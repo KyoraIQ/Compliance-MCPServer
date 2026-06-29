@@ -121,8 +121,8 @@
 
 <nav class="nav">
   <div class="brand"><div class="logo">KIQ</div><div class="name">Kyora IQ <span>Compliance Reference</span></div></div>
-  <div class="navlinks"><a href="#">Search</a><a href="#">Frameworks</a><a href="#">Crosswalk</a><a href="#">MCP</a></div>
-  <button class="cta"><i class="ti ti-plug-connected" style="font-size:16px"></i> Connect via MCP</button>
+  <div class="navlinks"><a href="index.html" class="active">Search</a><a href="frameworks.html">Frameworks</a><a href="crosswalk.html">Crosswalk</a><a href="mcp.html">MCP</a></div>
+  <a href="mcp.html" class="cta" style="text-decoration:none"><i class="ti ti-plug-connected" style="font-size:16px"></i> Connect via MCP</a>
 </nav>
 
 <header class="hero">
@@ -185,15 +185,19 @@ function mappingsFor(ref){
 }
 function fwShortName(fwid){ return DB.frameworks[fwid] ? DB.frameworks[fwid].framework.name : fwid; }
 
+function normalizeIds(s){
+  // unify control-id forms: "AC-05"/"ac-5"/"AC-5" -> "ac-5"; also strip zero-pad after any letter-dash
+  return s.replace(/([a-z])-0*(\d)/gi, "$1-$2");
+}
 function searchText(item){
   const c=item.ctrl;
   let t=[c.display_id,c.title,c.statement,c.guidance,item.fwname].join(" ");
   for(const ch of c.children||[]) t+=" "+ch.display_id+" "+ch.title+" "+ch.statement;
-  return t.toLowerCase();
+  return normalizeIds(t.toLowerCase());
 }
 
 function render(){
-  const q=document.getElementById('q').value.toLowerCase().trim();
+  const q=normalizeIds(document.getElementById('q').value.toLowerCase().trim());
   const res=FLAT.filter(it=>{
     if(curFw!=="all" && it.fwid!==curFw) return false;
     if(curLayer!=="all" && it.ctrl.layer!==curLayer) return false;

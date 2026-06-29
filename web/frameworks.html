@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyora IQ — Frameworks</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --bg:#0a0e11;--hero:#0c1318;--panel:#101820;--card:#121b22;--card2:#16212a;
+    --border:#1d2a33;--border2:#283a45;--text:#eef3f5;--text2:#9aacb5;--text3:#5f6e77;
+    --accent:#19e3a3;--accent2:#13c08a;--accent-dim:#0c3a2e;--accent-text:#22e0a6;
+    --mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Inter',system-ui,sans-serif;--r:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,14,17,.86);backdrop-filter:blur(10px);z-index:30;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .logo{width:32px;height:32px;border-radius:8px;background:var(--accent);color:#03150f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;}
+  .brand .name{font-size:15px;font-weight:600;}
+  .brand .name span{color:var(--accent-text);}
+  .navlinks{display:flex;gap:24px;}
+  .navlinks a{color:var(--text2);font-size:13.5px;}
+  .navlinks a:hover,.navlinks a.active{color:var(--text);}
+  .hero{background:linear-gradient(180deg,var(--hero),var(--bg));border-bottom:1px solid var(--border);padding:40px 32px 30px;}
+  .wrap{max-width:1140px;margin:0 auto;}
+  .eyebrow{display:flex;align-items:center;gap:11px;color:var(--accent-text);font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px;}
+  .eyebrow .bar{width:26px;height:2px;background:var(--accent);}
+  h1{font-size:34px;line-height:1.1;font-weight:700;letter-spacing:-1px;margin-bottom:12px;}
+  .lede{font-size:15px;color:var(--text2);max-width:680px;}
+  .work{padding:30px 32px 60px;}
+  .bucket-legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+  .blg{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text2);background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:7px 12px;}
+  .dot{width:8px;height:8px;border-radius:50%;}
+  .verbatim{background:var(--accent);} .paraphrased{background:#7ab7f0;} .own-wording{background:#e6b35c;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;}
+  .fw{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;}
+  .fw h3{font-size:16px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+  .fw .meta{font-size:11px;color:var(--text3);font-family:var(--mono);margin-bottom:10px;}
+  .fw .plain{font-size:13.5px;color:var(--text2);line-height:1.55;margin-bottom:12px;}
+  .fw .foot{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:10px;}
+  .badge{font-size:10px;font-weight:600;padding:3px 8px;border-radius:5px;text-transform:uppercase;letter-spacing:.4px;display:inline-flex;align-items:center;gap:5px;}
+  .b-verbatim{background:var(--accent-dim);color:var(--accent-text);}
+  .b-paraphrased{background:#10243a;color:#7ab7f0;}
+  .b-own-wording{background:#2a2110;color:#e6b35c;}
+  .count{font-family:var(--mono);}
+  .foot-note{border-top:1px solid var(--border);padding:24px 32px 40px;font-size:11.5px;color:var(--text3);line-height:1.8;}
+  @media(max-width:720px){.nav,.hero,.work,.foot-note{padding-left:18px;padding-right:18px;}.navlinks{display:none;}h1{font-size:26px;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="brand"><div class="logo">KIQ</div><div class="name">Kyora IQ <span>Compliance Reference</span></div></a>
+  <div class="navlinks"><a href="index.html">Search</a><a href="frameworks.html" class="active">Frameworks</a><a href="crosswalk.html">Crosswalk</a><a href="mcp.html">MCP</a></div>
+</nav>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow"><span class="bar"></span> The frameworks we track</div>
+  <h1>13 frameworks, in plain language</h1>
+  <p class="lede">Every framework Kyora IQ tracks, what it's for, and how we source it. Some are public and reproduced word-for-word; others are copyrighted, so we describe them in our own words.</p>
+</div></header>
+<main class="work"><div class="wrap">
+  <div class="bucket-legend">
+    <div class="blg"><span class="dot verbatim"></span> Verbatim — public domain, word-for-word</div>
+    <div class="blg"><span class="dot paraphrased"></span> Paraphrased — open license, our summaries</div>
+    <div class="blg"><span class="dot own-wording"></span> Own wording — copyrighted, structure only</div>
+  </div>
+  <div class="grid" id="grid"></div>
+</div></main>
+<footer class="foot-note"><div class="wrap" id="footAttr"></div></footer>
+
+<script>
+// Plain-language explanations, keyed by framework id.
+const PLAIN = {
+  "nist-800-53-r5": "The big U.S. government catalog of security and privacy controls. The gold standard many other frameworks map back to. Used by federal agencies and contractors.",
+  "nist-ai-rmf": "A voluntary playbook from NIST for managing the risks of AI systems — how to govern, map, measure, and manage them responsibly.",
+  "nist-ai-600-1": "A NIST companion focused specifically on the risks of generative AI (like chatbots and image generators), such as confabulation and data leakage.",
+  "hipaa-security-rule": "The U.S. healthcare law's rules for protecting electronic health information. Specifies safeguards that are either 'required' or 'addressable'.",
+  "owasp-llm-top10": "The top 10 security risks specific to apps built on large language models — prompt injection, data leakage, excessive agency, and more.",
+  "owasp-api-top10": "The top 10 security risks for APIs (the connections between software systems) — broken authorization, broken authentication, and so on.",
+  "owasp-web-top10": "The classic top 10 security risks for web applications — the most widely known security awareness list in software.",
+  "mitre-atlas": "A knowledge base of real-world techniques attackers use against AI and machine-learning systems. The AI-focused cousin of ATT&CK.",
+  "mitre-attack": "A widely used catalog of tactics and techniques attackers use against IT systems. We carry a curated subset relevant to these controls.",
+  "soc2-tsc": "The criteria behind SOC 2 audits — what customers ask SaaS vendors to prove about security, availability, and confidentiality.",
+  "iso-42001": "The world's first international standard for managing AI responsibly — an 'AI management system,' like ISO 27001 but for AI.",
+  "hitrust-csf": "A certifiable security framework popular in healthcare that harmonizes many other standards into one set of controls.",
+  "eu-ai-act": "The European Union's AI law. We reference its key articles for high-risk AI systems — risk management, oversight, transparency, and logging."
+};
+const BUCKET_LABEL = {verbatim:"Verbatim",paraphrased:"Paraphrased","own-wording":"Own wording"};
+
+fetch('kyora-data.json').then(r=>r.json()).then(db=>{
+  const frameworks = db.index.frameworks;
+  document.getElementById('grid').innerHTML = frameworks.map(f=>{
+    const plain = PLAIN[f.id] || "";
+    const bucket = f.source_handling;
+    return `<div class="fw">
+      <h3>${f.name}</h3>
+      <div class="meta">${f.publisher} · ${f.version}</div>
+      <div class="plain">${plain}</div>
+      <div class="foot">
+        <span class="badge b-${bucket}">${BUCKET_LABEL[bucket]||bucket}</span>
+        <span class="count">${f.total_nodes} controls</span>
+      </div>
+    </div>`;
+  }).join('');
+  const c = db.index.counts;
+  document.getElementById('footAttr').innerHTML =
+    `<b>${c.total_control_nodes}</b> control nodes across <b>${c.frameworks}</b> frameworks · ${c.mappings} cross-framework mappings.<br>`+
+    `Verbatim sources are public domain (NIST, HIPAA). Paraphrased sources are openly licensed (OWASP CC BY-SA; MITRE with attribution). Own-wording frameworks (SOC 2, ISO 42001, HITRUST, EU AI Act) are described in Kyora IQ's words because their official texts are copyrighted. Kyora IQ is a reference, not a certification or legal advice.`;
+}).catch(()=>{document.getElementById('grid').innerHTML='<div style="color:var(--text3)">Could not load data.</div>';});
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyora IQ — Connect via MCP</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --bg:#0a0e11;--hero:#0c1318;--panel:#101820;--card:#121b22;--card2:#16212a;
+    --border:#1d2a33;--border2:#283a45;--text:#eef3f5;--text2:#9aacb5;--text3:#5f6e77;
+    --accent:#19e3a3;--accent2:#13c08a;--accent-dim:#0c3a2e;--accent-text:#22e0a6;
+    --mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Inter',system-ui,sans-serif;--r:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent-text);text-decoration:none;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,14,17,.86);backdrop-filter:blur(10px);z-index:30;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand a,.brand{color:var(--text);text-decoration:none;}
+  .brand .logo{width:32px;height:32px;border-radius:8px;background:var(--accent);color:#03150f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;}
+  .brand .name{font-size:15px;font-weight:600;} .brand .name span{color:var(--accent-text);}
+  .navlinks{display:flex;gap:24px;} .navlinks a{color:var(--text2);font-size:13.5px;}
+  .navlinks a:hover,.navlinks a.active{color:var(--text);}
+  .hero{background:linear-gradient(180deg,var(--hero),var(--bg));border-bottom:1px solid var(--border);padding:40px 32px 30px;}
+  .wrap{max-width:900px;margin:0 auto;}
+  .eyebrow{display:flex;align-items:center;gap:11px;color:var(--accent-text);font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px;}
+  .eyebrow .bar{width:26px;height:2px;background:var(--accent);}
+  h1{font-size:34px;line-height:1.1;font-weight:700;letter-spacing:-1px;margin-bottom:12px;}
+  .lede{font-size:15px;color:var(--text2);max-width:680px;}
+  .work{padding:30px 32px 60px;}
+  h2{font-size:18px;font-weight:600;margin:28px 0 12px;}
+  p{color:var(--text2);font-size:14px;margin-bottom:12px;}
+  .analogy{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+  .acard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;}
+  .acard .ic{font-size:22px;color:var(--accent-text);margin-bottom:8px;}
+  .acard h3{font-size:14px;margin-bottom:4px;}
+  .acard p{font-size:13px;margin:0;}
+  .step{display:flex;gap:12px;margin-bottom:14px;}
+  .step .n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent-dim);color:var(--accent-text);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;}
+  .step .t{font-size:13.5px;color:var(--text2);}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin:16px 0;}
+  label{display:block;font-size:12px;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;}
+  input{width:100%;height:42px;padding:0 12px;background:var(--panel);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:var(--mono);font-size:13px;outline:none;margin-bottom:12px;}
+  input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim);}
+  button{background:var(--accent);color:#03150f;border:none;padding:10px 16px;border-radius:8px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit;}
+  pre{background:#06090b;border:1px solid var(--border);border-radius:8px;padding:14px;overflow-x:auto;font-family:var(--mono);font-size:12px;color:var(--text);white-space:pre-wrap;word-break:break-all;margin:10px 0;}
+  .warn{background:#2a2110;border:1px solid #5a4a1a;color:#e6c878;border-radius:8px;padding:12px 14px;font-size:12.5px;margin:14px 0;display:flex;gap:9px;align-items:flex-start;}
+  .ok{color:var(--accent-text);}
+  .tool{font-family:var(--mono);font-size:12px;color:var(--text2);}
+  .hidden{display:none;}
+  @media(max-width:720px){.nav,.hero,.work{padding-left:18px;padding-right:18px;}.navlinks{display:none;}h1{font-size:26px;}.analogy{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="brand"><div class="logo">KIQ</div><div class="name">Kyora IQ <span>Compliance Reference</span></div></a>
+  <div class="navlinks"><a href="index.html">Search</a><a href="frameworks.html">Frameworks</a><a href="crosswalk.html">Crosswalk</a><a href="mcp.html" class="active">MCP</a></div>
+</nav>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow"><span class="bar"></span> Connect your AI assistant</div>
+  <h1>What is MCP, and how do I connect?</h1>
+  <p class="lede">MCP (Model Context Protocol) is a standard way to give an AI assistant a set of tools it can use. Connect your assistant to Kyora IQ and it can look up real compliance controls instead of guessing.</p>
+</div></header>
+<main class="work"><div class="wrap">
+
+  <h2>The idea in one minute</h2>
+  <p>Normally an AI assistant only knows what it learned during training. An MCP server hands it a menu of tools it can call. Once your assistant is connected to Kyora IQ, you can ask it things like <em>"What does NIST AC-2 require, and what does it map to in HIPAA?"</em> and it will call our tools to get the real, cited answer.</p>
+
+  <div class="analogy">
+    <div class="acard"><div class="ic"><i class="ti ti-map-pin"></i></div><h3>The URL is the address</h3><p>It tells your assistant where the server lives. Knowing an address alone doesn't let anyone in.</p></div>
+    <div class="acard"><div class="ic"><i class="ti ti-key"></i></div><h3>The token is the key</h3><p>Only assistants with the key can use the tools. Your instructor gives you the key privately.</p></div>
+  </div>
+
+  <div class="warn"><i class="ti ti-shield-lock" style="font-size:18px"></i><div>This server is read-only and contains no secrets — it only returns the public compliance information you can already see on this site. Keep your access token private (don't post it publicly), and it can't be abused.</div></div>
+
+  <h2>Connect Claude</h2>
+  <div class="step"><span class="n">1</span><span class="t">Open Claude's settings and find <b>Connectors</b> (or "Custom connectors").</span></div>
+  <div class="step"><span class="n">2</span><span class="t">Add a connector using the <b>server URL</b> your instructor gave you.</span></div>
+  <div class="step"><span class="n">3</span><span class="t">When prompted, provide your <b>access token</b> as a bearer token.</span></div>
+  <div class="step"><span class="n">4</span><span class="t">Start a chat: <em>"Using Kyora IQ, search for audit logging controls."</em></span></div>
+  <p style="font-size:12px;color:var(--text3)">Menu names and supported plans change over time. If you don't see Connectors, check Claude's current documentation.</p>
+
+  <h2>Generate your connection details</h2>
+  <p>Paste the URL and token your instructor gave you. This runs entirely in your browser — nothing is sent anywhere or stored, and the token is never shown on this public page by default.</p>
+  <div class="panel">
+    <label>Server URL</label>
+    <input id="url" placeholder="https://your-server.onrender.com/mcp" autocomplete="off">
+    <label>Your access token (given to you privately)</label>
+    <input id="token" placeholder="paste token here" autocomplete="off">
+    <button onclick="gen()">Generate instructions</button>
+    <div id="out" class="hidden">
+      <h3 style="font-size:13px;margin:16px 0 6px;color:var(--text)">Python (for your own code)</h3>
+      <pre id="py"></pre>
+      <h3 style="font-size:13px;margin:16px 0 6px;color:var(--text)">Command-line bridge (for local stdio assistants)</h3>
+      <pre id="cli"></pre>
+    </div>
+  </div>
+
+  <h2>The tools you get</h2>
+  <p class="tool">list_frameworks · search_controls · get_control · get_mappings · list_risks · get_risk</p>
+
+</div></main>
+
+<script>
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function gen(){
+  const url=document.getElementById('url').value.trim()||'https://your-server.onrender.com/mcp';
+  const token=document.getElementById('token').value.trim()||'YOUR_TOKEN';
+  document.getElementById('py').textContent =
+`import asyncio
+from mcp.client.session import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
+
+URL = "${url}"
+HEADERS = {"Authorization": "Bearer ${token}"}
+
+async def main():
+    async with streamablehttp_client(URL, headers=HEADERS) as (r, w, _):
+        async with ClientSession(r, w) as s:
+            await s.initialize()
+            res = await s.call_tool("search_controls", {"query": "audit logging"})
+            print(res.content[0].text)
+
+asyncio.run(main())`;
+  document.getElementById('cli').textContent =
+`npx mcp-remote ${url} --header "Authorization: Bearer ${token}"`;
+  document.getElementById('out').classList.remove('hidden');
+}
+</script>
+</body>
+</html>

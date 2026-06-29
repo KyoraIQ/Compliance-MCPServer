@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyora IQ — Crosswalk</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --bg:#0a0e11;--hero:#0c1318;--panel:#101820;--card:#121b22;--card2:#16212a;
+    --border:#1d2a33;--border2:#283a45;--text:#eef3f5;--text2:#9aacb5;--text3:#5f6e77;
+    --accent:#19e3a3;--accent2:#13c08a;--accent-dim:#0c3a2e;--accent-text:#22e0a6;
+    --mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Inter',system-ui,sans-serif;--r:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,14,17,.86);backdrop-filter:blur(10px);z-index:30;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .logo{width:32px;height:32px;border-radius:8px;background:var(--accent);color:#03150f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;}
+  .brand .name{font-size:15px;font-weight:600;} .brand .name span{color:var(--accent-text);}
+  .navlinks{display:flex;gap:24px;} .navlinks a{color:var(--text2);font-size:13.5px;}
+  .navlinks a:hover,.navlinks a.active{color:var(--text);}
+  .hero{background:linear-gradient(180deg,var(--hero),var(--bg));border-bottom:1px solid var(--border);padding:40px 32px 30px;}
+  .wrap{max-width:1140px;margin:0 auto;}
+  .eyebrow{display:flex;align-items:center;gap:11px;color:var(--accent-text);font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px;}
+  .eyebrow .bar{width:26px;height:2px;background:var(--accent);}
+  h1{font-size:34px;line-height:1.1;font-weight:700;letter-spacing:-1px;margin-bottom:12px;}
+  .lede{font-size:15px;color:var(--text2);max-width:680px;}
+  .work{padding:30px 32px 60px;}
+  .risk{background:var(--card);border:1px solid var(--border);border-radius:var(--r);margin-bottom:14px;overflow:hidden;}
+  .risk-head{padding:16px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .ltag{font-size:10px;font-weight:700;letter-spacing:.5px;padding:4px 8px;border-radius:5px;text-transform:uppercase;}
+  .risk-title{font-size:16px;font-weight:600;}
+  .risk-sum{font-size:13px;color:var(--text2);padding:0 18px 14px;}
+  .chain{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 18px;align-items:center;}
+  .ctrl-pill{display:inline-flex;flex-direction:column;gap:2px;background:var(--panel);border:1px solid var(--border2);border-radius:8px;padding:8px 11px;min-width:120px;}
+  .ctrl-pill .fw{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.4px;}
+  .ctrl-pill .cid{font-family:var(--mono);font-size:12px;color:var(--accent-text);}
+  .ctrl-pill .ct{font-size:11px;color:var(--text2);}
+  .arrow{color:var(--text3);font-size:16px;}
+  .L-input{background:#10243a;color:#7ab7f0;} .L-output{background:#231a3a;color:#b3a5f0;}
+  .L-model{background:#0e2e26;color:#5fd3aa;} .L-infrastructure{background:#2e2410;color:#e6b964;}
+  .L-agentic{background:#2e1414;color:#ef8f8f;} .L-governance{background:#1a2a2e;color:#7fc9d4;}
+  .explain{font-size:13px;color:var(--text3);max-width:760px;margin-bottom:22px;line-height:1.6;}
+  .foot-note{border-top:1px solid var(--border);padding:24px 32px 40px;font-size:11.5px;color:var(--text3);line-height:1.8;}
+  @media(max-width:720px){.nav,.hero,.work,.foot-note{padding-left:18px;padding-right:18px;}.navlinks{display:none;}h1{font-size:26px;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="brand"><div class="logo">KIQ</div><div class="name">Kyora IQ <span>Compliance Reference</span></div></a>
+  <div class="navlinks"><a href="index.html">Search</a><a href="frameworks.html">Frameworks</a><a href="crosswalk.html" class="active">Crosswalk</a><a href="mcp.html">MCP</a></div>
+</nav>
+<header class="hero"><div class="wrap">
+  <div class="eyebrow"><span class="bar"></span> The crosswalk</div>
+  <h1>One risk, every framework's answer</h1>
+  <p class="lede">A crosswalk shows how the same underlying risk is addressed across different frameworks. Pick a risk below and see which control in each framework covers it.</p>
+</div></header>
+<main class="work"><div class="wrap">
+  <p class="explain">Each card is a risk that lives in one layer of your stack. The pills underneath are the controls — across different frameworks — that address that same risk. This is what makes a control in one framework findable from any other.</p>
+  <div id="risks"></div>
+</div></main>
+<footer class="foot-note"><div class="wrap" id="footAttr"></div></footer>
+
+<script>
+const LAYER_LABEL={input:"Input",output:"Output",model:"Model",infrastructure:"Infrastructure",agentic:"Agentic",governance:"Governance"};
+function fwShort(name){return name.replace('NIST SP ','').replace(' for LLM Applications',' LLM').replace(' (AICPA Trust Services Criteria)','').replace(' (Enterprise, curated)','').replace(':2023 (AI Management System)','');}
+
+fetch('kyora-data.json').then(r=>r.json()).then(db=>{
+  const fwName={}; db.index.frameworks.forEach(f=>fwName[f.id]=f.name);
+  document.getElementById('risks').innerHTML = db.risks.map(r=>{
+    const pills = (r.controls_resolved||[]).map((c,i)=>{
+      const fwid = c.ref.split(':')[0];
+      return `${i>0?'<i class="ti ti-plus arrow"></i>':''}<div class="ctrl-pill"><span class="fw">${fwShort(fwName[fwid]||fwid)}</span><span class="cid">${c.display_id||c.ref.split(':')[1]}</span><span class="ct">${(c.title||'').slice(0,40)}</span></div>`;
+    }).join('');
+    return `<div class="risk">
+      <div class="risk-head"><span class="ltag L-${r.layer}">${LAYER_LABEL[r.layer]||r.layer}</span><span class="risk-title">${r.title}</span></div>
+      <div class="risk-sum">${r.summary}</div>
+      <div class="chain">${pills}</div>
+    </div>`;
+  }).join('');
+  const c=db.index.counts;
+  document.getElementById('footAttr').innerHTML=`<b>${db.risks.length}</b> risks · <b>${c.mappings}</b> cross-framework mappings · ${c.total_control_nodes} control nodes. Mappings marked elsewhere as “Kyora IQ” are our interpretation, not the standards body's. Kyora IQ is a reference, not a certification or legal advice.`;
+}).catch(()=>{document.getElementById('risks').innerHTML='<div style="color:var(--text3)">Could not load data.</div>';});
+</script>
+</body>
+</html>
