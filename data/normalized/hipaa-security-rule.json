@@ -99,6 +99,41 @@
       "source_handling": "verbatim"
     },
     {
+      "id": "308-a-2",
+      "display_id": "§ 164.308(a)(2)",
+      "title": "Assigned Security Responsibility",
+      "kind": "standard",
+      "statement": "Standard: Assigned Security Responsibility. (Administrative safeguard.)",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "section": "164.308(a)(2)",
+        "safeguard": "Administrative"
+      },
+      "children": [
+        {
+          "id": "308-a-2",
+          "display_id": "§ 164.308(a)(2)",
+          "title": "Assigned Security Responsibility",
+          "kind": "spec",
+          "statement": "Identify the security official who is responsible for the development and implementation of the policies and procedures required by the Security Rule.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(2)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(2)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.308(a)(2)",
+      "source_handling": "verbatim"
+    },
+    {
       "id": "308-a-3",
       "display_id": "§ 164.308(a)(3)",
       "title": "Workforce Security",
@@ -358,6 +393,179 @@
       "source_handling": "verbatim"
     },
     {
+      "id": "308-a-7",
+      "display_id": "§ 164.308(a)(7)",
+      "title": "Contingency Plan",
+      "kind": "standard",
+      "statement": "Standard: Contingency Plan. (Administrative safeguard.)",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "section": "164.308(a)(7)",
+        "safeguard": "Administrative"
+      },
+      "children": [
+        {
+          "id": "308-a-7-ii-A",
+          "display_id": "§ 164.308(a)(7)(ii)(A)",
+          "title": "Data Backup Plan",
+          "kind": "spec",
+          "statement": "Establish and implement procedures to create and maintain retrievable exact copies of electronic protected health information.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(7)(ii)(A)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(7)(ii)(A)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-7-ii-B",
+          "display_id": "§ 164.308(a)(7)(ii)(B)",
+          "title": "Disaster Recovery Plan",
+          "kind": "spec",
+          "statement": "Establish and implement procedures to restore any loss of data.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(7)(ii)(B)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(7)(ii)(B)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-7-ii-C",
+          "display_id": "§ 164.308(a)(7)(ii)(C)",
+          "title": "Emergency Mode Operation Plan",
+          "kind": "spec",
+          "statement": "Establish and implement procedures to enable continuation of critical business processes for protection of ePHI while operating in emergency mode.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(7)(ii)(C)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(7)(ii)(C)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-7-ii-D",
+          "display_id": "§ 164.308(a)(7)(ii)(D)",
+          "title": "Testing and Revision Procedures",
+          "kind": "spec",
+          "statement": "Implement procedures for periodic testing and revision of contingency plans.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(7)(ii)(D)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(7)(ii)(D)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-7-ii-E",
+          "display_id": "§ 164.308(a)(7)(ii)(E)",
+          "title": "Applications and Data Criticality Analysis",
+          "kind": "spec",
+          "statement": "Assess the relative criticality of specific applications and data in support of other contingency plan components.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(7)(ii)(E)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(7)(ii)(E)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.308(a)(7)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "308-a-8",
+      "display_id": "§ 164.308(a)(8)",
+      "title": "Evaluation",
+      "kind": "standard",
+      "statement": "Standard: Evaluation. (Administrative safeguard.)",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "section": "164.308(a)(8)",
+        "safeguard": "Administrative"
+      },
+      "children": [
+        {
+          "id": "308-a-8",
+          "display_id": "§ 164.308(a)(8)",
+          "title": "Evaluation",
+          "kind": "spec",
+          "statement": "Perform a periodic technical and nontechnical evaluation that establishes the extent to which security policies and procedures meet the requirements of the Security Rule.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(8)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(8)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.308(a)(8)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "308-b-1",
+      "display_id": "§ 164.308(b)(1)",
+      "title": "Business Associate Contracts and Other Arrangements",
+      "kind": "standard",
+      "statement": "Standard: Business Associate Contracts and Other Arrangements. (Administrative safeguard.)",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "section": "164.308(b)(1)",
+        "safeguard": "Administrative"
+      },
+      "children": [
+        {
+          "id": "308-b-3",
+          "display_id": "§ 164.308(b)(3)",
+          "title": "Written Contract or Other Arrangement",
+          "kind": "spec",
+          "statement": "Document the satisfactory assurances required from a business associate through a written contract or other arrangement that meets the applicable requirements.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(b)(3)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(b)(3)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.308(b)(1)",
+      "source_handling": "verbatim"
+    },
+    {
       "id": "310-a-1",
       "display_id": "§ 164.310(a)(1)",
       "title": "Facility Access Controls",
@@ -441,6 +649,162 @@
       ],
       "mappings": [],
       "source_ref": "164.310(a)(1)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "310-b",
+      "display_id": "§ 164.310(b)",
+      "title": "Workstation Use",
+      "kind": "standard",
+      "statement": "Standard: Workstation Use. (Physical safeguard.)",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "section": "164.310(b)",
+        "safeguard": "Physical"
+      },
+      "children": [
+        {
+          "id": "310-b",
+          "display_id": "§ 164.310(b)",
+          "title": "Workstation Use",
+          "kind": "spec",
+          "statement": "Implement policies and procedures that specify the proper functions to be performed and the manner in which to perform them on workstations that access ePHI.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(b)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(b)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.310(b)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "310-c",
+      "display_id": "§ 164.310(c)",
+      "title": "Workstation Security",
+      "kind": "standard",
+      "statement": "Standard: Workstation Security. (Physical safeguard.)",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "section": "164.310(c)",
+        "safeguard": "Physical"
+      },
+      "children": [
+        {
+          "id": "310-c",
+          "display_id": "§ 164.310(c)",
+          "title": "Workstation Security",
+          "kind": "spec",
+          "statement": "Implement physical safeguards for all workstations that access ePHI to restrict access to authorized users.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(c)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(c)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.310(c)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "310-d-1",
+      "display_id": "§ 164.310(d)(1)",
+      "title": "Device and Media Controls",
+      "kind": "standard",
+      "statement": "Standard: Device and Media Controls. (Physical safeguard.)",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "section": "164.310(d)(1)",
+        "safeguard": "Physical"
+      },
+      "children": [
+        {
+          "id": "310-d-2-i",
+          "display_id": "§ 164.310(d)(2)(i)",
+          "title": "Disposal",
+          "kind": "spec",
+          "statement": "Implement policies and procedures to address the final disposition of ePHI and the hardware or electronic media on which it is stored.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(d)(2)(i)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(d)(2)(i)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "310-d-2-ii",
+          "display_id": "§ 164.310(d)(2)(ii)",
+          "title": "Media Re-use",
+          "kind": "spec",
+          "statement": "Implement procedures for removal of ePHI from electronic media before the media are made available for re-use.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(d)(2)(ii)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(d)(2)(ii)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "310-d-2-iii",
+          "display_id": "§ 164.310(d)(2)(iii)",
+          "title": "Accountability",
+          "kind": "spec",
+          "statement": "Maintain a record of the movements of hardware and electronic media and any person responsible for them.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(d)(2)(iii)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(d)(2)(iii)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "310-d-2-iv",
+          "display_id": "§ 164.310(d)(2)(iv)",
+          "title": "Data Backup and Storage",
+          "kind": "spec",
+          "statement": "Create a retrievable, exact copy of ePHI, when needed, before movement of equipment.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(d)(2)(iv)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(d)(2)(iv)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.310(d)(1)",
       "source_handling": "verbatim"
     },
     {

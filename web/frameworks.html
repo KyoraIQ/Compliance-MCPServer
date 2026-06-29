@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kyora IQ — Frameworks</title>
+<title>Kyora IQ, Frameworks</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
 <style>
@@ -58,13 +58,13 @@
 <header class="hero"><div class="wrap">
   <div class="eyebrow"><span class="bar"></span> The frameworks we track</div>
   <h1>13 frameworks, in plain language</h1>
-  <p class="lede">Every framework Kyora IQ tracks, what it's for, and how we source it. Some are public and reproduced word-for-word; others are copyrighted, so we describe them in our own words.</p>
+  <p class="lede">Every framework that Kyora IQ tracks, what it is for, and how we source it. Some are public and reproduced word for word. Others are copyrighted, so we describe them in our own words.</p>
 </div></header>
 <main class="work"><div class="wrap">
   <div class="bucket-legend">
-    <div class="blg"><span class="dot verbatim"></span> Verbatim — public domain, word-for-word</div>
-    <div class="blg"><span class="dot paraphrased"></span> Paraphrased — open license, our summaries</div>
-    <div class="blg"><span class="dot own-wording"></span> Own wording — copyrighted, structure only</div>
+    <div class="blg"><span class="dot verbatim"></span> Verbatim, public domain, word for word</div>
+    <div class="blg"><span class="dot paraphrased"></span> Paraphrased, open license, our summaries</div>
+    <div class="blg"><span class="dot own-wording"></span> Own wording, copyrighted, structure only</div>
   </div>
   <div class="grid" id="grid"></div>
 </div></main>
@@ -73,19 +73,19 @@
 <script>
 // Plain-language explanations, keyed by framework id.
 const PLAIN = {
-  "nist-800-53-r5": "The big U.S. government catalog of security and privacy controls. The gold standard many other frameworks map back to. Used by federal agencies and contractors.",
-  "nist-ai-rmf": "A voluntary playbook from NIST for managing the risks of AI systems — how to govern, map, measure, and manage them responsibly.",
-  "nist-ai-600-1": "A NIST companion focused specifically on the risks of generative AI (like chatbots and image generators), such as confabulation and data leakage.",
-  "hipaa-security-rule": "The U.S. healthcare law's rules for protecting electronic health information. Specifies safeguards that are either 'required' or 'addressable'.",
-  "owasp-llm-top10": "The top 10 security risks specific to apps built on large language models — prompt injection, data leakage, excessive agency, and more.",
-  "owasp-api-top10": "The top 10 security risks for APIs (the connections between software systems) — broken authorization, broken authentication, and so on.",
-  "owasp-web-top10": "The classic top 10 security risks for web applications — the most widely known security awareness list in software.",
-  "mitre-atlas": "A knowledge base of real-world techniques attackers use against AI and machine-learning systems. The AI-focused cousin of ATT&CK.",
-  "mitre-attack": "A widely used catalog of tactics and techniques attackers use against IT systems. We carry a curated subset relevant to these controls.",
-  "soc2-tsc": "The criteria behind SOC 2 audits — what customers ask SaaS vendors to prove about security, availability, and confidentiality.",
-  "iso-42001": "The world's first international standard for managing AI responsibly — an 'AI management system,' like ISO 27001 but for AI.",
-  "hitrust-csf": "A certifiable security framework popular in healthcare that harmonizes many other standards into one set of controls.",
-  "eu-ai-act": "The European Union's AI law. We reference its key articles for high-risk AI systems — risk management, oversight, transparency, and logging."
+  "nist-800-53-r5": "The large U.S. government catalog of security and privacy controls. It is the gold standard that many other frameworks map back to, and it is used by federal agencies and contractors.",
+  "nist-ai-rmf": "A voluntary playbook from NIST for managing the risks of AI systems. It covers how to govern, map, measure, and manage them responsibly.",
+  "nist-ai-600-1": "A NIST companion focused on the risks of generative AI, like chatbots and image generators. It addresses concerns such as confabulation and data leakage.",
+  "hipaa-security-rule": "The U.S. healthcare law's rules for protecting electronic health information. It specifies safeguards that are either required or addressable.",
+  "owasp-llm-top10": "The top ten security risks specific to apps built on large language models, including prompt injection, data leakage, and excessive agency.",
+  "owasp-api-top10": "The top ten security risks for APIs, the connections between software systems. It covers issues like broken authorization and broken authentication.",
+  "owasp-web-top10": "The classic top ten security risks for web applications. It is the most widely known security awareness list in software.",
+  "mitre-atlas": "A knowledge base of real world techniques that attackers use against AI and machine learning systems. It is the AI focused cousin of ATT&CK.",
+  "mitre-attack": "A widely used catalog of tactics and techniques that attackers use against IT systems. This tool carries a curated subset relevant to these controls.",
+  "soc2-tsc": "The criteria behind SOC 2 audits. These are what customers ask SaaS vendors to prove about security, availability, and confidentiality.",
+  "iso-42001": "The world's first international standard for managing AI responsibly. It defines an AI management system, much like ISO 27001 does for information security.",
+  "hitrust-csf": "A certifiable security framework popular in healthcare. It harmonizes many other standards into one set of controls.",
+  "eu-ai-act": "The European Union's AI law. This tool references its key articles for high risk AI systems, covering risk management, oversight, transparency, and logging."
 };
 const BUCKET_LABEL = {verbatim:"Verbatim",paraphrased:"Paraphrased","own-wording":"Own wording"};
 

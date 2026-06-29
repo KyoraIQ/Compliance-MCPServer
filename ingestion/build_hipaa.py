@@ -25,6 +25,10 @@ STANDARDS = [
         ("164.308(a)(1)(ii)(D)", "Information System Activity Review", "required",
          "Implement procedures to regularly review records of information system activity, such as audit logs, access reports, and security incident tracking reports."),
     ]),
+    ("164.308(a)(2)", "Assigned Security Responsibility", "governance", "Administrative", [
+        ("164.308(a)(2)", "Assigned Security Responsibility", "required",
+         "Identify the security official who is responsible for the development and implementation of the policies and procedures required by the Security Rule."),
+    ]),
     ("164.308(a)(3)", "Workforce Security", "governance", "Administrative", [
         ("164.308(a)(3)(ii)(A)", "Authorization and/or Supervision", "addressable",
          "Implement procedures for the authorization and/or supervision of workforce members who work with electronic protected health information or in locations where it might be accessed."),
@@ -55,6 +59,26 @@ STANDARDS = [
         ("164.308(a)(6)(ii)", "Response and Reporting", "required",
          "Identify and respond to suspected or known security incidents; mitigate harmful effects; and document incidents and their outcomes."),
     ]),
+    ("164.308(a)(7)", "Contingency Plan", "governance", "Administrative", [
+        ("164.308(a)(7)(ii)(A)", "Data Backup Plan", "required",
+         "Establish and implement procedures to create and maintain retrievable exact copies of electronic protected health information."),
+        ("164.308(a)(7)(ii)(B)", "Disaster Recovery Plan", "required",
+         "Establish and implement procedures to restore any loss of data."),
+        ("164.308(a)(7)(ii)(C)", "Emergency Mode Operation Plan", "required",
+         "Establish and implement procedures to enable continuation of critical business processes for protection of ePHI while operating in emergency mode."),
+        ("164.308(a)(7)(ii)(D)", "Testing and Revision Procedures", "addressable",
+         "Implement procedures for periodic testing and revision of contingency plans."),
+        ("164.308(a)(7)(ii)(E)", "Applications and Data Criticality Analysis", "addressable",
+         "Assess the relative criticality of specific applications and data in support of other contingency plan components."),
+    ]),
+    ("164.308(a)(8)", "Evaluation", "governance", "Administrative", [
+        ("164.308(a)(8)", "Evaluation", "required",
+         "Perform a periodic technical and nontechnical evaluation that establishes the extent to which security policies and procedures meet the requirements of the Security Rule."),
+    ]),
+    ("164.308(b)(1)", "Business Associate Contracts and Other Arrangements", "governance", "Administrative", [
+        ("164.308(b)(3)", "Written Contract or Other Arrangement", "required",
+         "Document the satisfactory assurances required from a business associate through a written contract or other arrangement that meets the applicable requirements."),
+    ]),
     ("164.310(a)(1)", "Facility Access Controls", "infrastructure", "Physical", [
         ("164.310(a)(2)(i)", "Contingency Operations", "addressable",
          "Establish procedures that allow facility access to support restoration of lost data under the disaster recovery and emergency mode operations plans."),
@@ -64,6 +88,24 @@ STANDARDS = [
          "Implement procedures to control and validate a person's access to facilities based on their role or function."),
         ("164.310(a)(2)(iv)", "Maintenance Records", "addressable",
          "Implement policies to document repairs and modifications to the physical components of a facility related to security."),
+    ]),
+    ("164.310(b)", "Workstation Use", "infrastructure", "Physical", [
+        ("164.310(b)", "Workstation Use", "required",
+         "Implement policies and procedures that specify the proper functions to be performed and the manner in which to perform them on workstations that access ePHI."),
+    ]),
+    ("164.310(c)", "Workstation Security", "infrastructure", "Physical", [
+        ("164.310(c)", "Workstation Security", "required",
+         "Implement physical safeguards for all workstations that access ePHI to restrict access to authorized users."),
+    ]),
+    ("164.310(d)(1)", "Device and Media Controls", "infrastructure", "Physical", [
+        ("164.310(d)(2)(i)", "Disposal", "required",
+         "Implement policies and procedures to address the final disposition of ePHI and the hardware or electronic media on which it is stored."),
+        ("164.310(d)(2)(ii)", "Media Re-use", "required",
+         "Implement procedures for removal of ePHI from electronic media before the media are made available for re-use."),
+        ("164.310(d)(2)(iii)", "Accountability", "addressable",
+         "Maintain a record of the movements of hardware and electronic media and any person responsible for them."),
+        ("164.310(d)(2)(iv)", "Data Backup and Storage", "addressable",
+         "Create a retrievable, exact copy of ePHI, when needed, before movement of equipment."),
     ]),
     ("164.312(a)(1)", "Access Control", "infrastructure", "Technical", [
         ("164.312(a)(2)(i)", "Unique User Identification", "required",

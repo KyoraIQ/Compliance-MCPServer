@@ -184,17 +184,33 @@ def resolve_index(normdir: Path):
         fw = data["framework"]
         total = 0
         control_count = 0
-        # "controls" = real controls: base controls + enhancements/standards/etc.,
-        # but NOT the lettered a/b/c parts (kind 'part') which are pieces of a control.
-        PART_KINDS = {"part", "section", "point_of_focus"}
-        def walk(nodes):
+        # Each framework has a natural "headline control" level; count nodes at
+        # that level so the displayed number matches official descriptions.
+        #   NIST: base controls + enhancements (not lettered parts)
+        #   HIPAA: standards (not implementation specs)
+        #   SOC 2 / HITRUST: the nested 'criterion' nodes (criteria / objectives)
+        #   others: top-level controls (+ MITRE techniques)
+        COUNT_KINDS = {
+            "nist-800-53-r5": {"control", "enhancement"},
+            "hipaa-security-rule": {"standard"},
+            "soc2-tsc": {"criterion"},
+            "hitrust-csf": {"criterion"},
+            "iso-42001": {"control"},
+            "eu-ai-act": {"control"},
+        }
+        count_kinds = COUNT_KINDS.get(fw["id"])
+        def walk(nodes, depth=0):
             nonlocal total, control_count
             for n in nodes:
                 total += 1
-                if n.get("kind") not in PART_KINDS:
-                    control_count += 1
+                if count_kinds is not None:
+                    if n.get("kind") in count_kinds:
+                        control_count += 1
+                else:
+                    if depth == 0 or n.get("kind") in {"technique", "subtechnique", "enhancement"}:
+                        control_count += 1
                 idx[f"{fw['id']}:{n['id']}"] = {"title": n["title"] or n["display_id"], "layer": n.get("layer"), "display_id": n["display_id"]}
-                walk(n.get("children", []))
+                walk(n.get("children", []), depth + 1)
         walk(data["controls"])
         fw_meta.append({"id": fw["id"], "name": fw["name"], "version": fw["version"],
                         "publisher": fw["publisher"], "source_handling": fw["source_handling"],

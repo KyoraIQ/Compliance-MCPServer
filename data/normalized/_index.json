@@ -18,8 +18,8 @@
       "publisher": "U.S. Department of Health and Human Services",
       "source_handling": "verbatim",
       "license": "public-domain",
-      "controls": 39,
-      "total_nodes": 39
+      "controls": 18,
+      "total_nodes": 60
     },
     {
       "id": "hitrust-csf",
@@ -28,7 +28,7 @@
       "publisher": "HITRUST",
       "source_handling": "own-wording",
       "license": "proprietary-structure-only",
-      "controls": 65,
+      "controls": 51,
       "total_nodes": 65
     },
     {
@@ -136,7 +136,7 @@
     "frameworks": 13,
     "risks": 16,
     "mappings": 31,
-    "total_control_nodes": 2406,
-    "total_controls": 1554
+    "total_control_nodes": 2427,
+    "total_controls": 1519
   }
 }
