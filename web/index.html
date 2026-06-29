@@ -79,6 +79,11 @@
   .guidance{font-size:13px;color:var(--text2);line-height:1.6;margin-top:6px;white-space:pre-wrap;}
   .src-note{font-size:11px;color:var(--text3);margin-top:8px;display:flex;align-items:center;gap:5px;}
   .suggest-link{display:inline-flex;align-items:center;gap:5px;margin-top:12px;font-size:12px;color:var(--accent-text);text-decoration:none;border:1px solid var(--border2);border-radius:7px;padding:6px 11px;transition:background .15s;}
+  .dom-card{border-color:var(--accent-dim);}
+  .dom-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:8px;}
+  .dom-fw{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:9px 11px;}
+  .dom-fwname{font-size:10.5px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+  .dom-pill{display:inline-block;font-family:var(--mono);font-size:11px;background:var(--card2);border:1px solid var(--border2);color:var(--text2);border-radius:5px;padding:2px 7px;margin:2px 3px 2px 0;}
   .suggest-link:hover{background:var(--accent-dim);}
 
   .child{border:1px solid var(--border);border-radius:8px;padding:11px 13px;margin-bottom:7px;background:var(--panel);}
@@ -208,6 +213,20 @@ function searchText(item){
 function render(){
   const q=normalizeIds(document.getElementById('q').value.toLowerCase().trim());
   const searching = q || curFw!=="all" || curLayer!=="all";
+
+  // Crosswalk domains: if the query matches a domain's title or summary, show
+  // it as a card listing every framework's control for that risk. This is how
+  // a cross-cutting risk like "MCP" surfaces, since no single control's text
+  // contains the word.
+  let domainCards="";
+  if(q && (DB.risks||[]).length){
+    const dmatch=DB.risks.filter(d=>{
+      const t=(d.title+" "+d.summary+" "+d.id).toLowerCase();
+      return t.includes(q);
+    });
+    domainCards=dmatch.map((d,i)=>domainCardHTML(d,i)).join("");
+  }
+
   const res=FLAT.filter(it=>{
     if(curFw!=="all" && it.fwid!==curFw) return false;
     if(curLayer!=="all" && it.ctrl.layer!==curLayer) return false;
@@ -224,8 +243,37 @@ function render(){
     : '<b>'+totalC.toLocaleString()+'</b> controls';
   document.getElementById('count').innerHTML=countLabel;
   const wrap=document.getElementById('results');
-  if(!res.length){ wrap.innerHTML='<div class="empty">No controls match. Try a different keyword, layer, or framework.</div>'; return; }
-  wrap.innerHTML=res.slice(0,80).map((it,i)=>cardHTML(it,i)).join('');
+  if(!res.length && !domainCards){ wrap.innerHTML='<div class="empty">No controls match. Try a different keyword, layer, or framework.</div>'; return; }
+  wrap.innerHTML=domainCards + res.slice(0,80).map((it,i)=>cardHTML(it,i)).join('');
+}
+
+// Render a crosswalk-domain search result: the risk plus its mapped control in
+// every framework, grouped so all aligned frameworks are visible at a glance.
+function domainCardHTML(d,i){
+  const byFw={};
+  for(const c of (d.controls_resolved||[])){
+    const fw=c.ref.split(":")[0];
+    (byFw[fw]=byFw[fw]||[]).push(c);
+  }
+  const fwCount=Object.keys(byFw).length;
+  let grid='<div class="dom-grid">';
+  for(const fw in byFw){
+    grid+='<div class="dom-fw"><div class="dom-fwname">'+esc(fwShortName(fw))+'</div>'+
+      byFw[fw].map(c=>'<span class="dom-pill" title="'+esc(c.title)+'">'+esc(c.display_id)+'</span>').join('')+
+      '</div>';
+  }
+  grid+='</div>';
+  const layer=d.layer||"governance";
+  return '<div class="rcard dom-card" id="dc'+i+'">'
+    +'<div class="rhead" onclick="document.getElementById(\'dc'+i+'\').classList.toggle(\'open\')">'
+      +'<span class="ltag L-'+layer+'">'+(LAYER_LABEL[layer]||layer)+'</span>'
+      +'<div class="rmid"><div class="rtitle">'+esc(d.title)+'<span class="fwname" style="background:var(--accent-dim);color:var(--accent-text)">crosswalk domain · '+fwCount+' frameworks</span></div>'
+        +'<div class="rdesc">'+esc(d.summary)+'</div></div>'
+      +'<i class="ti ti-chevron-down chev"></i>'
+    +'</div>'
+    +'<div class="rbody"><div class="section-label">Aligned controls across frameworks</div>'+grid
+    +'<div class="src-note"><i class="ti ti-arrows-cross" style="font-size:13px"></i> See the full crosswalk on the <a href="crosswalk.html">Crosswalk page</a>.</div></div>'
+  +'</div>';
 }
 
 function cardHTML(it,i){
