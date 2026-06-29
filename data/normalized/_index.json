@@ -135,7 +135,7 @@
   "counts": {
     "frameworks": 13,
     "risks": 16,
-    "mappings": 31,
+    "mappings": 86,
     "total_control_nodes": 2427,
     "total_controls": 1519
   }

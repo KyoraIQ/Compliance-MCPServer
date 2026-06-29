@@ -168,6 +168,150 @@ MAPPINGS = [
      "Event logging aligns with the EU AI Act record-keeping requirement (Art. 12)."),
     ("nist-ai-600-1:ga-2-7", "eu-ai-act:art-10", "related", "partial", "kyora-iq",
      "Data privacy risk aligns with EU AI Act data governance (Art. 10)."),
+
+    # ===================================================================
+    # Hand-authored crosswalk (Kyora IQ interpretation). Each links a NIST
+    # 800-53 control to the equivalent in another framework. Reasoned from
+    # the controls' purpose; clearly tagged kyora-iq, not an official mapping.
+    # ===================================================================
+
+    # --- Access control family (AC) -> SOC2 / HIPAA / HITRUST ---
+    ("nist-800-53-r5:ac-2", "soc2-tsc:cc6-2", "related", "strong", "kyora-iq",
+     "Account management aligns with SOC 2 CC6.2 (register and authorize new users)."),
+    ("nist-800-53-r5:ac-2", "soc2-tsc:cc6-3", "related", "strong", "kyora-iq",
+     "Account management aligns with SOC 2 CC6.3 (role-based access and least privilege)."),
+    ("nist-800-53-r5:ac-2", "hipaa-security-rule:308-a-4", "related", "strong", "kyora-iq",
+     "Account management aligns with the HIPAA Information Access Management standard."),
+    ("nist-800-53-r5:ac-3", "soc2-tsc:cc6-1", "related", "strong", "kyora-iq",
+     "Access enforcement aligns with SOC 2 CC6.1 (logical access security)."),
+    ("nist-800-53-r5:ac-5", "soc2-tsc:cc6-8", "related", "strong", "kyora-iq",
+     "Separation of duties aligns with SOC 2 CC6.8 (preventing unauthorized actions)."),
+    ("nist-800-53-r5:ac-5", "hitrust-csf:09", "related", "partial", "kyora-iq",
+     "Separation of duties aligns with HITRUST Communications and Operations Management (segregation of duties)."),
+    ("nist-800-53-r5:ac-6", "soc2-tsc:cc6-3", "related", "strong", "kyora-iq",
+     "Least privilege aligns with SOC 2 CC6.3 (access based on least privilege)."),
+    ("nist-800-53-r5:ac-6", "hipaa-security-rule:312-a-1", "related", "partial", "kyora-iq",
+     "Least privilege supports the HIPAA Access Control standard."),
+    ("nist-800-53-r5:ac-7", "hipaa-security-rule:312-a-1", "related", "partial", "kyora-iq",
+     "Unsuccessful logon attempts support the HIPAA Access Control standard."),
+    ("nist-800-53-r5:ac-17", "soc2-tsc:cc6-6", "related", "strong", "kyora-iq",
+     "Remote access aligns with SOC 2 CC6.6 (protection from threats outside the boundary)."),
+
+    # --- Identification & Authentication (IA) ---
+    ("nist-800-53-r5:ia-2", "soc2-tsc:cc6-1", "related", "strong", "kyora-iq",
+     "User authentication aligns with SOC 2 CC6.1 (logical access security)."),
+    ("nist-800-53-r5:ia-2", "hipaa-security-rule:312-d", "related", "strong", "kyora-iq",
+     "User authentication aligns with the HIPAA Person or Entity Authentication standard."),
+    ("nist-800-53-r5:ia-5", "hipaa-security-rule:312-d", "related", "partial", "kyora-iq",
+     "Authenticator management supports HIPAA Person or Entity Authentication."),
+
+    # --- Audit & Accountability (AU) ---
+    ("nist-800-53-r5:au-2", "soc2-tsc:cc7-2", "related", "strong", "kyora-iq",
+     "Event logging aligns with SOC 2 CC7.2 (monitoring for anomalies)."),
+    ("nist-800-53-r5:au-6", "soc2-tsc:cc7-3", "related", "strong", "kyora-iq",
+     "Audit review aligns with SOC 2 CC7.3 (evaluating security events)."),
+    ("nist-800-53-r5:au-6", "hipaa-security-rule:308-a-1", "related", "partial", "kyora-iq",
+     "Audit review supports the HIPAA Information System Activity Review specification."),
+    ("nist-800-53-r5:au-2", "hipaa-security-rule:312-b", "related", "strong", "kyora-iq",
+     "Event logging aligns with the HIPAA Audit Controls standard."),
+
+    # --- Incident Response (IR) ---
+    ("nist-800-53-r5:ir-4", "soc2-tsc:cc7-4", "related", "strong", "kyora-iq",
+     "Incident handling aligns with SOC 2 CC7.4 (responding to security incidents)."),
+    ("nist-800-53-r5:ir-4", "hipaa-security-rule:308-a-6", "related", "strong", "kyora-iq",
+     "Incident handling aligns with the HIPAA Security Incident Procedures standard."),
+    ("nist-800-53-r5:ir-4", "hitrust-csf:11", "related", "strong", "kyora-iq",
+     "Incident handling aligns with HITRUST Information Security Incident Management."),
+
+    # --- Contingency Planning (CP) ---
+    ("nist-800-53-r5:cp-9", "hipaa-security-rule:308-a-7", "related", "strong", "kyora-iq",
+     "System backup aligns with the HIPAA Contingency Plan standard (data backup)."),
+    ("nist-800-53-r5:cp-10", "hipaa-security-rule:308-a-7", "related", "strong", "kyora-iq",
+     "System recovery aligns with the HIPAA Contingency Plan standard (disaster recovery)."),
+    ("nist-800-53-r5:cp-2", "hitrust-csf:12", "related", "strong", "kyora-iq",
+     "Contingency planning aligns with HITRUST Business Continuity Management."),
+
+    # --- Risk Assessment (RA) ---
+    ("nist-800-53-r5:ra-3", "soc2-tsc:cc3-2", "related", "strong", "kyora-iq",
+     "Risk assessment aligns with SOC 2 CC3.2 (identify and analyze risk)."),
+    ("nist-800-53-r5:ra-3", "hipaa-security-rule:308-a-1", "related", "strong", "kyora-iq",
+     "Risk assessment aligns with the HIPAA Security Management Process (risk analysis)."),
+    ("nist-800-53-r5:ra-3", "hitrust-csf:03", "related", "strong", "kyora-iq",
+     "Risk assessment aligns with HITRUST Risk Management."),
+    ("nist-800-53-r5:ra-3", "iso-42001:a5", "related", "partial", "kyora-iq",
+     "Risk assessment aligns with ISO 42001 AI system impact assessment."),
+    ("nist-800-53-r5:ra-5", "soc2-tsc:cc7-1", "related", "strong", "kyora-iq",
+     "Vulnerability monitoring aligns with SOC 2 CC7.1 (detecting vulnerabilities)."),
+    ("nist-800-53-r5:ra-5", "hitrust-csf:10", "related", "strong", "kyora-iq",
+     "Vulnerability monitoring aligns with HITRUST Information Systems Acquisition (vulnerability management)."),
+
+    # --- Configuration / Change Management (CM) ---
+    ("nist-800-53-r5:cm-3", "soc2-tsc:cc8-1", "related", "strong", "kyora-iq",
+     "Configuration change control aligns with SOC 2 CC8.1 (change management)."),
+    ("nist-800-53-r5:cm-3", "hitrust-csf:09", "related", "partial", "kyora-iq",
+     "Configuration change control aligns with HITRUST change management."),
+    ("nist-800-53-r5:cm-8", "soc2-tsc:cc6-1", "related", "partial", "kyora-iq",
+     "System component inventory supports SOC 2 CC6.1 (knowing the assets to protect)."),
+    ("nist-800-53-r5:cm-8", "hitrust-csf:07", "related", "strong", "kyora-iq",
+     "System component inventory aligns with HITRUST Asset Management."),
+
+    # --- System & Communications Protection (SC) ---
+    ("nist-800-53-r5:sc-8", "hipaa-security-rule:312-e-1", "related", "strong", "kyora-iq",
+     "Transmission confidentiality aligns with the HIPAA Transmission Security standard."),
+    ("nist-800-53-r5:sc-13", "hipaa-security-rule:312-a-1", "related", "partial", "kyora-iq",
+     "Cryptographic protection supports HIPAA access control (encryption specification)."),
+    ("nist-800-53-r5:sc-28", "hipaa-security-rule:312-c-1", "related", "partial", "kyora-iq",
+     "Protection of information at rest supports the HIPAA Integrity standard."),
+    ("nist-800-53-r5:sc-7", "soc2-tsc:cc6-6", "related", "strong", "kyora-iq",
+     "Boundary protection aligns with SOC 2 CC6.6 (protecting the system boundary)."),
+    ("nist-800-53-r5:sc-8", "hitrust-csf:10", "related", "partial", "kyora-iq",
+     "Transmission confidentiality aligns with HITRUST cryptographic controls."),
+
+    # --- System & Information Integrity (SI) ---
+    ("nist-800-53-r5:si-4", "soc2-tsc:cc7-2", "related", "strong", "kyora-iq",
+     "System monitoring aligns with SOC 2 CC7.2 (monitoring for anomalies)."),
+    ("nist-800-53-r5:si-2", "hitrust-csf:10", "related", "strong", "kyora-iq",
+     "Flaw remediation aligns with HITRUST vulnerability management."),
+    ("nist-800-53-r5:si-3", "owasp-web-top10:a08-2021", "related", "partial", "kyora-iq",
+     "Malicious code protection relates to software and data integrity failures."),
+
+    # --- Governance / Program Management (PM) -> SOC2 / ISO / HITRUST ---
+    ("nist-800-53-r5:pm-1", "soc2-tsc:cc1-1", "related", "strong", "kyora-iq",
+     "Information security program plan aligns with SOC 2 CC1.1 (control environment)."),
+    ("nist-800-53-r5:pm-9", "soc2-tsc:cc3-1", "related", "partial", "kyora-iq",
+     "Risk management strategy aligns with SOC 2 CC3.1 (specifying objectives for risk)."),
+    ("nist-800-53-r5:pm-1", "hitrust-csf:04", "related", "strong", "kyora-iq",
+     "Security program plan aligns with HITRUST Security Policy."),
+    ("nist-800-53-r5:pm-1", "iso-42001:a2", "related", "partial", "kyora-iq",
+     "Security program plan parallels ISO 42001 AI policy at the governance level."),
+
+    # --- Supply Chain (SR) -> SOC2 / ISO / HITRUST ---
+    ("nist-800-53-r5:sr-3", "soc2-tsc:cc9-2", "related", "strong", "kyora-iq",
+     "Supply chain controls align with SOC 2 CC9.2 (vendor and business partner risk)."),
+    ("nist-800-53-r5:sr-3", "iso-42001:a10", "related", "partial", "kyora-iq",
+     "Supply chain controls align with ISO 42001 third-party relationships."),
+    ("nist-800-53-r5:sr-3", "hitrust-csf:05", "related", "partial", "kyora-iq",
+     "Supply chain controls align with HITRUST Organization of Information Security (external parties)."),
+
+    # --- Awareness & Training (AT) ---
+    ("nist-800-53-r5:at-2", "hipaa-security-rule:308-a-5", "related", "strong", "kyora-iq",
+     "Security awareness training aligns with the HIPAA Security Awareness and Training standard."),
+    ("nist-800-53-r5:at-2", "hitrust-csf:02", "related", "partial", "kyora-iq",
+     "Security awareness training aligns with HITRUST Human Resources Security."),
+
+    # --- Physical (PE) ---
+    ("nist-800-53-r5:pe-3", "hipaa-security-rule:310-a-1", "related", "strong", "kyora-iq",
+     "Physical access control aligns with the HIPAA Facility Access Controls standard."),
+    ("nist-800-53-r5:pe-3", "hitrust-csf:08", "related", "strong", "kyora-iq",
+     "Physical access control aligns with HITRUST Physical and Environmental Security."),
+
+    # --- AI governance cross-links ---
+    ("nist-ai-rmf:govern-1-1", "soc2-tsc:cc1-1", "related", "partial", "kyora-iq",
+     "AI governance parallels SOC 2 CC1.1 control environment at the program level."),
+    ("iso-42001:a6", "eu-ai-act:art-15", "related", "partial", "kyora-iq",
+     "ISO 42001 AI lifecycle aligns with EU AI Act accuracy and robustness (Art. 15)."),
+    ("iso-42001:a8", "eu-ai-act:art-13", "related", "strong", "kyora-iq",
+     "ISO 42001 information for interested parties aligns with EU AI Act transparency (Art. 13)."),
 ]
 
 def load_framework(p: Path):
