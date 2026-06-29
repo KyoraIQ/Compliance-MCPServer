@@ -95,6 +95,12 @@ RISKS = [
      "summary": "Policy, accountability, human oversight, and lifecycle risk management for AI systems.",
      "controls": ["nist-ai-rmf:govern-1-1", "iso-42001:a2", "iso-42001:a5", "eu-ai-act:art-9",
                   "eu-ai-act:art-14"]},
+    {"id": "ai-mcp-tool-abuse", "title": "AI: MCP & Connector Tool Abuse", "layer": "agentic",
+     "summary": "Untrusted or over-permissioned tool servers (for example MCP servers and third-party connectors) feed poisoned tool output, hijack tool calls, or hand an agent capabilities it should not have. Controls here limit what tools an agent can reach, validate what comes back, and log every tool call.",
+     "controls": ["owasp-llm-top10:llm06-2025", "owasp-llm-top10:llm03-2025",
+                  "nist-800-53-r5:ac-6", "nist-800-53-r5:si-10", "nist-800-53-r5:au-2",
+                  "nist-800-53-r5:sr-3", "eu-ai-act:art-14", "iso-42001:a9",
+                  "nist-ai-600-1:ga-2-12", "mitre-atlas:aml-t0051"]},
 ]
 
 # Cross-framework mappings. Each: from -> to with relation, strength, source.
