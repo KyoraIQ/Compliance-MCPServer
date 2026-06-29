@@ -102,7 +102,7 @@ fetch('kyora-data.json').then(r=>r.json()).then(db=>{
       <div class="plain">${plain}</div>
       <div class="foot">
         <span class="badge b-${bucket}">${BUCKET_LABEL[bucket]||bucket}</span>
-        <span class="count">${f.controls} controls</span>
+        <span class="count">${f.controls} ${f.unit || 'controls'}</span>
       </div>
       ${discHtml}
     </div>`;

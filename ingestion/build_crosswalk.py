@@ -596,9 +596,33 @@ def resolve_index(normdir: Path):
                 idx[f"{fw['id']}:{n['id']}"] = {"title": n["title"] or n["display_id"], "layer": n.get("layer"), "display_id": n["display_id"]}
                 walk(n.get("children", []), depth + 1)
         walk(data["controls"])
+        # The unit each framework actually uses for its headline items, so the
+        # UI can say "18 standards" / "12 articles" rather than "18 controls".
+        UNITS = {
+            "nist-800-53-r5": "controls",
+            "hipaa-security-rule": "standards",
+            "soc2-tsc": "criteria",
+            "iso-42001": "controls",
+            "eu-ai-act": "articles",
+            "nist-ai-rmf": "categories",
+            "nist-ai-600-1": "risk categories",
+            "nist-privacy-1-0": "categories",
+            "owasp-llm-top10": "risks",
+            "owasp-api-top10": "risks",
+            "owasp-web-top10": "risks",
+            "mitre-atlas": "techniques",
+            "mitre-attack": "techniques",
+        }
+        unit = UNITS.get(fw["id"], "controls")
+        # singular when count is 1
+        if control_count == 1 and unit.endswith("s"):
+            unit_label = unit[:-1] if unit not in ("risks",) else "risk"
+        else:
+            unit_label = unit
         fw_meta.append({"id": fw["id"], "name": fw["name"], "version": fw["version"],
                         "publisher": fw["publisher"], "source_handling": fw["source_handling"],
-                        "license": fw["license"], "controls": control_count, "total_nodes": total})
+                        "license": fw["license"], "controls": control_count, "total_nodes": total,
+                        "unit": unit})
     return idx, fw_meta
 
 ALL_DISCLAIMERS = {

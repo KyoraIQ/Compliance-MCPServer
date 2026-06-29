@@ -9,7 +9,8 @@
       "source_handling": "own-wording",
       "license": "proprietary-structure-only",
       "controls": 12,
-      "total_nodes": 12
+      "total_nodes": 12,
+      "unit": "articles"
     },
     {
       "id": "hipaa-security-rule",
@@ -19,7 +20,8 @@
       "source_handling": "verbatim",
       "license": "public-domain",
       "controls": 18,
-      "total_nodes": 60
+      "total_nodes": 60,
+      "unit": "standards"
     },
     {
       "id": "iso-42001",
@@ -29,7 +31,8 @@
       "source_handling": "own-wording",
       "license": "proprietary-structure-only",
       "controls": 38,
-      "total_nodes": 47
+      "total_nodes": 47,
+      "unit": "controls"
     },
     {
       "id": "mitre-atlas",
@@ -39,7 +42,8 @@
       "source_handling": "paraphrased",
       "license": "MITRE-ATLAS-terms",
       "controls": 127,
-      "total_nodes": 127
+      "total_nodes": 127,
+      "unit": "techniques"
     },
     {
       "id": "mitre-attack",
@@ -49,7 +53,8 @@
       "source_handling": "paraphrased",
       "license": "MITRE-ATTACK-terms",
       "controls": 26,
-      "total_nodes": 26
+      "total_nodes": 26,
+      "unit": "techniques"
     },
     {
       "id": "nist-800-53-r5",
@@ -59,7 +64,8 @@
       "source_handling": "verbatim",
       "license": "public-domain",
       "controls": 1196,
-      "total_nodes": 2048
+      "total_nodes": 2048,
+      "unit": "controls"
     },
     {
       "id": "nist-ai-600-1",
@@ -69,7 +75,8 @@
       "source_handling": "paraphrased",
       "license": "Public Domain (U.S. Government work)",
       "controls": 12,
-      "total_nodes": 12
+      "total_nodes": 12,
+      "unit": "risk categories"
     },
     {
       "id": "nist-ai-rmf",
@@ -79,7 +86,8 @@
       "source_handling": "paraphrased",
       "license": "Public Domain (U.S. Government work)",
       "controls": 19,
-      "total_nodes": 23
+      "total_nodes": 23,
+      "unit": "categories"
     },
     {
       "id": "nist-privacy-1-0",
@@ -89,7 +97,8 @@
       "source_handling": "verbatim",
       "license": "Public Domain (U.S. Government work)",
       "controls": 18,
-      "total_nodes": 23
+      "total_nodes": 23,
+      "unit": "categories"
     },
     {
       "id": "owasp-api-top10",
@@ -99,7 +108,8 @@
       "source_handling": "paraphrased",
       "license": "CC-BY-SA-4.0",
       "controls": 10,
-      "total_nodes": 10
+      "total_nodes": 10,
+      "unit": "risks"
     },
     {
       "id": "owasp-llm-top10",
@@ -109,7 +119,8 @@
       "source_handling": "paraphrased",
       "license": "CC-BY-SA-4.0",
       "controls": 10,
-      "total_nodes": 10
+      "total_nodes": 10,
+      "unit": "risks"
     },
     {
       "id": "owasp-web-top10",
@@ -119,7 +130,8 @@
       "source_handling": "paraphrased",
       "license": "CC-BY-SA-4.0",
       "controls": 10,
-      "total_nodes": 10
+      "total_nodes": 10,
+      "unit": "risks"
     },
     {
       "id": "soc2-tsc",
@@ -129,7 +141,8 @@
       "source_handling": "own-wording",
       "license": "proprietary-structure-only",
       "controls": 64,
-      "total_nodes": 64
+      "total_nodes": 64,
+      "unit": "criteria"
     }
   ],
   "counts": {
