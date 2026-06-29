@@ -212,7 +212,10 @@ function render(){
 
 function cardHTML(it,i){
   const c=it.ctrl, layer=c.layer||"governance";
-  const parts=(c.children||[]).filter(x=>x.kind==="part"||x.kind==="spec"||x.kind==="point_of_focus"||x.kind==="criterion");
+  // NIST lettered "part" children duplicate the control statement, so don't
+  // show them again. HIPAA specs / SOC2 criteria / HITRUST objectives are
+  // distinct sub-controls and DO get shown.
+  const parts=(c.children||[]).filter(x=>x.kind==="spec"||x.kind==="point_of_focus"||x.kind==="criterion");
   const techs=(c.children||[]).filter(x=>x.kind==="technique"||x.kind==="subtechnique");
   const enh=(c.children||[]).filter(x=>x.kind==="enhancement");
   const ref=it.fwid+":"+c.id;
@@ -225,7 +228,8 @@ function cardHTML(it,i){
   if(parts.length){
     const label = it.fwid==="hipaa-security-rule" ? "Implementation specifications"
                 : it.fwid==="soc2-tsc" ? "Points of focus"
-                : "Parts";
+                : it.fwid==="hitrust-csf" ? "Control objectives"
+                : "Sub-controls";
     body+='<div class="section-label">'+label+'</div>';
     body+=parts.map(p=>{
       const req=p.attributes&&p.attributes.requirement;

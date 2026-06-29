@@ -9,7 +9,7 @@
     "license": "public-domain",
     "retrieved_at": "2026-06-29",
     "source_checksum": "manual:nist-ai-rmf",
-    "disclaimer": "The NIST AI RMF is a U.S. Government publication (public domain), summarized here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text."
+    "disclaimer": "NIST AI RMF is public domain. Shown for reference — verify against the official NIST publication."
   },
   "controls": [
     {

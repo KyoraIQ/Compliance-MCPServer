@@ -91,6 +91,17 @@ def _statement_children(control: dict) -> list:
 
 import re as _re
 _PARAM_TOKEN = _re.compile(r"\{\{\s*insert:\s*param,\s*([a-z0-9_.\-]+)\s*\}\}", _re.I)
+# OSCAL cross-references like "[AU-02](#au-2)" or "[AU-2a.](#au-2_smt.a)" -> "AU-2a."
+_XREF = _re.compile(r"\[([^\]]+)\]\(#[^)]*\)")
+# any leftover bare anchors like "(#au-2)"
+_BARE_ANCHOR = _re.compile(r"\s*\(#[a-z0-9_.\-]+\)", _re.I)
+
+def _clean_xrefs(text: str) -> str:
+    if not text:
+        return text
+    text = _XREF.sub(r"\1", text)          # keep the label, drop the link
+    text = _BARE_ANCHOR.sub("", text)       # drop any orphan anchors
+    return text
 
 # Global map of param id -> readable label, built from the whole catalog.
 _PARAM_LABELS: dict[str, str] = {}
@@ -159,11 +170,11 @@ def main(src_path: str, out_path: str):
         for c in group.get("controls", []):
             controls.append(normalize_control(c, fam))
 
-    # Final pass: resolve any param tokens anywhere in the tree (nested parts).
+    # Final pass: resolve param tokens and clean OSCAL cross-references everywhere.
     def _resolve_tree(nodes):
         for n in nodes:
-            n["statement"] = _resolve_params(n.get("statement", ""))
-            n["guidance"] = _resolve_params(n.get("guidance", ""))
+            n["statement"] = _clean_xrefs(_resolve_params(n.get("statement", "")))
+            n["guidance"] = _clean_xrefs(_resolve_params(n.get("guidance", "")))
             _resolve_tree(n.get("children", []))
     _resolve_tree(controls)
 

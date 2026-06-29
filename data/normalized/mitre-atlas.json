@@ -9,7 +9,7 @@
     "license": "MITRE-ATLAS-terms",
     "retrieved_at": "2026-06-29",
     "source_checksum": "sha256:c9c23971d0db07e2782423d795a20e78d5c2c9bcdc78fc67e24530657daaec41",
-    "disclaimer": "MITRE ATLAS is © The MITRE Corporation. This tool provides independently-written summaries with attribution and is not endorsed by MITRE. See the official ATLAS site for authoritative text."
+    "disclaimer": "MITRE ATLAS © The MITRE Corporation, summarized with attribution. Not endorsed by MITRE. See the official ATLAS site for authoritative text."
   },
   "controls": [
     {

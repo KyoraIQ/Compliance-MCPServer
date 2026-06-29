@@ -9,7 +9,7 @@
     "license": "MITRE-ATTACK-terms",
     "retrieved_at": "2026-06-29",
     "source_checksum": "manual:attack-curated",
-    "disclaimer": "MITRE ATT&CK is © The MITRE Corporation. This tool provides independently-written summaries of a curated subset with attribution and is not endorsed by MITRE. See the official ATT&CK site for authoritative text."
+    "disclaimer": "MITRE ATT&CK © The MITRE Corporation, curated subset summarized with attribution. Not endorsed by MITRE. See the official ATT&CK site for authoritative text."
   },
   "controls": [
     {

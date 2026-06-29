@@ -207,14 +207,14 @@ ALL_DISCLAIMERS = {
     "hitrust-csf": "The HITRUST CSF is proprietary to HITRUST. This tool provides independently-written summaries of the control structure for educational reference only and is not affiliated with or endorsed by HITRUST. Access the official CSF via HITRUST MyCSF for authoritative control text. Do not rely on this tool for compliance decisions.",
     "eu-ai-act": "Summaries of EU AI Act articles are independently written for educational reference. The official, legally binding text is published in the Official Journal of the European Union (Regulation (EU) 2024/1689). Do not rely on this tool for legal or compliance decisions.",
     "hipaa-security-rule": "HIPAA Security Rule text is U.S. public law (45 CFR Part 164). This tool reproduces and summarizes it for educational reference only and is not affiliated with or endorsed by HHS. For authoritative requirements and official guidance, consult the eCFR and HHS. Do not rely on this tool for compliance decisions.",
-    "nist-800-53-r5": "NIST SP 800-53 is a U.S. Government publication (public domain), reproduced here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text. Do not rely on this tool for compliance decisions.",
-    "nist-ai-rmf": "The NIST AI RMF is a U.S. Government publication (public domain), summarized here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text.",
-    "nist-ai-600-1": "NIST AI 600-1 is a U.S. Government publication (public domain), summarized here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text.",
-    "owasp-llm-top10": "OWASP content is licensed CC BY-SA 4.0. This tool provides independently-written summaries with attribution and is not endorsed by the OWASP Foundation. See the official OWASP project for authoritative text.",
-    "owasp-api-top10": "OWASP content is licensed CC BY-SA 4.0. This tool provides independently-written summaries with attribution and is not endorsed by the OWASP Foundation. See the official OWASP project for authoritative text.",
-    "owasp-web-top10": "OWASP content is licensed CC BY-SA 4.0. This tool provides independently-written summaries with attribution and is not endorsed by the OWASP Foundation. See the official OWASP project for authoritative text.",
-    "mitre-atlas": "MITRE ATLAS is © The MITRE Corporation. This tool provides independently-written summaries with attribution and is not endorsed by MITRE. See the official ATLAS site for authoritative text.",
-    "mitre-attack": "MITRE ATT&CK is © The MITRE Corporation. This tool provides independently-written summaries of a curated subset with attribution and is not endorsed by MITRE. See the official ATT&CK site for authoritative text.",
+    "nist-800-53-r5": "NIST SP 800-53 is public domain. Shown for reference — verify against the official NIST publication; do not rely on this tool for compliance decisions.",
+    "nist-ai-rmf": "NIST AI RMF is public domain. Shown for reference — verify against the official NIST publication.",
+    "nist-ai-600-1": "NIST AI 600-1 is public domain. Shown for reference — verify against the official NIST publication.",
+    "owasp-llm-top10": "OWASP content (CC BY-SA 4.0), summarized with attribution. Not endorsed by OWASP. See the official OWASP project for authoritative text.",
+    "owasp-api-top10": "OWASP content (CC BY-SA 4.0), summarized with attribution. Not endorsed by OWASP. See the official OWASP project for authoritative text.",
+    "owasp-web-top10": "OWASP content (CC BY-SA 4.0), summarized with attribution. Not endorsed by OWASP. See the official OWASP project for authoritative text.",
+    "mitre-atlas": "MITRE ATLAS © The MITRE Corporation, summarized with attribution. Not endorsed by MITRE. See the official ATLAS site for authoritative text.",
+    "mitre-attack": "MITRE ATT&CK © The MITRE Corporation, curated subset summarized with attribution. Not endorsed by MITRE. See the official ATT&CK site for authoritative text.",
 }
 
 def inject_disclaimers(normdir: Path):
