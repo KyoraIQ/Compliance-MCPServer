@@ -499,6 +499,79 @@
       ]
     },
     {
+      "id": "data-privacy",
+      "title": "Data Privacy & Personal Data Protection",
+      "layer": "governance",
+      "summary": "Managing privacy risk to individuals across the data lifecycle: inventory and mapping, consent and notice, data minimization, access, and protection of personal data.",
+      "controls": [
+        "nist-privacy-1-0:id-im-p",
+        "nist-privacy-1-0:ct-dm-p",
+        "nist-privacy-1-0:pr-ds-p",
+        "nist-privacy-1-0:pr-ac-p",
+        "nist-800-53-r5:pt-1",
+        "soc2-tsc:p1",
+        "hipaa-security-rule:312-a-1",
+        "nist-ai-600-1:ga-2-7",
+        "eu-ai-act:art-10"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "nist-privacy-1-0:id-im-p",
+          "title": "Inventory and Mapping",
+          "layer": "governance",
+          "display_id": "ID.IM-P"
+        },
+        {
+          "ref": "nist-privacy-1-0:ct-dm-p",
+          "title": "Data Processing Management",
+          "layer": "model",
+          "display_id": "CT.DM-P"
+        },
+        {
+          "ref": "nist-privacy-1-0:pr-ds-p",
+          "title": "Data Security",
+          "layer": "infrastructure",
+          "display_id": "PR.DS-P"
+        },
+        {
+          "ref": "nist-privacy-1-0:pr-ac-p",
+          "title": "Identity Management, Authentication, and Access Control",
+          "layer": "infrastructure",
+          "display_id": "PR.AC-P"
+        },
+        {
+          "ref": "nist-800-53-r5:pt-1",
+          "title": "Policy and Procedures",
+          "layer": "governance",
+          "display_id": "PT-01"
+        },
+        {
+          "ref": "soc2-tsc:p1",
+          "title": "Privacy",
+          "layer": "output",
+          "display_id": "P1-P8"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-7",
+          "title": "Data Privacy",
+          "layer": "output",
+          "display_id": "GAI 2.7"
+        },
+        {
+          "ref": "eu-ai-act:art-10",
+          "title": "Data and Data Governance",
+          "layer": "model",
+          "display_id": "Art. 10"
+        }
+      ]
+    },
+    {
       "id": "ai-prompt-injection",
       "title": "AI: Prompt Injection",
       "layer": "input",

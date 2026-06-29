@@ -69,6 +69,8 @@ def main():
         [str(ING / "normalize_nist_oscal.py"), str(NIST_RAW), str(NORM / "nist-800-53-r5.json")])
     run("Build HIPAA Security Rule",
         [str(ING / "build_hipaa.py"), str(NORM / "hipaa-security-rule.json")])
+    run("Build NIST Privacy Framework v1.0",
+        [str(ING / "build_nist_privacy.py"), str(NORM / "nist-privacy-1-0.json")])
     run("Build OWASP (LLM/API/Web) + NIST AI (RMF/600-1)",
         [str(ING / "build_owasp_nistai.py"), str(NORM)])
     run("Normalize MITRE ATLAS (official YAML → schema)",

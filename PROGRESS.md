@@ -6,7 +6,7 @@ done and what is next. Each chunk writes real files before the next begins.
 ## Decisions locked
 
 - Product: Kyora IQ MCP Compliance Control Reference (separate from Nemesis).
-- Not AI-only: full security/privacy/AI framework coverage (12 frameworks).
+- Not AI-only: full security/privacy/AI framework coverage (13 frameworks).
 - Primary view: search-primary, returning controls + cross-framework mappings.
 - Secondary view: layer filter (Input/Output/Model/Infrastructure/Agentic/Governance).
 - Detail interaction: inline drop-down expansion (not side panel).

@@ -1,0 +1,296 @@
+{
+  "framework": {
+    "id": "nist-privacy-1-0",
+    "name": "NIST Privacy Framework",
+    "version": "1.0",
+    "publisher": "NIST",
+    "source_url": "https://www.nist.gov/privacy-framework",
+    "source_handling": "verbatim",
+    "license": "Public Domain (U.S. Government work)",
+    "retrieved_at": "2026-06-29",
+    "disclaimer": "NIST Privacy Framework is voluntary U.S. government guidance and is in the public domain. Shown here at the Function and Category level for reference; verify against the official NIST publication. Not legal advice or a compliance determination."
+  },
+  "controls": [
+    {
+      "id": "id_p",
+      "display_id": "ID-P",
+      "title": "Identify-P",
+      "layer": "governance",
+      "statement": "Identify-P function of the NIST Privacy Framework.",
+      "guidance": "",
+      "kind": "function",
+      "attributes": {},
+      "children": [
+        {
+          "id": "id-im-p",
+          "display_id": "ID.IM-P",
+          "title": "Inventory and Mapping",
+          "layer": "governance",
+          "statement": "Inventory the systems, products, services, and data processing activities, and map data flows, so the organization understands what personal data it handles and where it goes.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "id-be-p",
+          "display_id": "ID.BE-P",
+          "title": "Business Environment",
+          "layer": "governance",
+          "statement": "Understand the organization's role in the data processing ecosystem, its mission, and stakeholders, and align privacy priorities with business objectives.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "id-ra-p",
+          "display_id": "ID.RA-P",
+          "title": "Risk Assessment",
+          "layer": "governance",
+          "statement": "Assess the privacy risks to individuals that arise from data processing, including the likelihood and impact of problematic data actions.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "id-de-p",
+          "display_id": "ID.DE-P",
+          "title": "Data Processing Ecosystem Risk Management",
+          "layer": "governance",
+          "statement": "Identify and manage privacy risks that come from third parties, service providers, and partners in the data processing ecosystem.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        }
+      ],
+      "mappings": []
+    },
+    {
+      "id": "gv_p",
+      "display_id": "GV-P",
+      "title": "Govern-P",
+      "layer": "governance",
+      "statement": "Govern-P function of the NIST Privacy Framework.",
+      "guidance": "",
+      "kind": "function",
+      "attributes": {},
+      "children": [
+        {
+          "id": "gv-po-p",
+          "display_id": "GV.PO-P",
+          "title": "Governance Policies, Processes, and Procedures",
+          "layer": "governance",
+          "statement": "Establish and maintain the organizational privacy values, policies, roles, and legal/regulatory understanding that guide privacy risk management.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "gv-rm-p",
+          "display_id": "GV.RM-P",
+          "title": "Risk Management Strategy",
+          "layer": "governance",
+          "statement": "Establish the organization's risk tolerance and a strategy for prioritizing and responding to privacy risk.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "gv-at-p",
+          "display_id": "GV.AT-P",
+          "title": "Awareness and Training",
+          "layer": "governance",
+          "statement": "Ensure staff and third parties understand their privacy roles, responsibilities, and the organization's privacy policies.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "gv-mt-p",
+          "display_id": "GV.MT-P",
+          "title": "Monitoring and Review",
+          "layer": "governance",
+          "statement": "Continuously monitor and review the privacy posture, legal environment, and effectiveness of the privacy program, adjusting as needed.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        }
+      ],
+      "mappings": []
+    },
+    {
+      "id": "ct_p",
+      "display_id": "CT-P",
+      "title": "Control-P",
+      "layer": "governance",
+      "statement": "Control-P function of the NIST Privacy Framework.",
+      "guidance": "",
+      "kind": "function",
+      "attributes": {},
+      "children": [
+        {
+          "id": "ct-po-p",
+          "display_id": "CT.PO-P",
+          "title": "Data Processing Policies, Processes, and Procedures",
+          "layer": "model",
+          "statement": "Establish policies and procedures that let the organization manage data processing consistent with its privacy strategy, including data minimization and purpose limitation.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "ct-dm-p",
+          "display_id": "CT.DM-P",
+          "title": "Data Processing Management",
+          "layer": "model",
+          "statement": "Manage data elements through their lifecycle so they can be accessed for review, transmission, alteration, and deletion, and are destroyed according to policy.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "ct-dp-p",
+          "display_id": "CT.DP-P",
+          "title": "Disassociated Processing",
+          "layer": "model",
+          "statement": "Apply techniques such as de-identification, aggregation, and attribute substitution so processing can occur without unnecessarily linking data to individuals.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        }
+      ],
+      "mappings": []
+    },
+    {
+      "id": "cm_p",
+      "display_id": "CM-P",
+      "title": "Communicate-P",
+      "layer": "governance",
+      "statement": "Communicate-P function of the NIST Privacy Framework.",
+      "guidance": "",
+      "kind": "function",
+      "attributes": {},
+      "children": [
+        {
+          "id": "cm-po-p",
+          "display_id": "CM.PO-P",
+          "title": "Communication Policies, Processes, and Procedures",
+          "layer": "output",
+          "statement": "Establish policies and assign roles for communicating clearly, internally and externally, about the organization's data processing and privacy practices.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "cm-aw-p",
+          "display_id": "CM.AW-P",
+          "title": "Data Processing Awareness",
+          "layer": "output",
+          "statement": "Enable individuals and stakeholders to understand how data is processed, maintain records of disclosures, and design systems for data processing visibility.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        }
+      ],
+      "mappings": []
+    },
+    {
+      "id": "pr_p",
+      "display_id": "PR-P",
+      "title": "Protect-P",
+      "layer": "governance",
+      "statement": "Protect-P function of the NIST Privacy Framework.",
+      "guidance": "",
+      "kind": "function",
+      "attributes": {},
+      "children": [
+        {
+          "id": "pr-po-p",
+          "display_id": "PR.PO-P",
+          "title": "Data Protection Policies, Processes, and Procedures",
+          "layer": "infrastructure",
+          "statement": "Maintain data protection policies including configuration change control, backups, response and recovery plans, HR practices, and a vulnerability management plan.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "pr-ac-p",
+          "display_id": "PR.AC-P",
+          "title": "Identity Management, Authentication, and Access Control",
+          "layer": "infrastructure",
+          "statement": "Limit access to data and devices to authorized users and processes, applying least privilege, separation of duties, and managed remote and physical access.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "pr-ds-p",
+          "display_id": "PR.DS-P",
+          "title": "Data Security",
+          "layer": "infrastructure",
+          "statement": "Protect data at rest and in transit, guard against data leaks, maintain availability, and use integrity checking for software, firmware, and hardware.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "pr-ma-p",
+          "display_id": "PR.MA-P",
+          "title": "Maintenance",
+          "layer": "infrastructure",
+          "statement": "Perform maintenance and repairs on systems that process personal data in a controlled, logged, and authorized manner.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "pr-pt-p",
+          "display_id": "PR.PT-P",
+          "title": "Protective Technology",
+          "layer": "infrastructure",
+          "statement": "Manage protective technology such as removable media restrictions, least functionality, and protected communications and control networks.",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {},
+          "children": [],
+          "mappings": []
+        }
+      ],
+      "mappings": []
+    }
+  ]
+}

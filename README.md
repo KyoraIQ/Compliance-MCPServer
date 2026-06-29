@@ -14,7 +14,7 @@ assistant can pull authoritative, cited control text instead of guessing.
 > assistant can *use* this reference while reviewing a system, but the checking
 > of a real environment is a separate, later capability.
 
-## Frameworks tracked (12)
+## Frameworks tracked (13)
 
 Ingested in waves. Each framework is handled according to how its source is
 licensed — see `docs/SOURCING-POLICY.md`.

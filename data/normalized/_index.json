@@ -82,6 +82,16 @@
       "total_nodes": 9
     },
     {
+      "id": "nist-privacy-1-0",
+      "name": "NIST Privacy Framework",
+      "version": "1.0",
+      "publisher": "NIST",
+      "source_handling": "verbatim",
+      "license": "Public Domain (U.S. Government work)",
+      "controls": 18,
+      "total_nodes": 23
+    },
+    {
       "id": "owasp-api-top10",
       "name": "OWASP API Security Top 10",
       "version": "2023",
@@ -123,10 +133,10 @@
     }
   ],
   "counts": {
-    "frameworks": 12,
-    "risks": 16,
-    "mappings": 153,
-    "total_control_nodes": 2384,
-    "total_controls": 1490
+    "frameworks": 13,
+    "risks": 29,
+    "mappings": 171,
+    "total_control_nodes": 2407,
+    "total_controls": 1508
   }
 }
