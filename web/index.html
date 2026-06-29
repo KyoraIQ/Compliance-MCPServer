@@ -172,6 +172,13 @@ function flatten(db){
     const fw=db.frameworks[fwid].framework;
     for(const c of db.frameworks[fwid].controls){
       out.push({fwid, fwname:fw.name, handling:fw.source_handling, disclaimer:fw.disclaimer||"", ctrl:c});
+      // Enhancements (NIST AC-2(1) etc.), HIPAA specs, SOC 2 criteria are real
+      // sub-controls; index them individually so they are directly searchable.
+      for(const ch of (c.children||[])){
+        if(ch.kind==="enhancement"||ch.kind==="spec"||ch.kind==="criterion"||ch.kind==="technique"||ch.kind==="subtechnique"){
+          out.push({fwid, fwname:fw.name, handling:fw.source_handling, disclaimer:fw.disclaimer||"", ctrl:ch, parent:c.display_id, isChild:true});
+        }
+      }
     }
   }
   return out;
@@ -200,13 +207,22 @@ function searchText(item){
 
 function render(){
   const q=normalizeIds(document.getElementById('q').value.toLowerCase().trim());
+  const searching = q || curFw!=="all" || curLayer!=="all";
   const res=FLAT.filter(it=>{
     if(curFw!=="all" && it.fwid!==curFw) return false;
     if(curLayer!=="all" && it.ctrl.layer!==curLayer) return false;
     if(q && !searchText(it).includes(q)) return false;
+    // In the default browse view (no query/filter), show only top-level
+    // controls. Enhancements and specs are reachable by searching, and are
+    // also shown nested inside their parent's expanded card.
+    if(!searching && it.isChild) return false;
     return true;
   });
-  document.getElementById('count').innerHTML='<b>'+res.length+'</b> '+(res.length===1?'control':'controls')+(q?' matching “'+esc(q)+'”':'');
+  const totalC = DB.index.counts.total_controls;
+  const countLabel = searching
+    ? '<b>'+res.length+'</b> '+(res.length===1?'control':'controls')+(q?' matching “'+esc(q)+'”':'')
+    : '<b>'+totalC.toLocaleString()+'</b> controls';
+  document.getElementById('count').innerHTML=countLabel;
   const wrap=document.getElementById('results');
   if(!res.length){ wrap.innerHTML='<div class="empty">No controls match. Try a different keyword, layer, or framework.</div>'; return; }
   wrap.innerHTML=res.slice(0,80).map((it,i)=>cardHTML(it,i)).join('');
@@ -268,7 +284,7 @@ function cardHTML(it,i){
   return '<div class="rcard" id="rc'+i+'">'
     +'<div class="rhead" onclick="document.getElementById(\'rc'+i+'\').classList.toggle(\'open\')">'
       +'<span class="ltag L-'+layer+'">'+(LAYER_LABEL[layer]||layer)+'</span>'
-      +'<div class="rmid"><div class="rtitle">'+esc(c.title||c.display_id)+'<span class="fwname">'+esc(it.fwname)+'</span></div>'
+      +'<div class="rmid"><div class="rtitle">'+esc(c.title||c.display_id)+'<span class="fwname">'+esc(it.fwname)+'</span>'+(it.parent?'<span class="fwname" style="opacity:.7">under '+esc(it.parent)+'</span>':'')+'</div>'
         +'<div class="rdesc">'+esc(c.statement||'')+'</div></div>'
       +'<span class="rid">'+esc(c.display_id)+'</span>'
       +'<i class="ti ti-chevron-down chev"></i>'
