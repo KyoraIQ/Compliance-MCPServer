@@ -23,12 +23,12 @@
   a{color:inherit;}
   ::selection{background:var(--accent-dim);}
 
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,14,17,.86);backdrop-filter:blur(10px);z-index:30;}
+  .nav{display:flex;align-items:center;justify-content:space-between;position:sticky;padding:16px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,14,17,.86);backdrop-filter:blur(10px);z-index:30;}
   .brand{display:flex;align-items:center;gap:11px;}
   .brand .logo{width:32px;height:32px;border-radius:8px;background:var(--accent);color:#03150f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;}
   .brand .name{font-size:15px;font-weight:600;}
   .brand .name span{color:var(--accent-text);}
-  .navlinks{display:flex;gap:24px;}
+  .navlinks{display:flex;gap:24px;position:absolute;left:50%;transform:translateX(-50%);}
   .navlinks a{color:var(--text2);text-decoration:none;font-size:13.5px;}
   .navlinks a:hover{color:var(--text);}
   .cta{background:var(--accent);color:#03150f;border:none;padding:9px 16px;border-radius:8px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:7px;}
@@ -291,7 +291,7 @@ function syncChips(row,attr,val){ row.querySelectorAll('.chip').forEach(c=>c.cla
 
 function buildFooter(){
   document.getElementById('footAttr').innerHTML=
-    '<b>'+DB.index.counts.total_control_nodes+'</b> control nodes across <b>'+DB.index.counts.frameworks+'</b> frameworks &middot; '+DB.index.counts.mappings+' cross-framework mappings &middot; generated '+DB.index.generated_at+'<br>'
+    '<b>'+DB.index.counts.total_controls+'</b> controls across <b>'+DB.index.counts.frameworks+'</b> frameworks &middot; '+DB.index.counts.mappings+' cross-framework mappings &middot; generated '+DB.index.generated_at+'<br>'
     +'<b>Source handling</b> — Verbatim (public domain): NIST 800-53, NIST AI RMF, NIST AI 600-1, HIPAA. Paraphrased (CC BY-SA): OWASP LLM / API / Web. '
     +'Mappings marked “Kyora IQ” are our interpretation, not the standards body’s. Kyora IQ is a reference, not a certification or legal advice.';
 }

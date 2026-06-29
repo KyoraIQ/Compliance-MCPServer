@@ -16,12 +16,12 @@
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;}
   a{color:inherit;text-decoration:none;}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,14,17,.86);backdrop-filter:blur(10px);z-index:30;}
+  .nav{display:flex;align-items:center;justify-content:space-between;position:sticky;padding:16px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,14,17,.86);backdrop-filter:blur(10px);z-index:30;}
   .brand{display:flex;align-items:center;gap:11px;}
   .brand .logo{width:32px;height:32px;border-radius:8px;background:var(--accent);color:#03150f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;}
   .brand .name{font-size:15px;font-weight:600;}
   .brand .name span{color:var(--accent-text);}
-  .navlinks{display:flex;gap:24px;}
+  .navlinks{display:flex;gap:24px;position:absolute;left:50%;transform:translateX(-50%);}
   .navlinks a{color:var(--text2);font-size:13.5px;}
   .navlinks a:hover,.navlinks a.active{color:var(--text);}
   .hero{background:linear-gradient(180deg,var(--hero),var(--bg));border-bottom:1px solid var(--border);padding:40px 32px 30px;}
@@ -100,13 +100,13 @@ fetch('kyora-data.json').then(r=>r.json()).then(db=>{
       <div class="plain">${plain}</div>
       <div class="foot">
         <span class="badge b-${bucket}">${BUCKET_LABEL[bucket]||bucket}</span>
-        <span class="count">${f.total_nodes} controls</span>
+        <span class="count">${f.controls} controls</span>
       </div>
     </div>`;
   }).join('');
   const c = db.index.counts;
   document.getElementById('footAttr').innerHTML =
-    `<b>${c.total_control_nodes}</b> control nodes across <b>${c.frameworks}</b> frameworks · ${c.mappings} cross-framework mappings.<br>`+
+    `<b>${c.total_controls}</b> controls across <b>${c.frameworks}</b> frameworks · ${c.mappings} cross-framework mappings.<br>`+
     `Verbatim sources are public domain (NIST, HIPAA). Paraphrased sources are openly licensed (OWASP CC BY-SA; MITRE with attribution). Own-wording frameworks (SOC 2, ISO 42001, HITRUST, EU AI Act) are described in Kyora IQ's words because their official texts are copyrighted. Kyora IQ is a reference, not a certification or legal advice.`;
 }).catch(()=>{document.getElementById('grid').innerHTML='<div style="color:var(--text3)">Could not load data.</div>';});
 </script>

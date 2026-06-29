@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25",
+  "generated_at": "2026-06-29",
   "frameworks": [
     {
       "id": "eu-ai-act",
@@ -18,7 +18,7 @@
       "publisher": "U.S. Department of Health and Human Services",
       "source_handling": "verbatim",
       "license": "public-domain",
-      "controls": 11,
+      "controls": 39,
       "total_nodes": 39
     },
     {
@@ -48,7 +48,7 @@
       "publisher": "The MITRE Corporation",
       "source_handling": "paraphrased",
       "license": "MITRE-ATLAS-terms",
-      "controls": 16,
+      "controls": 127,
       "total_nodes": 127
     },
     {
@@ -58,7 +58,7 @@
       "publisher": "The MITRE Corporation",
       "source_handling": "paraphrased",
       "license": "MITRE-ATTACK-terms",
-      "controls": 10,
+      "controls": 26,
       "total_nodes": 26
     },
     {
@@ -68,7 +68,7 @@
       "publisher": "NIST",
       "source_handling": "verbatim",
       "license": "public-domain",
-      "controls": 324,
+      "controls": 1196,
       "total_nodes": 2048
     },
     {
@@ -128,7 +128,7 @@
       "publisher": "AICPA",
       "source_handling": "own-wording",
       "license": "proprietary-structure-only",
-      "controls": 9,
+      "controls": 42,
       "total_nodes": 42
     }
   ],
@@ -136,6 +136,7 @@
     "frameworks": 13,
     "risks": 8,
     "mappings": 31,
-    "total_control_nodes": 2347
+    "total_control_nodes": 2347,
+    "total_controls": 1495
   }
 }

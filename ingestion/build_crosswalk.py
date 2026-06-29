@@ -136,16 +136,22 @@ def resolve_index(normdir: Path):
         data = load_framework(f)
         fw = data["framework"]
         total = 0
+        control_count = 0
+        # "controls" = real controls: base controls + enhancements/standards/etc.,
+        # but NOT the lettered a/b/c parts (kind 'part') which are pieces of a control.
+        PART_KINDS = {"part", "section", "point_of_focus"}
         def walk(nodes):
-            nonlocal total
+            nonlocal total, control_count
             for n in nodes:
                 total += 1
+                if n.get("kind") not in PART_KINDS:
+                    control_count += 1
                 idx[f"{fw['id']}:{n['id']}"] = {"title": n["title"] or n["display_id"], "layer": n.get("layer"), "display_id": n["display_id"]}
                 walk(n.get("children", []))
         walk(data["controls"])
         fw_meta.append({"id": fw["id"], "name": fw["name"], "version": fw["version"],
                         "publisher": fw["publisher"], "source_handling": fw["source_handling"],
-                        "license": fw["license"], "controls": len(data["controls"]), "total_nodes": total})
+                        "license": fw["license"], "controls": control_count, "total_nodes": total})
     return idx, fw_meta
 
 def main(normdir_str: str):
@@ -178,7 +184,8 @@ def main(normdir_str: str):
         "generated_at": datetime.date.today().isoformat(),
         "frameworks": fw_meta,
         "counts": {"frameworks": len(fw_meta), "risks": len(RISKS), "mappings": len(built_maps),
-                   "total_control_nodes": sum(m["total_nodes"] for m in fw_meta)},
+                   "total_control_nodes": sum(m["total_nodes"] for m in fw_meta),
+                   "total_controls": sum(m["controls"] for m in fw_meta)},
     }, indent=2))
 
     print("frameworks:", len(fw_meta))

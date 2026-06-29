@@ -89,6 +89,35 @@ def _statement_children(control: dict) -> list:
             })
     return kids
 
+import re as _re
+_PARAM_TOKEN = _re.compile(r"\{\{\s*insert:\s*param,\s*([a-z0-9_.\-]+)\s*\}\}", _re.I)
+
+# Global map of param id -> readable label, built from the whole catalog.
+_PARAM_LABELS: dict[str, str] = {}
+
+def _collect_params(control: dict):
+    for p in control.get("params", []) or []:
+        pid = p.get("id", "")
+        label = p.get("label", "")
+        if not label:
+            # fall back to select choices or guideline prose
+            sel = p.get("select", {})
+            if sel.get("choice"):
+                label = " or ".join(sel["choice"])
+        if pid and label:
+            _PARAM_LABELS[pid] = label
+    for sub in control.get("controls", []) or []:
+        _collect_params(sub)
+
+def _resolve_params(text: str) -> str:
+    def repl(m):
+        pid = m.group(1)
+        label = _PARAM_LABELS.get(pid)
+        if label:
+            return f"[Assignment: organization-defined {label}]"
+        return "[Assignment: organization-defined parameter]"
+    return _PARAM_TOKEN.sub(repl, text or "")
+
 def normalize_control(control: dict, family_id: str, is_enh=False) -> dict:
     layer = FAMILY_LAYER.get(family_id, "governance")
     node = {
@@ -96,8 +125,8 @@ def normalize_control(control: dict, family_id: str, is_enh=False) -> dict:
         "display_id": _label(control) or control["id"].upper(),
         "title": control.get("title", ""),
         "kind": "enhancement" if is_enh else "control",
-        "statement": _statement(control),
-        "guidance": _guidance(control),
+        "statement": _resolve_params(_statement(control)),
+        "guidance": _resolve_params(_guidance(control)),
         "layer": layer,
         "attributes": {"family": family_id.upper()},
         "children": [],
@@ -105,7 +134,9 @@ def normalize_control(control: dict, family_id: str, is_enh=False) -> dict:
         "source_ref": control["id"],
         "source_handling": "verbatim",
     }
-    node["children"].extend(_statement_children(control))
+    for child in _statement_children(control):
+        child["statement"] = _resolve_params(child["statement"])
+        node["children"].append(child)
     for enh in control.get("controls", []) or []:
         node["children"].append(normalize_control(enh, family_id, is_enh=True))
     return node
@@ -118,10 +149,23 @@ def main(src_path: str, out_path: str):
     version = meta.get("version", "5.x")
 
     controls = []
+    # First pass: collect every parameter label across the catalog.
+    for group in cat.get("groups", []):
+        for c in group.get("controls", []):
+            _collect_params(c)
+    # Second pass: normalize, resolving param tokens to readable text.
     for group in cat.get("groups", []):
         fam = group.get("id", "")
         for c in group.get("controls", []):
             controls.append(normalize_control(c, fam))
+
+    # Final pass: resolve any param tokens anywhere in the tree (nested parts).
+    def _resolve_tree(nodes):
+        for n in nodes:
+            n["statement"] = _resolve_params(n.get("statement", ""))
+            n["guidance"] = _resolve_params(n.get("guidance", ""))
+            _resolve_tree(n.get("children", []))
+    _resolve_tree(controls)
 
     out = {
         "framework": {
