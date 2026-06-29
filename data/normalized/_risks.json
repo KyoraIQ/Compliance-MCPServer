@@ -502,13 +502,26 @@
       "id": "ai-prompt-injection",
       "title": "AI: Prompt Injection",
       "layer": "input",
-      "summary": "Crafted input overrides an AI model's instructions, directly or via poisoned content.",
+      "summary": "Crafted input overrides the model's instructions, either directly or through poisoned content it reads from RAG, files, or the web.",
       "controls": [
         "owasp-llm-top10:llm01-2025",
         "mitre-atlas:aml-t0051",
-        "nist-ai-600-1:ga-2-9",
+        "mitre-attack:execution",
+        "owasp-api-top10:api8-2023",
+        "owasp-web-top10:a03-2021",
         "nist-ai-rmf:measure-2-7",
-        "nist-800-53-r5:si-10"
+        "nist-ai-rmf:manage-2-2",
+        "iso-42001:a6",
+        "iso-42001:a8",
+        "eu-ai-act:art-15",
+        "nist-800-53-r5:si-10",
+        "nist-800-53-r5:ac-3",
+        "nist-800-53-r5:cm-6",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc6-6",
+        "hipaa-security-rule:312-a-1",
+        "hipaa-security-rule:312-b",
+        "nist-ai-600-1:ga-2-9"
       ],
       "controls_resolved": [
         {
@@ -524,10 +537,22 @@
           "display_id": "AML.T0051"
         },
         {
-          "ref": "nist-ai-600-1:ga-2-9",
-          "title": "Information Security",
+          "ref": "mitre-attack:execution",
+          "title": "Execution",
+          "layer": "infrastructure",
+          "display_id": "Execution"
+        },
+        {
+          "ref": "owasp-api-top10:api8-2023",
+          "title": "Security Misconfiguration",
+          "layer": "infrastructure",
+          "display_id": "API8:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a03-2021",
+          "title": "Injection",
           "layer": "input",
-          "display_id": "GAI 2.9"
+          "display_id": "A03:2021"
         },
         {
           "ref": "nist-ai-rmf:measure-2-7",
@@ -536,61 +561,617 @@
           "display_id": "MEASURE 2.7"
         },
         {
+          "ref": "nist-ai-rmf:manage-2-2",
+          "title": "Mechanisms to Sustain Value",
+          "layer": "governance",
+          "display_id": "MANAGE 2.2"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "iso-42001:a8",
+          "title": "Information for Interested Parties",
+          "layer": "output",
+          "display_id": "A.8"
+        },
+        {
+          "ref": "eu-ai-act:art-15",
+          "title": "Accuracy, Robustness and Cybersecurity",
+          "layer": "model",
+          "display_id": "Art. 15"
+        },
+        {
           "ref": "nist-800-53-r5:si-10",
           "title": "Information Input Validation",
           "layer": "output",
           "display_id": "SI-10"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "nist-800-53-r5:cm-6",
+          "title": "Configuration Settings",
+          "layer": "infrastructure",
+          "display_id": "CM-06"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc6-6",
+          "title": "Protect against threats from outside the system boundary",
+          "layer": "infrastructure",
+          "display_id": "CC6.6"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "hipaa-security-rule:312-b",
+          "title": "Audit Controls",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(b)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
         }
       ]
     },
     {
-      "id": "ai-excessive-agency",
-      "title": "AI: Excessive Agency",
-      "layer": "agentic",
-      "summary": "An AI agent with too much autonomy or permission takes damaging actions when manipulated.",
+      "id": "ai-vector-embedding-weaknesses",
+      "title": "AI: Vector & Embedding Weaknesses",
+      "layer": "input",
+      "summary": "RAG retrieval and embedding stores get manipulated or leak data, through poisoned documents, embedding inversion, or cross-tenant retrieval.",
       "controls": [
-        "owasp-llm-top10:llm06-2025",
-        "nist-800-53-r5:ac-6",
-        "eu-ai-act:art-14",
-        "iso-42001:a9"
+        "owasp-llm-top10:llm08-2025",
+        "mitre-atlas:aml-t0020",
+        "mitre-atlas:aml-t0024",
+        "owasp-api-top10:api3-2023",
+        "owasp-web-top10:a01-2021",
+        "nist-ai-rmf:measure-2-7",
+        "nist-ai-rmf:manage-2-2",
+        "iso-42001:a6",
+        "eu-ai-act:art-10",
+        "nist-800-53-r5:si-10",
+        "nist-800-53-r5:sa-11",
+        "nist-800-53-r5:sc-28",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc7-1",
+        "hipaa-security-rule:312-b",
+        "nist-ai-600-1:ga-2-9",
+        "nist-ai-600-1:ga-2-7"
       ],
       "controls_resolved": [
         {
-          "ref": "owasp-llm-top10:llm06-2025",
-          "title": "Excessive Agency",
-          "layer": "agentic",
-          "display_id": "LLM06:2025"
+          "ref": "owasp-llm-top10:llm08-2025",
+          "title": "Vector and Embedding Weaknesses",
+          "layer": "input",
+          "display_id": "LLM08:2025"
         },
         {
-          "ref": "nist-800-53-r5:ac-6",
-          "title": "Least Privilege",
+          "ref": "mitre-atlas:aml-t0020",
+          "title": "Poison Training Data",
+          "layer": "governance",
+          "display_id": "AML.T0020"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0024",
+          "title": "Exfiltration via AI Inference API",
+          "layer": "output",
+          "display_id": "AML.T0024"
+        },
+        {
+          "ref": "owasp-api-top10:api3-2023",
+          "title": "Broken Object Property Level Authorization",
           "layer": "infrastructure",
-          "display_id": "AC-06"
+          "display_id": "API3:2023"
         },
         {
-          "ref": "eu-ai-act:art-14",
-          "title": "Human Oversight",
-          "layer": "agentic",
-          "display_id": "Art. 14"
+          "ref": "owasp-web-top10:a01-2021",
+          "title": "Broken Access Control",
+          "layer": "infrastructure",
+          "display_id": "A01:2021"
         },
         {
-          "ref": "iso-42001:a9",
-          "title": "Use of AI Systems",
-          "layer": "agentic",
-          "display_id": "A.9"
+          "ref": "nist-ai-rmf:measure-2-7",
+          "title": "Security and Resilience",
+          "layer": "input",
+          "display_id": "MEASURE 2.7"
+        },
+        {
+          "ref": "nist-ai-rmf:manage-2-2",
+          "title": "Mechanisms to Sustain Value",
+          "layer": "governance",
+          "display_id": "MANAGE 2.2"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "eu-ai-act:art-10",
+          "title": "Data and Data Governance",
+          "layer": "model",
+          "display_id": "Art. 10"
+        },
+        {
+          "ref": "nist-800-53-r5:si-10",
+          "title": "Information Input Validation",
+          "layer": "output",
+          "display_id": "SI-10"
+        },
+        {
+          "ref": "nist-800-53-r5:sa-11",
+          "title": "Developer Testing and Evaluation",
+          "layer": "governance",
+          "display_id": "SA-11"
+        },
+        {
+          "ref": "nist-800-53-r5:sc-28",
+          "title": "Protection of Information at Rest",
+          "layer": "infrastructure",
+          "display_id": "SC-28"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc7-1",
+          "title": "Detect and monitor for new vulnerabilities and configuration changes",
+          "layer": "infrastructure",
+          "display_id": "CC7.1"
+        },
+        {
+          "ref": "hipaa-security-rule:312-b",
+          "title": "Audit Controls",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(b)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-7",
+          "title": "Data Privacy",
+          "layer": "output",
+          "display_id": "GAI 2.7"
         }
       ]
     },
     {
-      "id": "ai-data-poisoning",
+      "id": "ai-sensitive-information-disclosure",
+      "title": "AI: Sensitive Information Disclosure",
+      "layer": "output",
+      "summary": "The model reveals secrets, PII, or proprietary data in its responses, whether from training data, system context, or other users' data.",
+      "controls": [
+        "owasp-llm-top10:llm02-2025",
+        "mitre-atlas:aml-t0057",
+        "mitre-atlas:aml-t0024",
+        "mitre-attack:t1530",
+        "owasp-api-top10:api3-2023",
+        "owasp-web-top10:a02-2021",
+        "nist-ai-rmf:measure-2-7",
+        "nist-ai-rmf:govern-1-1",
+        "iso-42001:a6",
+        "iso-42001:a8",
+        "eu-ai-act:art-10",
+        "nist-800-53-r5:ac-3",
+        "nist-800-53-r5:sc-28",
+        "nist-800-53-r5:mp-6",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc6-7",
+        "hipaa-security-rule:312-a-1",
+        "hipaa-security-rule:312-e-1",
+        "nist-ai-600-1:ga-2-7",
+        "nist-ai-600-1:ga-2-9"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm02-2025",
+          "title": "Sensitive Information Disclosure",
+          "layer": "output",
+          "display_id": "LLM02:2025"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0057",
+          "title": "LLM Data Leakage",
+          "layer": "output",
+          "display_id": "AML.T0057"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0024",
+          "title": "Exfiltration via AI Inference API",
+          "layer": "output",
+          "display_id": "AML.T0024"
+        },
+        {
+          "ref": "mitre-attack:t1530",
+          "title": "Data from Cloud Storage",
+          "layer": "output",
+          "display_id": "T1530"
+        },
+        {
+          "ref": "owasp-api-top10:api3-2023",
+          "title": "Broken Object Property Level Authorization",
+          "layer": "infrastructure",
+          "display_id": "API3:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a02-2021",
+          "title": "Cryptographic Failures",
+          "layer": "infrastructure",
+          "display_id": "A02:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:measure-2-7",
+          "title": "Security and Resilience",
+          "layer": "input",
+          "display_id": "MEASURE 2.7"
+        },
+        {
+          "ref": "nist-ai-rmf:govern-1-1",
+          "title": "Legal and Regulatory Requirements",
+          "layer": "governance",
+          "display_id": "GOVERN 1.1"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "iso-42001:a8",
+          "title": "Information for Interested Parties",
+          "layer": "output",
+          "display_id": "A.8"
+        },
+        {
+          "ref": "eu-ai-act:art-10",
+          "title": "Data and Data Governance",
+          "layer": "model",
+          "display_id": "Art. 10"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "nist-800-53-r5:sc-28",
+          "title": "Protection of Information at Rest",
+          "layer": "infrastructure",
+          "display_id": "SC-28"
+        },
+        {
+          "ref": "nist-800-53-r5:mp-6",
+          "title": "Media Sanitization",
+          "layer": "infrastructure",
+          "display_id": "MP-06"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc6-7",
+          "title": "Restrict the transmission and movement of information",
+          "layer": "infrastructure",
+          "display_id": "CC6.7"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "hipaa-security-rule:312-e-1",
+          "title": "Transmission Security",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(e)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-7",
+          "title": "Data Privacy",
+          "layer": "output",
+          "display_id": "GAI 2.7"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        }
+      ]
+    },
+    {
+      "id": "ai-improper-output-handling",
+      "title": "AI: Improper Output Handling",
+      "layer": "output",
+      "summary": "Model output is consumed by downstream systems without validation, which can lead to XSS, SSRF, or remote code execution.",
+      "controls": [
+        "owasp-llm-top10:llm05-2025",
+        "mitre-atlas:aml-t0048",
+        "mitre-attack:execution",
+        "owasp-api-top10:api7-2023",
+        "owasp-web-top10:a03-2021",
+        "nist-ai-rmf:measure-2-7",
+        "nist-ai-rmf:manage-2-2",
+        "iso-42001:a6",
+        "eu-ai-act:art-15",
+        "nist-800-53-r5:si-10",
+        "nist-800-53-r5:cm-6",
+        "nist-800-53-r5:sa-11",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc7-1",
+        "hipaa-security-rule:312-a-1",
+        "nist-ai-600-1:ga-2-9",
+        "nist-ai-600-1:ga-2-8"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm05-2025",
+          "title": "Improper Output Handling",
+          "layer": "output",
+          "display_id": "LLM05:2025"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0048",
+          "title": "External Harms",
+          "layer": "output",
+          "display_id": "AML.T0048"
+        },
+        {
+          "ref": "mitre-attack:execution",
+          "title": "Execution",
+          "layer": "infrastructure",
+          "display_id": "Execution"
+        },
+        {
+          "ref": "owasp-api-top10:api7-2023",
+          "title": "Server Side Request Forgery",
+          "layer": "infrastructure",
+          "display_id": "API7:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a03-2021",
+          "title": "Injection",
+          "layer": "input",
+          "display_id": "A03:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:measure-2-7",
+          "title": "Security and Resilience",
+          "layer": "input",
+          "display_id": "MEASURE 2.7"
+        },
+        {
+          "ref": "nist-ai-rmf:manage-2-2",
+          "title": "Mechanisms to Sustain Value",
+          "layer": "governance",
+          "display_id": "MANAGE 2.2"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "eu-ai-act:art-15",
+          "title": "Accuracy, Robustness and Cybersecurity",
+          "layer": "model",
+          "display_id": "Art. 15"
+        },
+        {
+          "ref": "nist-800-53-r5:si-10",
+          "title": "Information Input Validation",
+          "layer": "output",
+          "display_id": "SI-10"
+        },
+        {
+          "ref": "nist-800-53-r5:cm-6",
+          "title": "Configuration Settings",
+          "layer": "infrastructure",
+          "display_id": "CM-06"
+        },
+        {
+          "ref": "nist-800-53-r5:sa-11",
+          "title": "Developer Testing and Evaluation",
+          "layer": "governance",
+          "display_id": "SA-11"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc7-1",
+          "title": "Detect and monitor for new vulnerabilities and configuration changes",
+          "layer": "infrastructure",
+          "display_id": "CC7.1"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-8",
+          "title": "Confabulation",
+          "layer": "output",
+          "display_id": "GAI 2.8"
+        }
+      ]
+    },
+    {
+      "id": "ai-misinformation",
+      "title": "AI: Misinformation",
+      "layer": "output",
+      "summary": "The model produces confidently wrong or fabricated output that users over-trust, leading to harmful decisions.",
+      "controls": [
+        "owasp-llm-top10:llm09-2025",
+        "mitre-atlas:aml-t0048",
+        "mitre-atlas:aml-t0047",
+        "nist-ai-rmf:measure-2-11",
+        "nist-ai-rmf:govern-2-1",
+        "iso-42001:a6",
+        "iso-42001:a8",
+        "eu-ai-act:art-13",
+        "nist-800-53-r5:si-10",
+        "nist-800-53-r5:sa-11",
+        "soc2-tsc:cc7-1",
+        "soc2-tsc:cc9-1",
+        "hipaa-security-rule:308-a-1",
+        "nist-ai-600-1:ga-2-8"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm09-2025",
+          "title": "Misinformation",
+          "layer": "output",
+          "display_id": "LLM09:2025"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0048",
+          "title": "External Harms",
+          "layer": "output",
+          "display_id": "AML.T0048"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0047",
+          "title": "AI-Enabled Product or Service",
+          "layer": "model",
+          "display_id": "AML.T0047"
+        },
+        {
+          "ref": "nist-ai-rmf:measure-2-11",
+          "title": "Harmful Bias",
+          "layer": "model",
+          "display_id": "MEASURE 2.11"
+        },
+        {
+          "ref": "nist-ai-rmf:govern-2-1",
+          "title": "Roles and Responsibilities",
+          "layer": "governance",
+          "display_id": "GOVERN 2.1"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "iso-42001:a8",
+          "title": "Information for Interested Parties",
+          "layer": "output",
+          "display_id": "A.8"
+        },
+        {
+          "ref": "eu-ai-act:art-13",
+          "title": "Transparency and Information to Users",
+          "layer": "output",
+          "display_id": "Art. 13"
+        },
+        {
+          "ref": "nist-800-53-r5:si-10",
+          "title": "Information Input Validation",
+          "layer": "output",
+          "display_id": "SI-10"
+        },
+        {
+          "ref": "nist-800-53-r5:sa-11",
+          "title": "Developer Testing and Evaluation",
+          "layer": "governance",
+          "display_id": "SA-11"
+        },
+        {
+          "ref": "soc2-tsc:cc7-1",
+          "title": "Detect and monitor for new vulnerabilities and configuration changes",
+          "layer": "infrastructure",
+          "display_id": "CC7.1"
+        },
+        {
+          "ref": "soc2-tsc:cc9-1",
+          "title": "Identify and develop risk mitigation activities",
+          "layer": "governance",
+          "display_id": "CC9.1"
+        },
+        {
+          "ref": "hipaa-security-rule:308-a-1",
+          "title": "Security Management Process",
+          "layer": "governance",
+          "display_id": "§ 164.308(a)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-8",
+          "title": "Confabulation",
+          "layer": "output",
+          "display_id": "GAI 2.8"
+        }
+      ]
+    },
+    {
+      "id": "ai-data-model-poisoning",
       "title": "AI: Data & Model Poisoning",
       "layer": "model",
-      "summary": "Tampered training, fine-tuning, or RAG data corrupts AI model behavior.",
+      "summary": "Training, fine-tuning, or embedding data is tampered with to implant backdoors, bias, or degraded behavior.",
       "controls": [
         "owasp-llm-top10:llm04-2025",
-        "nist-ai-600-1:ga-2-12",
         "mitre-atlas:aml-t0020",
-        "iso-42001:a7"
+        "owasp-web-top10:a08-2021",
+        "nist-ai-rmf:measure-2-11",
+        "nist-ai-rmf:map-2-3",
+        "iso-42001:a6",
+        "iso-42001:a7",
+        "eu-ai-act:art-10",
+        "nist-800-53-r5:si-10",
+        "nist-800-53-r5:sa-11",
+        "nist-800-53-r5:cm-6",
+        "soc2-tsc:cc7-1",
+        "soc2-tsc:cc9-1",
+        "hipaa-security-rule:312-b",
+        "nist-ai-600-1:ga-2-9",
+        "nist-ai-600-1:ga-2-12"
       ],
       "controls_resolved": [
         {
@@ -600,38 +1181,164 @@
           "display_id": "LLM04:2025"
         },
         {
-          "ref": "nist-ai-600-1:ga-2-12",
-          "title": "Value Chain and Component Integration",
-          "layer": "model",
-          "display_id": "GAI 2.12"
-        },
-        {
           "ref": "mitre-atlas:aml-t0020",
           "title": "Poison Training Data",
           "layer": "governance",
           "display_id": "AML.T0020"
         },
         {
+          "ref": "owasp-web-top10:a08-2021",
+          "title": "Software and Data Integrity Failures",
+          "layer": "model",
+          "display_id": "A08:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:measure-2-11",
+          "title": "Harmful Bias",
+          "layer": "model",
+          "display_id": "MEASURE 2.11"
+        },
+        {
+          "ref": "nist-ai-rmf:map-2-3",
+          "title": "Capabilities and Limitations",
+          "layer": "model",
+          "display_id": "MAP 2.3"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
           "ref": "iso-42001:a7",
           "title": "Data for AI Systems",
           "layer": "model",
           "display_id": "A.7"
+        },
+        {
+          "ref": "eu-ai-act:art-10",
+          "title": "Data and Data Governance",
+          "layer": "model",
+          "display_id": "Art. 10"
+        },
+        {
+          "ref": "nist-800-53-r5:si-10",
+          "title": "Information Input Validation",
+          "layer": "output",
+          "display_id": "SI-10"
+        },
+        {
+          "ref": "nist-800-53-r5:sa-11",
+          "title": "Developer Testing and Evaluation",
+          "layer": "governance",
+          "display_id": "SA-11"
+        },
+        {
+          "ref": "nist-800-53-r5:cm-6",
+          "title": "Configuration Settings",
+          "layer": "infrastructure",
+          "display_id": "CM-06"
+        },
+        {
+          "ref": "soc2-tsc:cc7-1",
+          "title": "Detect and monitor for new vulnerabilities and configuration changes",
+          "layer": "infrastructure",
+          "display_id": "CC7.1"
+        },
+        {
+          "ref": "soc2-tsc:cc9-1",
+          "title": "Identify and develop risk mitigation activities",
+          "layer": "governance",
+          "display_id": "CC9.1"
+        },
+        {
+          "ref": "hipaa-security-rule:312-b",
+          "title": "Audit Controls",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(b)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-12",
+          "title": "Value Chain and Component Integration",
+          "layer": "model",
+          "display_id": "GAI 2.12"
         }
       ]
     },
     {
-      "id": "ai-governance",
-      "title": "AI: Governance & Oversight",
-      "layer": "governance",
-      "summary": "Policy, accountability, human oversight, and lifecycle risk management for AI systems.",
+      "id": "ai-system-prompt-leakage",
+      "title": "AI: System Prompt Leakage",
+      "layer": "model",
+      "summary": "The system prompt, which holds rules, secrets, or architecture details, gets extracted through crafted questions.",
       "controls": [
+        "owasp-llm-top10:llm07-2025",
+        "mitre-atlas:aml-t0051",
+        "mitre-atlas:aml-t0057",
+        "mitre-attack:credential-access",
+        "owasp-api-top10:api3-2023",
+        "owasp-web-top10:a05-2021",
+        "nist-ai-rmf:measure-2-7",
         "nist-ai-rmf:govern-1-1",
-        "iso-42001:a2",
-        "iso-42001:a5",
-        "eu-ai-act:art-9",
-        "eu-ai-act:art-14"
+        "iso-42001:a6",
+        "eu-ai-act:art-13",
+        "nist-800-53-r5:ac-3",
+        "nist-800-53-r5:sc-28",
+        "nist-800-53-r5:si-10",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc6-7",
+        "hipaa-security-rule:312-a-1",
+        "nist-ai-600-1:ga-2-9"
       ],
       "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm07-2025",
+          "title": "System Prompt Leakage",
+          "layer": "output",
+          "display_id": "LLM07:2025"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0051",
+          "title": "LLM Prompt Injection",
+          "layer": "infrastructure",
+          "display_id": "AML.T0051"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0057",
+          "title": "LLM Data Leakage",
+          "layer": "output",
+          "display_id": "AML.T0057"
+        },
+        {
+          "ref": "mitre-attack:credential-access",
+          "title": "Credential Access",
+          "layer": "infrastructure",
+          "display_id": "Credential Access"
+        },
+        {
+          "ref": "owasp-api-top10:api3-2023",
+          "title": "Broken Object Property Level Authorization",
+          "layer": "infrastructure",
+          "display_id": "API3:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a05-2021",
+          "title": "Security Misconfiguration",
+          "layer": "infrastructure",
+          "display_id": "A05:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:measure-2-7",
+          "title": "Security and Resilience",
+          "layer": "input",
+          "display_id": "MEASURE 2.7"
+        },
         {
           "ref": "nist-ai-rmf:govern-1-1",
           "title": "Legal and Regulatory Requirements",
@@ -639,47 +1346,1145 @@
           "display_id": "GOVERN 1.1"
         },
         {
-          "ref": "iso-42001:a2",
-          "title": "AI Policy",
-          "layer": "governance",
-          "display_id": "A.2"
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
         },
         {
-          "ref": "iso-42001:a5",
-          "title": "AI System Impact Assessment",
-          "layer": "governance",
-          "display_id": "A.5"
+          "ref": "eu-ai-act:art-13",
+          "title": "Transparency and Information to Users",
+          "layer": "output",
+          "display_id": "Art. 13"
         },
         {
-          "ref": "eu-ai-act:art-9",
-          "title": "Risk Management System",
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "nist-800-53-r5:sc-28",
+          "title": "Protection of Information at Rest",
+          "layer": "infrastructure",
+          "display_id": "SC-28"
+        },
+        {
+          "ref": "nist-800-53-r5:si-10",
+          "title": "Information Input Validation",
+          "layer": "output",
+          "display_id": "SI-10"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc6-7",
+          "title": "Restrict the transmission and movement of information",
+          "layer": "infrastructure",
+          "display_id": "CC6.7"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        }
+      ]
+    },
+    {
+      "id": "ai-model-theft-extraction",
+      "title": "AI: Model Theft & Extraction",
+      "layer": "model",
+      "summary": "Unauthorized access to or replication of a proprietary model through query-based extraction or direct exfiltration.",
+      "controls": [
+        "mitre-atlas:aml-t0007",
+        "mitre-atlas:aml-t0014",
+        "mitre-attack:t1530",
+        "owasp-api-top10:api2-2023",
+        "owasp-web-top10:a01-2021",
+        "nist-ai-rmf:govern-1-1",
+        "nist-ai-rmf:manage-2-2",
+        "iso-42001:a6",
+        "eu-ai-act:art-13",
+        "nist-800-53-r5:ac-3",
+        "nist-800-53-r5:sc-28",
+        "nist-800-53-r5:si-10",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc6-7",
+        "hipaa-security-rule:312-a-1",
+        "nist-ai-600-1:ga-2-9",
+        "nist-ai-600-1:ga-2-12"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "mitre-atlas:aml-t0007",
+          "title": "Discover AI Artifacts",
+          "layer": "infrastructure",
+          "display_id": "AML.T0007"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0014",
+          "title": "Discover AI Model Family",
+          "layer": "infrastructure",
+          "display_id": "AML.T0014"
+        },
+        {
+          "ref": "mitre-attack:t1530",
+          "title": "Data from Cloud Storage",
+          "layer": "output",
+          "display_id": "T1530"
+        },
+        {
+          "ref": "owasp-api-top10:api2-2023",
+          "title": "Broken Authentication",
+          "layer": "infrastructure",
+          "display_id": "API2:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a01-2021",
+          "title": "Broken Access Control",
+          "layer": "infrastructure",
+          "display_id": "A01:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:govern-1-1",
+          "title": "Legal and Regulatory Requirements",
           "layer": "governance",
-          "display_id": "Art. 9"
+          "display_id": "GOVERN 1.1"
+        },
+        {
+          "ref": "nist-ai-rmf:manage-2-2",
+          "title": "Mechanisms to Sustain Value",
+          "layer": "governance",
+          "display_id": "MANAGE 2.2"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "eu-ai-act:art-13",
+          "title": "Transparency and Information to Users",
+          "layer": "output",
+          "display_id": "Art. 13"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "nist-800-53-r5:sc-28",
+          "title": "Protection of Information at Rest",
+          "layer": "infrastructure",
+          "display_id": "SC-28"
+        },
+        {
+          "ref": "nist-800-53-r5:si-10",
+          "title": "Information Input Validation",
+          "layer": "output",
+          "display_id": "SI-10"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc6-7",
+          "title": "Restrict the transmission and movement of information",
+          "layer": "infrastructure",
+          "display_id": "CC6.7"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-12",
+          "title": "Value Chain and Component Integration",
+          "layer": "model",
+          "display_id": "GAI 2.12"
+        }
+      ]
+    },
+    {
+      "id": "ai-unbounded-consumption",
+      "title": "AI: Unbounded Consumption",
+      "layer": "infrastructure",
+      "summary": "Uncontrolled token, compute, or API consumption, including token floods, recursive expansion, runaway cost, and denial of wallet.",
+      "controls": [
+        "owasp-llm-top10:llm10-2025",
+        "mitre-atlas:aml-t0034",
+        "mitre-attack:t1499",
+        "owasp-api-top10:api4-2023",
+        "owasp-web-top10:a05-2021",
+        "nist-ai-rmf:measure-2-7",
+        "nist-ai-rmf:manage-4-1",
+        "iso-42001:a6",
+        "eu-ai-act:art-15",
+        "nist-800-53-r5:sc-5",
+        "nist-800-53-r5:si-10",
+        "nist-800-53-r5:ac-3",
+        "soc2-tsc:cc6-6",
+        "soc2-tsc:cc6-1",
+        "hipaa-security-rule:312-a-1",
+        "hipaa-security-rule:312-e-1",
+        "nist-ai-600-1:ga-2-9"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm10-2025",
+          "title": "Unbounded Consumption",
+          "layer": "infrastructure",
+          "display_id": "LLM10:2025"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0034",
+          "title": "Cost Harvesting",
+          "layer": "output",
+          "display_id": "AML.T0034"
+        },
+        {
+          "ref": "mitre-attack:t1499",
+          "title": "Endpoint Denial of Service",
+          "layer": "output",
+          "display_id": "T1499"
+        },
+        {
+          "ref": "owasp-api-top10:api4-2023",
+          "title": "Unrestricted Resource Consumption",
+          "layer": "infrastructure",
+          "display_id": "API4:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a05-2021",
+          "title": "Security Misconfiguration",
+          "layer": "infrastructure",
+          "display_id": "A05:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:measure-2-7",
+          "title": "Security and Resilience",
+          "layer": "input",
+          "display_id": "MEASURE 2.7"
+        },
+        {
+          "ref": "nist-ai-rmf:manage-4-1",
+          "title": "Post-Deployment Monitoring",
+          "layer": "output",
+          "display_id": "MANAGE 4.1"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "eu-ai-act:art-15",
+          "title": "Accuracy, Robustness and Cybersecurity",
+          "layer": "model",
+          "display_id": "Art. 15"
+        },
+        {
+          "ref": "nist-800-53-r5:sc-5",
+          "title": "Denial-of-service Protection",
+          "layer": "infrastructure",
+          "display_id": "SC-05"
+        },
+        {
+          "ref": "nist-800-53-r5:si-10",
+          "title": "Information Input Validation",
+          "layer": "output",
+          "display_id": "SI-10"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "soc2-tsc:cc6-6",
+          "title": "Protect against threats from outside the system boundary",
+          "layer": "infrastructure",
+          "display_id": "CC6.6"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "hipaa-security-rule:312-e-1",
+          "title": "Transmission Security",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(e)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        }
+      ]
+    },
+    {
+      "id": "ai-supply-chain",
+      "title": "AI: Supply Chain",
+      "layer": "infrastructure",
+      "summary": "Compromised models, datasets, libraries, or plugins introduce vulnerabilities into the AI pipeline.",
+      "controls": [
+        "owasp-llm-top10:llm03-2025",
+        "mitre-atlas:aml-t0010",
+        "mitre-attack:initial-access",
+        "owasp-api-top10:api9-2023",
+        "owasp-web-top10:a06-2021",
+        "nist-ai-rmf:govern-1-1",
+        "nist-ai-rmf:map-2-3",
+        "iso-42001:a6",
+        "iso-42001:a7",
+        "eu-ai-act:art-15",
+        "nist-800-53-r5:sa-12",
+        "nist-800-53-r5:sa-11",
+        "nist-800-53-r5:cm-6",
+        "soc2-tsc:cc9-2",
+        "soc2-tsc:cc6-1",
+        "hipaa-security-rule:308-b-1",
+        "nist-ai-600-1:ga-2-12"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm03-2025",
+          "title": "Supply Chain",
+          "layer": "model",
+          "display_id": "LLM03:2025"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0010",
+          "title": "AI Supply Chain Compromise",
+          "layer": "infrastructure",
+          "display_id": "AML.T0010"
+        },
+        {
+          "ref": "mitre-attack:initial-access",
+          "title": "Initial Access",
+          "layer": "infrastructure",
+          "display_id": "Initial Access"
+        },
+        {
+          "ref": "owasp-api-top10:api9-2023",
+          "title": "Improper Inventory Management",
+          "layer": "governance",
+          "display_id": "API9:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a06-2021",
+          "title": "Vulnerable and Outdated Components",
+          "layer": "model",
+          "display_id": "A06:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:govern-1-1",
+          "title": "Legal and Regulatory Requirements",
+          "layer": "governance",
+          "display_id": "GOVERN 1.1"
+        },
+        {
+          "ref": "nist-ai-rmf:map-2-3",
+          "title": "Capabilities and Limitations",
+          "layer": "model",
+          "display_id": "MAP 2.3"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "iso-42001:a7",
+          "title": "Data for AI Systems",
+          "layer": "model",
+          "display_id": "A.7"
+        },
+        {
+          "ref": "eu-ai-act:art-15",
+          "title": "Accuracy, Robustness and Cybersecurity",
+          "layer": "model",
+          "display_id": "Art. 15"
+        },
+        {
+          "ref": "nist-800-53-r5:sa-12",
+          "title": "Supply Chain Protection",
+          "layer": "governance",
+          "display_id": "SA-12"
+        },
+        {
+          "ref": "nist-800-53-r5:sa-11",
+          "title": "Developer Testing and Evaluation",
+          "layer": "governance",
+          "display_id": "SA-11"
+        },
+        {
+          "ref": "nist-800-53-r5:cm-6",
+          "title": "Configuration Settings",
+          "layer": "infrastructure",
+          "display_id": "CM-06"
+        },
+        {
+          "ref": "soc2-tsc:cc9-2",
+          "title": "Assess and manage risks from vendors and business partners",
+          "layer": "governance",
+          "display_id": "CC9.2"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "hipaa-security-rule:308-b-1",
+          "title": "Business Associate Contracts and Other Arrangements",
+          "layer": "governance",
+          "display_id": "§ 164.308(b)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-12",
+          "title": "Value Chain and Component Integration",
+          "layer": "model",
+          "display_id": "GAI 2.12"
+        }
+      ]
+    },
+    {
+      "id": "ai-api-authentication-access",
+      "title": "AI: API Authentication & Access",
+      "layer": "infrastructure",
+      "summary": "The endpoint serving the model lacks auth, leaks keys, or allows unauthenticated access, which is the classic API attack surface.",
+      "controls": [
+        "mitre-atlas:aml-t0012",
+        "mitre-attack:t1190",
+        "owasp-api-top10:api2-2023",
+        "owasp-api-top10:api1-2023",
+        "owasp-web-top10:a01-2021",
+        "owasp-web-top10:a07-2021",
+        "nist-ai-rmf:measure-2-7",
+        "iso-42001:a6",
+        "eu-ai-act:art-15",
+        "nist-800-53-r5:ia-3",
+        "nist-800-53-r5:ac-3",
+        "nist-800-53-r5:sc-28",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc6-3",
+        "hipaa-security-rule:312-a-1",
+        "nist-ai-600-1:ga-2-9"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "mitre-atlas:aml-t0012",
+          "title": "Valid Accounts",
+          "layer": "infrastructure",
+          "display_id": "AML.T0012"
+        },
+        {
+          "ref": "mitre-attack:t1190",
+          "title": "Exploit Public-Facing Application",
+          "layer": "infrastructure",
+          "display_id": "T1190"
+        },
+        {
+          "ref": "owasp-api-top10:api2-2023",
+          "title": "Broken Authentication",
+          "layer": "infrastructure",
+          "display_id": "API2:2023"
+        },
+        {
+          "ref": "owasp-api-top10:api1-2023",
+          "title": "Broken Object Level Authorization",
+          "layer": "infrastructure",
+          "display_id": "API1:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a01-2021",
+          "title": "Broken Access Control",
+          "layer": "infrastructure",
+          "display_id": "A01:2021"
+        },
+        {
+          "ref": "owasp-web-top10:a07-2021",
+          "title": "Identification and Authentication Failures",
+          "layer": "infrastructure",
+          "display_id": "A07:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:measure-2-7",
+          "title": "Security and Resilience",
+          "layer": "input",
+          "display_id": "MEASURE 2.7"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "eu-ai-act:art-15",
+          "title": "Accuracy, Robustness and Cybersecurity",
+          "layer": "model",
+          "display_id": "Art. 15"
+        },
+        {
+          "ref": "nist-800-53-r5:ia-3",
+          "title": "Device Identification and Authentication",
+          "layer": "infrastructure",
+          "display_id": "IA-03"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "nist-800-53-r5:sc-28",
+          "title": "Protection of Information at Rest",
+          "layer": "infrastructure",
+          "display_id": "SC-28"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc6-3",
+          "title": "Manage access based on roles and least privilege",
+          "layer": "infrastructure",
+          "display_id": "CC6.3"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        }
+      ]
+    },
+    {
+      "id": "ai-security-misconfiguration",
+      "title": "AI: Security Misconfiguration",
+      "layer": "infrastructure",
+      "summary": "Missing security headers, wildcard CORS, verbose errors, exposed files, or no HTTPS enforcement on the AI service.",
+      "controls": [
+        "mitre-attack:t1190",
+        "owasp-api-top10:api7-2023",
+        "owasp-api-top10:api8-2023",
+        "owasp-web-top10:a05-2021",
+        "nist-ai-rmf:manage-4-1",
+        "iso-42001:a6",
+        "eu-ai-act:art-15",
+        "nist-800-53-r5:cm-6",
+        "nist-800-53-r5:sc-7",
+        "nist-800-53-r5:au-2",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc6-6",
+        "hipaa-security-rule:312-a-1",
+        "hipaa-security-rule:308-a-1",
+        "nist-ai-600-1:ga-2-9"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "mitre-attack:t1190",
+          "title": "Exploit Public-Facing Application",
+          "layer": "infrastructure",
+          "display_id": "T1190"
+        },
+        {
+          "ref": "owasp-api-top10:api7-2023",
+          "title": "Server Side Request Forgery",
+          "layer": "infrastructure",
+          "display_id": "API7:2023"
+        },
+        {
+          "ref": "owasp-api-top10:api8-2023",
+          "title": "Security Misconfiguration",
+          "layer": "infrastructure",
+          "display_id": "API8:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a05-2021",
+          "title": "Security Misconfiguration",
+          "layer": "infrastructure",
+          "display_id": "A05:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:manage-4-1",
+          "title": "Post-Deployment Monitoring",
+          "layer": "output",
+          "display_id": "MANAGE 4.1"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "eu-ai-act:art-15",
+          "title": "Accuracy, Robustness and Cybersecurity",
+          "layer": "model",
+          "display_id": "Art. 15"
+        },
+        {
+          "ref": "nist-800-53-r5:cm-6",
+          "title": "Configuration Settings",
+          "layer": "infrastructure",
+          "display_id": "CM-06"
+        },
+        {
+          "ref": "nist-800-53-r5:sc-7",
+          "title": "Boundary Protection",
+          "layer": "infrastructure",
+          "display_id": "SC-07"
+        },
+        {
+          "ref": "nist-800-53-r5:au-2",
+          "title": "Event Logging",
+          "layer": "infrastructure",
+          "display_id": "AU-02"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc6-6",
+          "title": "Protect against threats from outside the system boundary",
+          "layer": "infrastructure",
+          "display_id": "CC6.6"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "hipaa-security-rule:308-a-1",
+          "title": "Security Management Process",
+          "layer": "governance",
+          "display_id": "§ 164.308(a)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        }
+      ]
+    },
+    {
+      "id": "ai-excessive-agency",
+      "title": "AI: Excessive Agency",
+      "layer": "agentic",
+      "summary": "An agent has too much autonomy, permission, or tool access, letting manipulation translate into real-world actions.",
+      "controls": [
+        "owasp-llm-top10:llm06-2025",
+        "mitre-atlas:aml-t0053",
+        "mitre-atlas:aml-t0054",
+        "mitre-attack:execution",
+        "mitre-attack:t1078",
+        "owasp-api-top10:api5-2023",
+        "owasp-web-top10:a01-2021",
+        "nist-ai-rmf:govern-1-2",
+        "nist-ai-rmf:manage-4-1",
+        "iso-42001:a6",
+        "eu-ai-act:art-14",
+        "nist-800-53-r5:ac-3",
+        "nist-800-53-r5:ac-6",
+        "nist-800-53-r5:cm-7",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc6-3",
+        "hipaa-security-rule:312-a-1",
+        "hipaa-security-rule:308-a-3",
+        "nist-ai-600-1:ga-2-9"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm06-2025",
+          "title": "Excessive Agency",
+          "layer": "agentic",
+          "display_id": "LLM06:2025"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0053",
+          "title": "AI Agent Tool Invocation",
+          "layer": "infrastructure",
+          "display_id": "AML.T0053"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0054",
+          "title": "LLM Jailbreak",
+          "layer": "infrastructure",
+          "display_id": "AML.T0054"
+        },
+        {
+          "ref": "mitre-attack:execution",
+          "title": "Execution",
+          "layer": "infrastructure",
+          "display_id": "Execution"
+        },
+        {
+          "ref": "mitre-attack:t1078",
+          "title": "Valid Accounts",
+          "layer": "infrastructure",
+          "display_id": "T1078"
+        },
+        {
+          "ref": "owasp-api-top10:api5-2023",
+          "title": "Broken Function Level Authorization",
+          "layer": "infrastructure",
+          "display_id": "API5:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a01-2021",
+          "title": "Broken Access Control",
+          "layer": "infrastructure",
+          "display_id": "A01:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:govern-1-2",
+          "title": "Trustworthy AI Characteristics",
+          "layer": "governance",
+          "display_id": "GOVERN 1.2"
+        },
+        {
+          "ref": "nist-ai-rmf:manage-4-1",
+          "title": "Post-Deployment Monitoring",
+          "layer": "output",
+          "display_id": "MANAGE 4.1"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
         },
         {
           "ref": "eu-ai-act:art-14",
           "title": "Human Oversight",
           "layer": "agentic",
           "display_id": "Art. 14"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-6",
+          "title": "Least Privilege",
+          "layer": "infrastructure",
+          "display_id": "AC-06"
+        },
+        {
+          "ref": "nist-800-53-r5:cm-7",
+          "title": "Least Functionality",
+          "layer": "infrastructure",
+          "display_id": "CM-07"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc6-3",
+          "title": "Manage access based on roles and least privilege",
+          "layer": "infrastructure",
+          "display_id": "CC6.3"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "hipaa-security-rule:308-a-3",
+          "title": "Workforce Security",
+          "layer": "governance",
+          "display_id": "§ 164.308(a)(3)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
         }
       ]
     },
     {
-      "id": "ai-mcp-tool-abuse",
+      "id": "ai-agentic-tool-chain-abuse",
+      "title": "AI: Agentic Tool & Chain Abuse",
+      "layer": "agentic",
+      "summary": "Multi-step agents get hijacked through tool outputs, memory poisoning, or chained calls that compound a single injection.",
+      "controls": [
+        "owasp-llm-top10:llm06-2025",
+        "owasp-llm-top10:llm01-2025",
+        "mitre-atlas:aml-t0086",
+        "mitre-atlas:aml-t0110",
+        "mitre-attack:execution",
+        "owasp-api-top10:api5-2023",
+        "owasp-api-top10:api8-2023",
+        "owasp-web-top10:a04-2021",
+        "nist-ai-rmf:govern-1-2",
+        "nist-ai-rmf:manage-2-2",
+        "iso-42001:a6",
+        "iso-42001:a7",
+        "eu-ai-act:art-14",
+        "nist-800-53-r5:ac-3",
+        "nist-800-53-r5:ac-6",
+        "nist-800-53-r5:cm-7",
+        "nist-800-53-r5:sa-11",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc6-3",
+        "hipaa-security-rule:312-a-1",
+        "hipaa-security-rule:308-a-1",
+        "nist-ai-600-1:ga-2-9"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm06-2025",
+          "title": "Excessive Agency",
+          "layer": "agentic",
+          "display_id": "LLM06:2025"
+        },
+        {
+          "ref": "owasp-llm-top10:llm01-2025",
+          "title": "Prompt Injection",
+          "layer": "input",
+          "display_id": "LLM01:2025"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0086",
+          "title": "Exfiltration via AI Agent Tool Invocation",
+          "layer": "output",
+          "display_id": "AML.T0086"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0110",
+          "title": "AI Agent Tool Poisoning",
+          "layer": "infrastructure",
+          "display_id": "AML.T0110"
+        },
+        {
+          "ref": "mitre-attack:execution",
+          "title": "Execution",
+          "layer": "infrastructure",
+          "display_id": "Execution"
+        },
+        {
+          "ref": "owasp-api-top10:api5-2023",
+          "title": "Broken Function Level Authorization",
+          "layer": "infrastructure",
+          "display_id": "API5:2023"
+        },
+        {
+          "ref": "owasp-api-top10:api8-2023",
+          "title": "Security Misconfiguration",
+          "layer": "infrastructure",
+          "display_id": "API8:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a04-2021",
+          "title": "Insecure Design",
+          "layer": "governance",
+          "display_id": "A04:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:govern-1-2",
+          "title": "Trustworthy AI Characteristics",
+          "layer": "governance",
+          "display_id": "GOVERN 1.2"
+        },
+        {
+          "ref": "nist-ai-rmf:manage-2-2",
+          "title": "Mechanisms to Sustain Value",
+          "layer": "governance",
+          "display_id": "MANAGE 2.2"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "iso-42001:a7",
+          "title": "Data for AI Systems",
+          "layer": "model",
+          "display_id": "A.7"
+        },
+        {
+          "ref": "eu-ai-act:art-14",
+          "title": "Human Oversight",
+          "layer": "agentic",
+          "display_id": "Art. 14"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-6",
+          "title": "Least Privilege",
+          "layer": "infrastructure",
+          "display_id": "AC-06"
+        },
+        {
+          "ref": "nist-800-53-r5:cm-7",
+          "title": "Least Functionality",
+          "layer": "infrastructure",
+          "display_id": "CM-07"
+        },
+        {
+          "ref": "nist-800-53-r5:sa-11",
+          "title": "Developer Testing and Evaluation",
+          "layer": "governance",
+          "display_id": "SA-11"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc6-3",
+          "title": "Manage access based on roles and least privilege",
+          "layer": "infrastructure",
+          "display_id": "CC6.3"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "hipaa-security-rule:308-a-1",
+          "title": "Security Management Process",
+          "layer": "governance",
+          "display_id": "§ 164.308(a)(1)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        }
+      ]
+    },
+    {
+      "id": "ai-insufficient-human-oversight",
+      "title": "AI: Insufficient Human Oversight",
+      "layer": "agentic",
+      "summary": "No human in the loop or audit trail on high-impact agent actions, so failures and manipulations go unchecked.",
+      "controls": [
+        "owasp-llm-top10:llm06-2025",
+        "mitre-atlas:aml-t0086",
+        "owasp-web-top10:a04-2021",
+        "nist-ai-rmf:govern-1-2",
+        "nist-ai-rmf:measure-2-7",
+        "iso-42001:a6",
+        "iso-42001:a8",
+        "eu-ai-act:art-14",
+        "nist-800-53-r5:ac-3",
+        "nist-800-53-r5:au-2",
+        "nist-800-53-r5:cm-6",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc7-2",
+        "hipaa-security-rule:312-a-1",
+        "hipaa-security-rule:312-b",
+        "nist-ai-600-1:ga-2-9"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm06-2025",
+          "title": "Excessive Agency",
+          "layer": "agentic",
+          "display_id": "LLM06:2025"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0086",
+          "title": "Exfiltration via AI Agent Tool Invocation",
+          "layer": "output",
+          "display_id": "AML.T0086"
+        },
+        {
+          "ref": "owasp-web-top10:a04-2021",
+          "title": "Insecure Design",
+          "layer": "governance",
+          "display_id": "A04:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:govern-1-2",
+          "title": "Trustworthy AI Characteristics",
+          "layer": "governance",
+          "display_id": "GOVERN 1.2"
+        },
+        {
+          "ref": "nist-ai-rmf:measure-2-7",
+          "title": "Security and Resilience",
+          "layer": "input",
+          "display_id": "MEASURE 2.7"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "iso-42001:a8",
+          "title": "Information for Interested Parties",
+          "layer": "output",
+          "display_id": "A.8"
+        },
+        {
+          "ref": "eu-ai-act:art-14",
+          "title": "Human Oversight",
+          "layer": "agentic",
+          "display_id": "Art. 14"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "nist-800-53-r5:au-2",
+          "title": "Event Logging",
+          "layer": "infrastructure",
+          "display_id": "AU-02"
+        },
+        {
+          "ref": "nist-800-53-r5:cm-6",
+          "title": "Configuration Settings",
+          "layer": "infrastructure",
+          "display_id": "CM-06"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc7-2",
+          "title": "Monitor system components for anomalies",
+          "layer": "infrastructure",
+          "display_id": "CC7.2"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "hipaa-security-rule:312-b",
+          "title": "Audit Controls",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(b)"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        }
+      ]
+    },
+    {
+      "id": "ai-mcp-connector-tool-abuse",
       "title": "AI: MCP & Connector Tool Abuse",
       "layer": "agentic",
-      "summary": "Untrusted or over-permissioned tool servers (for example MCP servers and third-party connectors) feed poisoned tool output, hijack tool calls, or hand an agent capabilities it should not have. Controls here limit what tools an agent can reach, validate what comes back, and log every tool call.",
+      "summary": "Untrusted or over-permissioned tool servers (for example MCP servers and third-party connectors) feed poisoned tool output, hijack tool calls, or hand an agent capabilities it should not have. Documented in real autonomous-attack tradecraft where penetration tools were wired in as MCP servers to turn an agent into an attack platform.",
       "controls": [
         "owasp-llm-top10:llm06-2025",
         "owasp-llm-top10:llm03-2025",
-        "nist-800-53-r5:ac-6",
-        "nist-800-53-r5:si-10",
-        "nist-800-53-r5:au-2",
-        "nist-800-53-r5:sr-3",
+        "mitre-atlas:aml-t0110",
+        "mitre-atlas:aml-t0053",
+        "mitre-atlas:aml-t0086",
+        "mitre-attack:execution",
+        "mitre-attack:t1078",
+        "owasp-api-top10:api5-2023",
+        "owasp-api-top10:api8-2023",
+        "owasp-web-top10:a04-2021",
+        "owasp-web-top10:a01-2021",
+        "nist-ai-rmf:govern-1-2",
+        "nist-ai-rmf:manage-2-2",
+        "iso-42001:a6",
+        "iso-42001:a7",
         "eu-ai-act:art-14",
-        "iso-42001:a9",
+        "nist-800-53-r5:ac-6",
+        "nist-800-53-r5:cm-7",
+        "nist-800-53-r5:sa-9",
+        "soc2-tsc:cc6-1",
+        "soc2-tsc:cc6-3",
+        "hipaa-security-rule:312-a-1",
+        "hipaa-security-rule:308-b-1",
         "nist-ai-600-1:ga-2-12",
-        "mitre-atlas:aml-t0051"
+        "nist-ai-600-1:ga-2-9"
       ],
       "controls_resolved": [
         {
@@ -695,28 +2500,82 @@
           "display_id": "LLM03:2025"
         },
         {
-          "ref": "nist-800-53-r5:ac-6",
-          "title": "Least Privilege",
+          "ref": "mitre-atlas:aml-t0110",
+          "title": "AI Agent Tool Poisoning",
           "layer": "infrastructure",
-          "display_id": "AC-06"
+          "display_id": "AML.T0110"
         },
         {
-          "ref": "nist-800-53-r5:si-10",
-          "title": "Information Input Validation",
+          "ref": "mitre-atlas:aml-t0053",
+          "title": "AI Agent Tool Invocation",
+          "layer": "infrastructure",
+          "display_id": "AML.T0053"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0086",
+          "title": "Exfiltration via AI Agent Tool Invocation",
           "layer": "output",
-          "display_id": "SI-10"
+          "display_id": "AML.T0086"
         },
         {
-          "ref": "nist-800-53-r5:au-2",
-          "title": "Event Logging",
+          "ref": "mitre-attack:execution",
+          "title": "Execution",
           "layer": "infrastructure",
-          "display_id": "AU-02"
+          "display_id": "Execution"
         },
         {
-          "ref": "nist-800-53-r5:sr-3",
-          "title": "Supply Chain Controls and Processes",
+          "ref": "mitre-attack:t1078",
+          "title": "Valid Accounts",
+          "layer": "infrastructure",
+          "display_id": "T1078"
+        },
+        {
+          "ref": "owasp-api-top10:api5-2023",
+          "title": "Broken Function Level Authorization",
+          "layer": "infrastructure",
+          "display_id": "API5:2023"
+        },
+        {
+          "ref": "owasp-api-top10:api8-2023",
+          "title": "Security Misconfiguration",
+          "layer": "infrastructure",
+          "display_id": "API8:2023"
+        },
+        {
+          "ref": "owasp-web-top10:a04-2021",
+          "title": "Insecure Design",
           "layer": "governance",
-          "display_id": "SR-03"
+          "display_id": "A04:2021"
+        },
+        {
+          "ref": "owasp-web-top10:a01-2021",
+          "title": "Broken Access Control",
+          "layer": "infrastructure",
+          "display_id": "A01:2021"
+        },
+        {
+          "ref": "nist-ai-rmf:govern-1-2",
+          "title": "Trustworthy AI Characteristics",
+          "layer": "governance",
+          "display_id": "GOVERN 1.2"
+        },
+        {
+          "ref": "nist-ai-rmf:manage-2-2",
+          "title": "Mechanisms to Sustain Value",
+          "layer": "governance",
+          "display_id": "MANAGE 2.2"
+        },
+        {
+          "ref": "iso-42001:a6",
+          "title": "AI System Lifecycle",
+          "layer": "model",
+          "display_id": "A.6"
+        },
+        {
+          "ref": "iso-42001:a7",
+          "title": "Data for AI Systems",
+          "layer": "model",
+          "display_id": "A.7"
         },
         {
           "ref": "eu-ai-act:art-14",
@@ -725,10 +2584,46 @@
           "display_id": "Art. 14"
         },
         {
-          "ref": "iso-42001:a9",
-          "title": "Use of AI Systems",
-          "layer": "agentic",
-          "display_id": "A.9"
+          "ref": "nist-800-53-r5:ac-6",
+          "title": "Least Privilege",
+          "layer": "infrastructure",
+          "display_id": "AC-06"
+        },
+        {
+          "ref": "nist-800-53-r5:cm-7",
+          "title": "Least Functionality",
+          "layer": "infrastructure",
+          "display_id": "CM-07"
+        },
+        {
+          "ref": "nist-800-53-r5:sa-9",
+          "title": "External System Services",
+          "layer": "governance",
+          "display_id": "SA-09"
+        },
+        {
+          "ref": "soc2-tsc:cc6-1",
+          "title": "Logical access security over protected information assets",
+          "layer": "infrastructure",
+          "display_id": "CC6.1"
+        },
+        {
+          "ref": "soc2-tsc:cc6-3",
+          "title": "Manage access based on roles and least privilege",
+          "layer": "infrastructure",
+          "display_id": "CC6.3"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "hipaa-security-rule:308-b-1",
+          "title": "Business Associate Contracts and Other Arrangements",
+          "layer": "governance",
+          "display_id": "§ 164.308(b)(1)"
         },
         {
           "ref": "nist-ai-600-1:ga-2-12",
@@ -737,10 +2632,10 @@
           "display_id": "GAI 2.12"
         },
         {
-          "ref": "mitre-atlas:aml-t0051",
-          "title": "LLM Prompt Injection",
-          "layer": "infrastructure",
-          "display_id": "AML.T0051"
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
         }
       ]
     }
