@@ -22,6 +22,7 @@ python server/server.py
 | `get_mappings(framework, control_id)` | Cross-framework mappings for a control, with relation/strength/provenance. |
 | `list_risks(layer?)` | Canonical risks and how many controls each links to. |
 | `get_risk(risk_id)` | One risk with its fully resolved cross-framework controls. |
+| `analyze_gap(have_framework, want_framework)` | Which target-framework controls are covered by a mapping vs. gaps. Planning aid, not an audit. |
 
 Control text is cleaned of raw OSCAL parameter tokens at load time
 (`{{ insert: param … }}` → `[organization-defined value]`). Mappings carry a

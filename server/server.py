@@ -231,5 +231,73 @@ def get_risk(risk_id: str) -> dict[str, Any]:
     return {"ok": False, "error": f"no risk '{risk_id}'",
             "available": [r["id"] for r in RISKS]}
 
+@mcp.tool()
+def analyze_gap(have_framework: str, want_framework: str) -> dict[str, Any]:
+    """Compare two frameworks: given controls you already meet in one framework,
+    show which controls in a target framework are covered by an existing mapping
+    and which are gaps with no mapping yet.
+
+    This is a planning aid, not an audit. "Covered" means a Kyora IQ mapping
+    links the target control to some control in the framework you have; it does
+    not verify the control is actually implemented in your environment. Gaps are
+    target controls with no mapping, which may mean a real gap or simply a
+    mapping that has not been authored yet.
+
+    Args:
+        have_framework: framework id you already meet, e.g. 'soc2-tsc'.
+        want_framework: framework id you are pursuing, e.g. 'hipaa-security-rule'.
+    """
+    have = have_framework.strip().lower()
+    want = want_framework.strip().lower()
+    fw_ids = {f["id"] for f in INDEX["frameworks"]}
+    if have not in fw_ids:
+        return {"ok": False, "error": f"unknown framework '{have}'", "available": sorted(fw_ids)}
+    if want not in fw_ids:
+        return {"ok": False, "error": f"unknown framework '{want}'", "available": sorted(fw_ids)}
+    if have == want:
+        return {"ok": False, "error": "have_framework and want_framework must differ"}
+
+    # Which target controls are linked (either direction) to any control in `have`?
+    covered_ids: dict[str, list] = {}
+    for m in MAPPINGS:
+        a, b = m["from"], m["to"]
+        tgt = None
+        if a.startswith(have + ":") and b.startswith(want + ":"):
+            tgt = b
+        elif b.startswith(have + ":") and a.startswith(want + ":"):
+            tgt = a
+        if tgt:
+            cid = tgt.split(":", 1)[1]
+            covered_ids.setdefault(cid, [])
+
+    # Walk the target framework's headline controls (top-level + their direct
+    # children for frameworks where children are the real controls).
+    want_data = _load(want + ".json")
+    covered, gaps = [], []
+    for n in want_data["controls"]:
+        entry = {"id": n["id"], "display_id": n["display_id"], "title": n["title"]}
+        # A control counts as covered if it, or any of its children, has a mapping
+        # back to the `have` framework (mappings often target sub-criteria).
+        child_ids = {ch["id"] for ch in n.get("children", [])}
+        if n["id"] in covered_ids or (child_ids & set(covered_ids)):
+            covered.append(entry)
+        else:
+            gaps.append(entry)
+
+    total = len(covered) + len(gaps)
+    pct = round(100 * len(covered) / total) if total else 0
+    return {
+        "ok": True,
+        "have": have, "want": want,
+        "summary": f"{len(covered)} of {total} {want} controls are covered by an existing "
+                   f"{have} mapping ({pct}%); {len(gaps)} are gaps.",
+        "covered": covered,
+        "gaps": gaps,
+        "caveat": "Planning aid only. 'Covered' means a Kyora IQ mapping exists, not that "
+                  "the control is implemented in your environment. Gaps may be unmapped rather "
+                  "than truly missing. Not an audit.",
+        "attribution": ATTRIBUTION,
+    }
+
 if __name__ == "__main__":
     mcp.run(transport="streamable-http")
