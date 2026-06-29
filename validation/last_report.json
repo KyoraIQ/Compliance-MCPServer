@@ -1,0 +1,185 @@
+{
+  "generated_at": "2026-06-29T00:38:28",
+  "summary": {
+    "ok": 33,
+    "warn": 2,
+    "error": 0
+  },
+  "findings": [
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "eu-ai-act.json: schema shape OK (6 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "hipaa-security-rule.json: schema shape OK (39 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "hitrust-csf.json: schema shape OK (6 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "iso-42001.json: schema shape OK (9 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "mitre-atlas.json: schema shape OK (127 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "mitre-attack.json: schema shape OK (26 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "nist-800-53-r5.json: schema shape OK (2048 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "nist-ai-600-1.json: schema shape OK (5 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "nist-ai-rmf.json: schema shape OK (9 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "owasp-api-top10.json: schema shape OK (10 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "owasp-llm-top10.json: schema shape OK (10 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "owasp-web-top10.json: schema shape OK (10 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "STRUCTURE",
+      "message": "soc2-tsc.json: schema shape OK (42 nodes)"
+    },
+    {
+      "level": "OK",
+      "check": "REFS",
+      "message": "all 8 risks and 31 mappings resolve"
+    },
+    {
+      "level": "OK",
+      "check": "LAYERS",
+      "message": "all control layers are valid"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "eu-ai-act: own-wording / proprietary-structure-only"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "hipaa-security-rule: verbatim / public-domain"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "hitrust-csf: own-wording / proprietary-structure-only"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "iso-42001: own-wording / proprietary-structure-only"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "mitre-atlas: paraphrased / MITRE-ATLAS-terms"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "mitre-attack: paraphrased / MITRE-ATTACK-terms"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "nist-800-53-r5: verbatim / public-domain"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "nist-ai-600-1: verbatim / public-domain"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "nist-ai-rmf: verbatim / public-domain"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "owasp-api-top10: paraphrased / CC-BY-SA-4.0"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "owasp-llm-top10: paraphrased / CC-BY-SA-4.0"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "owasp-web-top10: paraphrased / CC-BY-SA-4.0"
+    },
+    {
+      "level": "OK",
+      "check": "ATTRIBUTION",
+      "message": "soc2-tsc: own-wording / proprietary-structure-only"
+    },
+    {
+      "level": "OK",
+      "check": "HIPAA",
+      "message": "every implementation spec carries a required/addressable flag"
+    },
+    {
+      "level": "OK",
+      "check": "BUCKET3",
+      "message": "eu-ai-act: correctly flagged own-wording (licensed source)"
+    },
+    {
+      "level": "OK",
+      "check": "BUCKET3",
+      "message": "hitrust-csf: correctly flagged own-wording (licensed source)"
+    },
+    {
+      "level": "OK",
+      "check": "BUCKET3",
+      "message": "iso-42001: correctly flagged own-wording (licensed source)"
+    },
+    {
+      "level": "OK",
+      "check": "BUCKET3",
+      "message": "soc2-tsc: correctly flagged own-wording (licensed source)"
+    },
+    {
+      "level": "WARN",
+      "check": "SOURCE",
+      "message": "offline: skipped live NIST source comparison"
+    },
+    {
+      "level": "WARN",
+      "check": "SOURCE",
+      "message": "offline: skipped live ATLAS source comparison"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "framework": {
+    "id": "hitrust-csf",
+    "name": "HITRUST CSF",
+    "version": "v11 (representative)",
+    "publisher": "HITRUST",
+    "source_handling": "own-wording",
+    "source_url": "https://hitrustalliance.net/",
+    "license": "proprietary-structure-only",
+    "retrieved_at": "2026-06-25",
+    "source_checksum": "manual:hitrust-csf"
+  },
+  "controls": [
+    {
+      "id": "01-access-control",
+      "display_id": "01 Access Control",
+      "title": "Access Control",
+      "kind": "control",
+      "statement": "Govern logical access: registration, privilege management, authentication, and review of user access to information systems.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "01 Access Control",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "06-config-management",
+      "display_id": "06 Configuration Management",
+      "title": "Configuration Management",
+      "kind": "control",
+      "statement": "Establish and maintain secure baseline configurations and control changes to systems and software.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "06 Configuration Management",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "07-vuln-management",
+      "display_id": "07 Vulnerability Management",
+      "title": "Vulnerability Management",
+      "kind": "control",
+      "statement": "Identify, evaluate, and remediate technical vulnerabilities in a timely, risk-based manner.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "07 Vulnerability Management",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "09-audit-logging",
+      "display_id": "09 Audit Logging & Monitoring",
+      "title": "Audit Logging and Monitoring",
+      "kind": "control",
+      "statement": "Record and review security-relevant events to detect and investigate unauthorized activity.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "09 Audit Logging & Monitoring",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "11-incident-management",
+      "display_id": "11 Incident Management",
+      "title": "Incident Management",
+      "kind": "control",
+      "statement": "Detect, report, respond to, and learn from information security incidents.",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "11 Incident Management",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "13-privacy",
+      "display_id": "13 Privacy Practices",
+      "title": "Privacy Practices",
+      "kind": "control",
+      "statement": "Govern the collection, use, disclosure, retention, and protection of personal information.",
+      "guidance": "",
+      "layer": "output",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "13 Privacy Practices",
+      "source_handling": "own-wording"
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+{
+  "framework": {
+    "id": "hipaa-security-rule",
+    "name": "HIPAA Security Rule",
+    "version": "45 CFR Part 164, Subpart C",
+    "publisher": "U.S. Department of Health and Human Services",
+    "source_handling": "verbatim",
+    "source_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164",
+    "license": "public-domain",
+    "retrieved_at": "2026-06-25",
+    "source_checksum": "manual:45cfr164-subpartC"
+  },
+  "controls": [
+    {
+      "id": "308-a-1",
+      "display_id": "§ 164.308(a)(1)",
+      "title": "Security Management Process",
+      "kind": "standard",
+      "statement": "Standard: Security Management Process. (Administrative safeguard.)",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "section": "164.308(a)(1)",
+        "safeguard": "Administrative"
+      },
+      "children": [
+        {
+          "id": "308-a-1-ii-A",
+          "display_id": "§ 164.308(a)(1)(ii)(A)",
+          "title": "Risk Analysis",
+          "kind": "spec",
+          "statement": "Conduct an accurate and thorough assessment of the potential risks and vulnerabilities to the confidentiality, integrity, and availability of electronic protected health information.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(1)(ii)(A)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(1)(ii)(A)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-1-ii-B",
+          "display_id": "§ 164.308(a)(1)(ii)(B)",
+          "title": "Risk Management",
+          "kind": "spec",
+          "statement": "Implement security measures sufficient to reduce risks and vulnerabilities to a reasonable and appropriate level.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(1)(ii)(B)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(1)(ii)(B)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-1-ii-C",
+          "display_id": "§ 164.308(a)(1)(ii)(C)",
+          "title": "Sanction Policy",
+          "kind": "spec",
+          "statement": "Apply appropriate sanctions against workforce members who fail to comply with the security policies and procedures.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(1)(ii)(C)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(1)(ii)(C)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-1-ii-D",
+          "display_id": "§ 164.308(a)(1)(ii)(D)",
+          "title": "Information System Activity Review",
+          "kind": "spec",
+          "statement": "Implement procedures to regularly review records of information system activity, such as audit logs, access reports, and security incident tracking reports.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(1)(ii)(D)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(1)(ii)(D)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.308(a)(1)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "308-a-3",
+      "display_id": "§ 164.308(a)(3)",
+      "title": "Workforce Security",
+      "kind": "standard",
+      "statement": "Standard: Workforce Security. (Administrative safeguard.)",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "section": "164.308(a)(3)",
+        "safeguard": "Administrative"
+      },
+      "children": [
+        {
+          "id": "308-a-3-ii-A",
+          "display_id": "§ 164.308(a)(3)(ii)(A)",
+          "title": "Authorization and/or Supervision",
+          "kind": "spec",
+          "statement": "Implement procedures for the authorization and/or supervision of workforce members who work with electronic protected health information or in locations where it might be accessed.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(3)(ii)(A)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(3)(ii)(A)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-3-ii-B",
+          "display_id": "§ 164.308(a)(3)(ii)(B)",
+          "title": "Workforce Clearance Procedure",
+          "kind": "spec",
+          "statement": "Implement procedures to determine that the access of a workforce member to electronic protected health information is appropriate.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(3)(ii)(B)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(3)(ii)(B)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-3-ii-C",
+          "display_id": "§ 164.308(a)(3)(ii)(C)",
+          "title": "Termination Procedures",
+          "kind": "spec",
+          "statement": "Implement procedures for terminating access to electronic protected health information when employment ends.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(3)(ii)(C)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(3)(ii)(C)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.308(a)(3)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "308-a-4",
+      "display_id": "§ 164.308(a)(4)",
+      "title": "Information Access Management",
+      "kind": "standard",
+      "statement": "Standard: Information Access Management. (Administrative safeguard.)",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "section": "164.308(a)(4)",
+        "safeguard": "Administrative"
+      },
+      "children": [
+        {
+          "id": "308-a-4-ii-A",
+          "display_id": "§ 164.308(a)(4)(ii)(A)",
+          "title": "Isolating Health Care Clearinghouse Functions",
+          "kind": "spec",
+          "statement": "If a clearinghouse is part of a larger organization, implement policies that protect ePHI from unauthorized access by the larger organization.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.308(a)(4)(ii)(A)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(4)(ii)(A)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-4-ii-B",
+          "display_id": "§ 164.308(a)(4)(ii)(B)",
+          "title": "Access Authorization",
+          "kind": "spec",
+          "statement": "Implement policies and procedures for granting access to electronic protected health information.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.308(a)(4)(ii)(B)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(4)(ii)(B)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-4-ii-C",
+          "display_id": "§ 164.308(a)(4)(ii)(C)",
+          "title": "Access Establishment and Modification",
+          "kind": "spec",
+          "statement": "Implement policies and procedures that establish, document, review, and modify a user's right of access to a workstation, transaction, program, or process.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.308(a)(4)(ii)(C)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(4)(ii)(C)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.308(a)(4)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "308-a-5",
+      "display_id": "§ 164.308(a)(5)",
+      "title": "Security Awareness and Training",
+      "kind": "standard",
+      "statement": "Standard: Security Awareness and Training. (Administrative safeguard.)",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "section": "164.308(a)(5)",
+        "safeguard": "Administrative"
+      },
+      "children": [
+        {
+          "id": "308-a-5-ii-A",
+          "display_id": "§ 164.308(a)(5)(ii)(A)",
+          "title": "Security Reminders",
+          "kind": "spec",
+          "statement": "Provide periodic security updates to workforce members.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(5)(ii)(A)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(5)(ii)(A)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-5-ii-B",
+          "display_id": "§ 164.308(a)(5)(ii)(B)",
+          "title": "Protection from Malicious Software",
+          "kind": "spec",
+          "statement": "Implement procedures for guarding against, detecting, and reporting malicious software.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(5)(ii)(B)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(5)(ii)(B)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-5-ii-C",
+          "display_id": "§ 164.308(a)(5)(ii)(C)",
+          "title": "Log-in Monitoring",
+          "kind": "spec",
+          "statement": "Implement procedures for monitoring log-in attempts and reporting discrepancies.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(5)(ii)(C)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(5)(ii)(C)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "308-a-5-ii-D",
+          "display_id": "§ 164.308(a)(5)(ii)(D)",
+          "title": "Password Management",
+          "kind": "spec",
+          "statement": "Implement procedures for creating, changing, and safeguarding passwords.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(5)(ii)(D)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(5)(ii)(D)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.308(a)(5)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "308-a-6",
+      "display_id": "§ 164.308(a)(6)",
+      "title": "Security Incident Procedures",
+      "kind": "standard",
+      "statement": "Standard: Security Incident Procedures. (Administrative safeguard.)",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "section": "164.308(a)(6)",
+        "safeguard": "Administrative"
+      },
+      "children": [
+        {
+          "id": "308-a-6-ii",
+          "display_id": "§ 164.308(a)(6)(ii)",
+          "title": "Response and Reporting",
+          "kind": "spec",
+          "statement": "Identify and respond to suspected or known security incidents; mitigate harmful effects; and document incidents and their outcomes.",
+          "guidance": "",
+          "layer": "governance",
+          "attributes": {
+            "section": "164.308(a)(6)(ii)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.308(a)(6)(ii)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.308(a)(6)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "310-a-1",
+      "display_id": "§ 164.310(a)(1)",
+      "title": "Facility Access Controls",
+      "kind": "standard",
+      "statement": "Standard: Facility Access Controls. (Physical safeguard.)",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "section": "164.310(a)(1)",
+        "safeguard": "Physical"
+      },
+      "children": [
+        {
+          "id": "310-a-2-i",
+          "display_id": "§ 164.310(a)(2)(i)",
+          "title": "Contingency Operations",
+          "kind": "spec",
+          "statement": "Establish procedures that allow facility access to support restoration of lost data under the disaster recovery and emergency mode operations plans.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(a)(2)(i)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(a)(2)(i)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "310-a-2-ii",
+          "display_id": "§ 164.310(a)(2)(ii)",
+          "title": "Facility Security Plan",
+          "kind": "spec",
+          "statement": "Implement policies to safeguard the facility and equipment from unauthorized physical access, tampering, and theft.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(a)(2)(ii)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(a)(2)(ii)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "310-a-2-iii",
+          "display_id": "§ 164.310(a)(2)(iii)",
+          "title": "Access Control and Validation Procedures",
+          "kind": "spec",
+          "statement": "Implement procedures to control and validate a person's access to facilities based on their role or function.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(a)(2)(iii)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(a)(2)(iii)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "310-a-2-iv",
+          "display_id": "§ 164.310(a)(2)(iv)",
+          "title": "Maintenance Records",
+          "kind": "spec",
+          "statement": "Implement policies to document repairs and modifications to the physical components of a facility related to security.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.310(a)(2)(iv)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.310(a)(2)(iv)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.310(a)(1)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "312-a-1",
+      "display_id": "§ 164.312(a)(1)",
+      "title": "Access Control",
+      "kind": "standard",
+      "statement": "Standard: Access Control. (Technical safeguard.)",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "section": "164.312(a)(1)",
+        "safeguard": "Technical"
+      },
+      "children": [
+        {
+          "id": "312-a-2-i",
+          "display_id": "§ 164.312(a)(2)(i)",
+          "title": "Unique User Identification",
+          "kind": "spec",
+          "statement": "Assign a unique name and/or number for identifying and tracking user identity.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.312(a)(2)(i)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.312(a)(2)(i)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "312-a-2-ii",
+          "display_id": "§ 164.312(a)(2)(ii)",
+          "title": "Emergency Access Procedure",
+          "kind": "spec",
+          "statement": "Establish procedures for obtaining necessary electronic protected health information during an emergency.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.312(a)(2)(ii)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.312(a)(2)(ii)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "312-a-2-iii",
+          "display_id": "§ 164.312(a)(2)(iii)",
+          "title": "Automatic Logoff",
+          "kind": "spec",
+          "statement": "Implement electronic procedures that terminate an electronic session after a predetermined time of inactivity.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.312(a)(2)(iii)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.312(a)(2)(iii)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "312-a-2-iv",
+          "display_id": "§ 164.312(a)(2)(iv)",
+          "title": "Encryption and Decryption",
+          "kind": "spec",
+          "statement": "Implement a mechanism to encrypt and decrypt electronic protected health information.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.312(a)(2)(iv)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.312(a)(2)(iv)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.312(a)(1)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "312-b",
+      "display_id": "§ 164.312(b)",
+      "title": "Audit Controls",
+      "kind": "standard",
+      "statement": "Standard: Audit Controls. (Technical safeguard.)",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "section": "164.312(b)",
+        "safeguard": "Technical"
+      },
+      "children": [
+        {
+          "id": "312-b",
+          "display_id": "§ 164.312(b)",
+          "title": "Audit Controls",
+          "kind": "spec",
+          "statement": "Implement hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.312(b)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.312(b)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.312(b)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "312-c-1",
+      "display_id": "§ 164.312(c)(1)",
+      "title": "Integrity",
+      "kind": "standard",
+      "statement": "Standard: Integrity. (Technical safeguard.)",
+      "guidance": "",
+      "layer": "model",
+      "attributes": {
+        "section": "164.312(c)(1)",
+        "safeguard": "Technical"
+      },
+      "children": [
+        {
+          "id": "312-c-2",
+          "display_id": "§ 164.312(c)(2)",
+          "title": "Mechanism to Authenticate ePHI",
+          "kind": "spec",
+          "statement": "Implement electronic mechanisms to corroborate that electronic protected health information has not been altered or destroyed in an unauthorized manner.",
+          "guidance": "",
+          "layer": "model",
+          "attributes": {
+            "section": "164.312(c)(2)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.312(c)(2)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.312(c)(1)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "312-d",
+      "display_id": "§ 164.312(d)",
+      "title": "Person or Entity Authentication",
+      "kind": "standard",
+      "statement": "Standard: Person or Entity Authentication. (Technical safeguard.)",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "section": "164.312(d)",
+        "safeguard": "Technical"
+      },
+      "children": [
+        {
+          "id": "312-d",
+          "display_id": "§ 164.312(d)",
+          "title": "Person or Entity Authentication",
+          "kind": "spec",
+          "statement": "Implement procedures to verify that a person or entity seeking access to electronic protected health information is the one claimed.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.312(d)",
+            "requirement": "required"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.312(d)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.312(d)",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "312-e-1",
+      "display_id": "§ 164.312(e)(1)",
+      "title": "Transmission Security",
+      "kind": "standard",
+      "statement": "Standard: Transmission Security. (Technical safeguard.)",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "section": "164.312(e)(1)",
+        "safeguard": "Technical"
+      },
+      "children": [
+        {
+          "id": "312-e-2-i",
+          "display_id": "§ 164.312(e)(2)(i)",
+          "title": "Integrity Controls",
+          "kind": "spec",
+          "statement": "Implement security measures to ensure that electronically transmitted ePHI is not improperly modified without detection until disposed of.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.312(e)(2)(i)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.312(e)(2)(i)",
+          "source_handling": "verbatim"
+        },
+        {
+          "id": "312-e-2-ii",
+          "display_id": "§ 164.312(e)(2)(ii)",
+          "title": "Encryption",
+          "kind": "spec",
+          "statement": "Implement a mechanism to encrypt electronic protected health information whenever deemed appropriate.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "section": "164.312(e)(2)(ii)",
+            "requirement": "addressable"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "164.312(e)(2)(ii)",
+          "source_handling": "verbatim"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "164.312(e)(1)",
+      "source_handling": "verbatim"
+    }
+  ]
+}

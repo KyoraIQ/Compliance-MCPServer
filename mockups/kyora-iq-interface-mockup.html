@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyora IQ — Compliance Control Reference (Mockup)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --bg:#fbfbfa; --surface:#ffffff; --surface2:#f4f3ef;
+    --text:#28281f; --text2:#5f5e57; --text3:#8a897f;
+    --border:#e7e6e0; --border2:#d6d5cd;
+    --info-bg:#e6f1fb; --info-fg:#185fa5;
+    --success-bg:#eaf3de; --success-fg:#3b6d11;
+    --purple-bg:#eeedfe; --purple-fg:#534ab7;
+    --amber-bg:#faeeda; --amber-fg:#854f0b;
+    --radius:8px; --radius-lg:12px;
+    --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1f1e1b; --surface:#26251f; --surface2:#2c2b25;
+      --text:#ecebe3; --text2:#b4b2a9; --text3:#888780;
+      --border:#3a3933; --border2:#48473f;
+      --info-bg:#0c447c; --info-fg:#b5d4f4;
+      --success-bg:#27500a; --success-fg:#c0dd97;
+      --purple-bg:#3c3489; --purple-fg:#cecbf6;
+      --amber-bg:#633806; --amber-fg:#fac775;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);margin:0;padding:32px 16px;line-height:1.5;}
+  .wrap{max-width:720px;margin:0 auto;}
+  input[type=text]{width:100%;height:40px;padding:0 12px 0 38px;font-size:15px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--surface);color:var(--text);outline:none;}
+  input[type=text]:focus{box-shadow:0 0 0 3px var(--info-bg);border-color:var(--info-fg);}
+  .chip{border:0.5px solid var(--border);background:transparent;color:var(--text);padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer;font-family:inherit;}
+  .chip.on{background:var(--surface2);border-color:var(--border2);font-weight:500;}
+  .stat{background:var(--surface2);border-radius:var(--radius);padding:12px;}
+  .stat .l{font-size:12px;color:var(--text2);}
+  .stat .v{font-size:22px;font-weight:500;}
+  .card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:14px 16px;}
+  .badge{font-size:11px;padding:3px 9px;border-radius:6px;font-weight:500;}
+  .map{background:var(--surface2);font-size:11px;padding:3px 8px;border-radius:6px;color:var(--text2);}
+  .note{font-size:11px;color:var(--text3);margin-left:6px;}
+  .foot{font-size:12px;color:var(--text3);margin-top:28px;text-align:center;line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:34px;height:34px;border-radius:8px;background:var(--info-bg);display:flex;align-items:center;justify-content:center;color:var(--info-fg);"><i class="ti ti-shield-check" style="font-size:20px"></i></div>
+      <div>
+        <div style="font-size:18px;font-weight:500;line-height:1.1;">Kyora IQ</div>
+        <div style="font-size:12px;color:var(--text3);">Compliance control reference</div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--text2);display:flex;align-items:center;gap:6px;"><i class="ti ti-plug-connected" style="font-size:16px"></i> MCP ready</div>
+  </div>
+
+  <div style="position:relative;margin:16px 0 14px;">
+    <i class="ti ti-search" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--text3)"></i>
+    <input id="kq-search" type="text" placeholder="Search controls, e.g. audit logging, encryption, access" value="access control" oninput="kqFilter()"/>
+  </div>
+
+  <div id="kq-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+    <button class="chip on" data-fw="all" onclick="kqSetFw('all')">All frameworks</button>
+    <button class="chip" data-fw="NIST" onclick="kqSetFw('NIST')">NIST 800-53</button>
+    <button class="chip" data-fw="HIPAA" onclick="kqSetFw('HIPAA')">HIPAA</button>
+    <button class="chip" data-fw="OWASP" onclick="kqSetFw('OWASP')">OWASP LLM</button>
+    <button class="chip" data-fw="SOC2" onclick="kqSetFw('SOC2')">SOC 2</button>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px;">
+    <div class="stat"><div class="l">NIST 800-53</div><div class="v">1,189</div></div>
+    <div class="stat"><div class="l">HIPAA</div><div class="v">54</div></div>
+    <div class="stat"><div class="l">OWASP LLM</div><div class="v">10</div></div>
+    <div class="stat"><div class="l">SOC 2 TSC</div><div class="v">64</div></div>
+  </div>
+
+  <div id="kq-count" style="font-size:12px;color:var(--text3);margin-bottom:10px;"></div>
+  <div id="kq-results" style="display:flex;flex-direction:column;gap:12px;"></div>
+
+  <div class="foot">
+    Mockup with sample data &middot; counts are illustrative<br>
+    Source handling: NIST &amp; HIPAA verbatim (public domain) &middot; OWASP paraphrased (CC BY-SA) &middot; SOC 2 own wording (AICPA text licensed)
+  </div>
+</div>
+
+<script>
+const KQ_DATA = [
+  {fw:"NIST", fwLabel:"NIST 800-53", id:"AC-2", title:"Account Management", ramp:"info",
+   text:"Define account types, assign managers, require approvals to create accounts, and review accounts for compliance on a defined frequency.",
+   maps:["HIPAA 164.308(a)(4)","SOC 2 CC6.2"], src:"verbatim"},
+  {fw:"NIST", fwLabel:"NIST 800-53", id:"AC-6", title:"Least Privilege", ramp:"info",
+   text:"Allow only the access necessary for users and processes to accomplish assigned tasks.",
+   maps:["OWASP LLM06","SOC 2 CC6.3"], src:"verbatim"},
+  {fw:"NIST", fwLabel:"NIST 800-53", id:"AU-2", title:"Event Logging", ramp:"info",
+   text:"Identify the events the system can log to support the audit function, and review the logged event set periodically.",
+   maps:["HIPAA 164.312(b)","SOC 2 CC7.2"], src:"verbatim"},
+  {fw:"HIPAA", fwLabel:"HIPAA Security Rule", id:"164.312(a)(1)", title:"Access Control (Technical Safeguard)", ramp:"success",
+   text:"Implement technical policies and procedures so only authorized persons or software programs can access electronic protected health information.",
+   maps:["NIST AC-3","SOC 2 CC6.1"], src:"verbatim"},
+  {fw:"HIPAA", fwLabel:"HIPAA Security Rule", id:"164.308(a)(5)", title:"Security Awareness and Training", ramp:"success",
+   text:"Implement a security awareness and training program for all workforce members, including management.",
+   maps:["NIST AT-2"], src:"verbatim"},
+  {fw:"OWASP", fwLabel:"OWASP LLM Top 10", id:"LLM01:2025", title:"Prompt Injection", ramp:"purple",
+   text:"Crafted inputs override intended instructions to extract data, bypass safeguards, or trigger unintended tool actions. Includes indirect injection via retrieved content.",
+   maps:["NIST SI-10"], src:"paraphrased"},
+  {fw:"OWASP", fwLabel:"OWASP LLM Top 10", id:"LLM06:2025", title:"Excessive Agency", ramp:"purple",
+   text:"Granting an LLM too much autonomy or permission lets it take damaging actions when manipulated. Apply least privilege per agent.",
+   maps:["NIST AC-6"], src:"paraphrased"},
+  {fw:"SOC2", fwLabel:"SOC 2 Trust Services", id:"CC6.1", title:"Logical Access Controls", ramp:"amber",
+   text:"The entity implements logical access security measures to protect against threats from outside its system boundaries. (Plain-language summary; AICPA text is licensed.)",
+   maps:["NIST AC-3","HIPAA 164.312(a)(1)"], src:"own"},
+  {fw:"SOC2", fwLabel:"SOC 2 Trust Services", id:"CC7.2", title:"System Monitoring", ramp:"amber",
+   text:"The entity monitors system components for anomalies indicative of malicious acts and evaluates whether events represent security incidents. (Plain-language summary.)",
+   maps:["NIST AU-6"], src:"own"},
+];
+let kqFw="all";
+function ramp(r){const m={info:["--info-bg","--info-fg"],success:["--success-bg","--success-fg"],purple:["--purple-bg","--purple-fg"],amber:["--amber-bg","--amber-fg"]};return m[r]||m.info;}
+function srcNote(s){
+  if(s==="verbatim")return '<span class="note"><i class="ti ti-check" style="font-size:13px;vertical-align:-2px"></i> verbatim source</span>';
+  if(s==="paraphrased")return '<span class="note"><i class="ti ti-creative-commons" style="font-size:13px;vertical-align:-2px"></i> paraphrased</span>';
+  return '<span class="note"><i class="ti ti-pencil" style="font-size:13px;vertical-align:-2px"></i> own wording</span>';
+}
+function kqSetFw(fw){
+  kqFw=fw;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset.fw===fw));
+  kqFilter();
+}
+function kqFilter(){
+  const q=(document.getElementById('kq-search').value||'').toLowerCase().trim();
+  const res=KQ_DATA.filter(d=>{
+    const fwOk=kqFw==='all'||d.fw===kqFw;
+    const qOk=!q||(d.title+' '+d.text+' '+d.id+' '+d.fwLabel).toLowerCase().includes(q);
+    return fwOk&&qOk;
+  });
+  document.getElementById('kq-count').textContent=res.length+(res.length===1?' control':' controls')+' shown';
+  document.getElementById('kq-results').innerHTML=res.map(d=>{
+    const [bg,fg]=ramp(d.ramp);
+    const badge='<span class="badge" style="background:var('+bg+');color:var('+fg+');">'+d.fwLabel+'</span>';
+    const maps=d.maps.map(m=>'<span class="map">'+m+'</span>').join(' ');
+    return '<div class="card">'
+      +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">'+badge
+      +'<span style="font-family:var(--mono);font-size:13px;color:var(--text2);">'+d.id+'</span>'
+      +'<span style="font-size:15px;font-weight:500;">'+d.title+'</span>'+srcNote(d.src)+'</div>'
+      +'<div style="font-size:14px;color:var(--text2);line-height:1.55;margin-bottom:10px;">'+d.text+'</div>'
+      +'<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;"><span style="font-size:11px;color:var(--text3);margin-right:2px;">Maps to</span>'+maps+'</div>'
+      +'</div>';
+  }).join('') || '<div style="font-size:14px;color:var(--text3);padding:20px;text-align:center;">No controls match. Try another term.</div>';
+}
+kqFilter();
+</script>
+</body>
+</html>

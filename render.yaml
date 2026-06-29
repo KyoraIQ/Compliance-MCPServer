@@ -1,0 +1,22 @@
+# Render deployment (https://render.com) — gives automatic HTTPS at
+# https://<your-service>.onrender.com. Free tier works for a classroom.
+#
+# Setup: push repo to GitHub, then in Render: New > Blueprint, pick this repo.
+# Set KYORA_TOKEN in the Render dashboard (do NOT hardcode it here).
+services:
+  - type: web
+    name: kyora-iq-mcp
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt && python ingestion/ingest_all.py"
+    startCommand: "python server/gateway.py"
+    healthCheckPath: /health
+    envVars:
+      - key: KYORA_HOST
+        value: 0.0.0.0
+      - key: KYORA_PORT
+        value: 10000
+      - key: KYORA_RATE_PER_MIN
+        value: 60
+      - key: KYORA_TOKEN
+        sync: false   # set this secret in the Render dashboard

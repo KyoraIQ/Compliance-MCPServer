@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyora IQ — MCP Compliance Control Reference</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --bg:#0b0f12;
+    --hero:#0d1419;
+    --panel:#11181d;
+    --card:#131b21;
+    --card-hover:#172129;
+    --border:#1e2a32;
+    --border2:#2a3a44;
+    --text:#eef2f4;
+    --text2:#9fb0b8;
+    --text3:#647079;
+    --accent:#19e3a3;
+    --accent-dim:#0e3b30;
+    --accent-text:#1ce0a4;
+    --mono:ui-monospace,SFMono-Regular,Menlo,"Cascadia Code",monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;}
+
+  /* Top nav */
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .logo{width:34px;height:34px;border-radius:8px;background:var(--accent);color:#03150f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;letter-spacing:.5px;}
+  .brand .name{font-size:16px;font-weight:600;}
+  .brand .name span{color:var(--accent-text);}
+  .navlinks{display:flex;gap:28px;}
+  .navlinks a{color:var(--text2);text-decoration:none;font-size:14px;}
+  .navlinks a:hover{color:var(--text);}
+  .navlinks a.active{color:var(--text);}
+  .cta{background:var(--accent);color:#03150f;border:none;padding:9px 18px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;}
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,#0d1419 0%,#0a1014 100%);padding:46px 40px 40px;border-bottom:1px solid var(--border);}
+  .hero-inner{max-width:1180px;margin:0 auto;}
+  .eyebrow{display:flex;align-items:center;gap:12px;color:var(--accent-text);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;}
+  .eyebrow .bar{width:28px;height:2px;background:var(--accent);}
+  .hero h1{font-size:42px;line-height:1.08;font-weight:700;margin:0 0 16px;letter-spacing:-1px;max-width:880px;}
+  .hero p{font-size:16px;color:var(--text2);max-width:680px;margin:0 0 26px;line-height:1.6;}
+  .fw-row{display:flex;flex-wrap:wrap;gap:9px;max-width:1000px;}
+  .fw-pill{background:var(--panel);border:1px solid var(--border2);color:var(--text2);padding:7px 13px;border-radius:7px;font-size:12.5px;font-weight:500;white-space:nowrap;}
+
+  /* Search section */
+  .work{max-width:1180px;margin:0 auto;padding:32px 40px 64px;}
+  .searchbar{position:relative;margin-bottom:18px;}
+  .searchbar i{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--text3);}
+  .searchbar input{width:100%;height:56px;padding:0 18px 0 50px;font-size:16px;background:var(--panel);border:1px solid var(--border2);border-radius:12px;color:var(--text);outline:none;font-family:inherit;}
+  .searchbar input::placeholder{color:var(--text3);}
+  .searchbar input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim);}
+
+  .filters{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:14px;}
+  .fbtn{background:transparent;border:1px solid var(--border2);color:var(--text2);padding:8px 15px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:7px;}
+  .fbtn:hover{border-color:var(--text3);color:var(--text);}
+  .fbtn.on{background:var(--accent);border-color:var(--accent);color:#03150f;font-weight:600;}
+  .fbtn .dot{width:7px;height:7px;border-radius:50%;}
+
+  .explain{font-size:13px;color:var(--text3);margin-bottom:22px;line-height:1.6;max-width:1000px;}
+  .explain b{color:var(--text2);font-weight:600;}
+
+  .count{font-size:13px;color:var(--text3);margin-bottom:14px;}
+  .count b{color:var(--text);font-weight:600;}
+
+  /* Result cards */
+  .results{display:flex;flex-direction:column;gap:12px;}
+  .rcard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;cursor:pointer;transition:background .12s,border-color .12s;}
+  .rcard:hover{background:var(--card-hover);border-color:var(--border2);}
+  .rtop{display:flex;align-items:flex-start;gap:14px;}
+  .layer-tag{font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:5px 9px;border-radius:6px;text-transform:uppercase;white-space:nowrap;margin-top:2px;}
+  .rbody{flex:1;min-width:0;}
+  .rtitle{font-size:16px;font-weight:600;margin:0 0 5px;}
+  .rdesc{font-size:14px;color:var(--text2);line-height:1.55;margin:0;}
+  .rid{font-family:var(--mono);font-size:12px;color:var(--accent-text);background:var(--accent-dim);padding:5px 10px;border-radius:6px;white-space:nowrap;align-self:flex-start;margin-top:2px;}
+  .rmaps{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;padding-top:13px;border-top:1px solid var(--border);}
+  .rmaps .lbl{font-size:11px;color:var(--text3);align-self:center;margin-right:3px;text-transform:uppercase;letter-spacing:.5px;}
+  .fwtag{font-size:11.5px;padding:4px 9px;border-radius:6px;background:var(--panel);border:1px solid var(--border2);color:var(--text2);white-space:nowrap;}
+  .fwtag .code{font-family:var(--mono);color:var(--text);}
+
+  .src{font-size:10.5px;color:var(--text3);display:inline-flex;align-items:center;gap:4px;margin-left:auto;align-self:center;}
+
+  .foot{max-width:1180px;margin:0 auto;padding:0 40px 48px;font-size:12px;color:var(--text3);line-height:1.8;border-top:1px solid var(--border);padding-top:24px;}
+  .foot b{color:var(--text2);}
+
+  /* Layer color dots / tags */
+  .L-input{background:#10243a;color:#7ab7f0;}
+  .L-output{background:#231a3a;color:#b3a5f0;}
+  .L-model{background:#0e2e26;color:#5fd3aa;}
+  .L-infra{background:#2e2410;color:#e6b964;}
+  .L-agentic{background:#2e1414;color:#ef8f8f;}
+  .L-governance{background:#1a2a2e;color:#7fc9d4;}
+  .dot-input{background:#7ab7f0;} .dot-output{background:#b3a5f0;} .dot-model{background:#5fd3aa;}
+  .dot-infra{background:#e6b964;} .dot-agentic{background:#ef8f8f;} .dot-governance{background:#7fc9d4;}
+
+  @media (max-width:720px){
+    .nav,.hero,.work,.foot{padding-left:18px;padding-right:18px;}
+    .navlinks{display:none;}
+    .hero h1{font-size:30px;}
+    .rtop{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand">
+    <div class="logo">KIQ</div>
+    <div class="name">Kyora IQ <span>Compliance Reference</span></div>
+  </div>
+  <div class="navlinks">
+    <a href="#" class="active">Search</a>
+    <a href="#">Frameworks</a>
+    <a href="#">Crosswalk</a>
+    <a href="#">MCP</a>
+    <a href="#">About</a>
+  </div>
+  <button class="cta">Connect via MCP</button>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="bar"></span> Reference &middot; Compliance Control Crosswalk</div>
+    <h1>Search one control. See every framework that maps to it.</h1>
+    <p>Search a risk, control, or keyword across security, privacy, and AI frameworks. Each result shows the related controls in every other framework we track — one authoritative reference, built to be queried by humans and by AI assistants over MCP.</p>
+    <div class="fw-row" id="fwRow"></div>
+  </div>
+</header>
+
+<main class="work">
+  <div class="searchbar">
+    <i class="ti ti-search"></i>
+    <input id="q" type="text" placeholder="Search a risk, control, or keyword — like access control, audit logging, encryption, or LLM01" value="access control" oninput="render()"/>
+  </div>
+
+  <div class="filters" id="layerFilters">
+    <button class="fbtn on" data-layer="all" onclick="setLayer('all')">All layers</button>
+    <button class="fbtn" data-layer="input" onclick="setLayer('input')"><span class="dot dot-input"></span>Input</button>
+    <button class="fbtn" data-layer="output" onclick="setLayer('output')"><span class="dot dot-output"></span>Output</button>
+    <button class="fbtn" data-layer="model" onclick="setLayer('model')"><span class="dot dot-model"></span>Model</button>
+    <button class="fbtn" data-layer="infra" onclick="setLayer('infra')"><span class="dot dot-infra"></span>Infrastructure</button>
+    <button class="fbtn" data-layer="agentic" onclick="setLayer('agentic')"><span class="dot dot-agentic"></span>Agentic</button>
+    <button class="fbtn" data-layer="governance" onclick="setLayer('governance')"><span class="dot dot-governance"></span>Governance</button>
+  </div>
+
+  <div class="explain">
+    <b>How this works.</b> Results are organized by the layer of your stack a risk or control lives in. Each card names a control or risk, and the framework tags below it show how that same concern is expressed across every framework we track. Select a layer to narrow the list, or search to find a specific control.
+  </div>
+
+  <div class="count" id="count"></div>
+  <div class="results" id="results"></div>
+</main>
+
+<div class="foot">
+  <b>Mockup with representative sample data.</b> Framework counts and mappings shown here are illustrative.<br>
+  Source handling by framework — <b>Verbatim (public domain):</b> NIST 800-53, NIST AI RMF, NIST AI 600-1, HIPAA Security Rule.
+  <b>Paraphrased with attribution:</b> OWASP LLM / API / Web Top 10 (CC BY-SA), MITRE ATLAS &amp; ATT&amp;CK.
+  <b>Own wording (licensed source):</b> SOC 2 (AICPA), ISO 42001, HITRUST CSF, EU AI Act article mappings.
+</div>
+
+<script>
+const FRAMEWORKS = ["OWASP LLM Top 10","OWASP API Top 10","OWASP Web Top 10","MITRE ATLAS","MITRE ATT&CK","NIST AI RMF","NIST AI 600-1","NIST 800-53","ISO 42001","EU AI Act","SOC 2","HIPAA","HITRUST CSF"];
+
+document.getElementById('fwRow').innerHTML = FRAMEWORKS.map(f=>'<span class="fw-pill">'+f+'</span>').join('');
+
+const DATA = [
+  {layer:"input", layerLabel:"Input", id:"LLM01:2025", title:"Prompt Injection",
+   desc:"Crafted input overrides the model's instructions, either directly or through poisoned content it reads from RAG, files, or the web.",
+   maps:[["OWASP LLM Top 10","LLM01:2025"],["NIST 800-53","SI-10"],["MITRE ATLAS","AML.T0051"],["NIST AI RMF","MEASURE 2.7"]]},
+  {layer:"input", layerLabel:"Input", id:"AC-3", title:"Access Enforcement",
+   desc:"Enforce approved authorizations for logical access to information and system resources per access control policy.",
+   maps:[["NIST 800-53","AC-3"],["HIPAA","164.312(a)(1)"],["SOC 2","CC6.1"],["ISO 42001","A.5.2"],["HITRUST CSF","01.b"]]},
+  {layer:"infra", layerLabel:"Infrastructure", id:"AC-2", title:"Account Management",
+   desc:"Define account types, assign managers, require approvals to create accounts, and review accounts for compliance periodically.",
+   maps:[["NIST 800-53","AC-2"],["HIPAA","164.308(a)(4)"],["SOC 2","CC6.2"],["HITRUST CSF","01.c"]]},
+  {layer:"infra", layerLabel:"Infrastructure", id:"AU-2", title:"Audit & Event Logging",
+   desc:"Identify the events the system can log to support the audit function, and review the logged event set periodically.",
+   maps:[["NIST 800-53","AU-2"],["HIPAA","164.312(b)"],["SOC 2","CC7.2"],["OWASP API Top 10","API9:2023"],["ISO 42001","A.6.2"]]},
+  {layer:"input", layerLabel:"Input", id:"LLM08:2025", title:"Vector & Embedding Weaknesses",
+   desc:"RAG retrieval and embedding stores get manipulated or leak data through poisoned documents, embedding inversion, or cross-tenant retrieval.",
+   maps:[["OWASP LLM Top 10","LLM08:2025"],["MITRE ATLAS","AML.T0070"],["NIST AI RMF","MANAGE 2.2"]]},
+  {layer:"agentic", layerLabel:"Agentic", id:"LLM06:2025", title:"Excessive Agency",
+   desc:"An agent is granted more autonomy, tools, or permissions than needed, letting a manipulated model take damaging actions.",
+   maps:[["OWASP LLM Top 10","LLM06:2025"],["NIST 800-53","AC-6"],["MITRE ATLAS","AML.T0053"],["EU AI Act","Art. 14"]]},
+  {layer:"output", layerLabel:"Output", id:"LLM05:2025", title:"Improper Output Handling",
+   desc:"Model output is passed downstream without validation, enabling injection, XSS, or code execution in connected systems.",
+   maps:[["OWASP LLM Top 10","LLM05:2025"],["OWASP Web Top 10","A03:2021"],["NIST 800-53","SI-10"]]},
+  {layer:"model", layerLabel:"Model", id:"LLM04:2025", title:"Data & Model Poisoning",
+   desc:"Tampered training, fine-tuning, or RAG data introduces bias, backdoors, or degraded behavior into the model.",
+   maps:[["OWASP LLM Top 10","LLM04:2025"],["MITRE ATLAS","AML.T0020"],["NIST AI 600-1","2.7"],["ISO 42001","A.7.4"]]},
+  {layer:"governance", layerLabel:"Governance", id:"GV-1.1", title:"AI Risk Management Policy",
+   desc:"Establish and document policies, processes, and accountability structures for managing risks across the AI lifecycle.",
+   maps:[["NIST AI RMF","GOVERN 1.1"],["ISO 42001","A.2.2"],["EU AI Act","Art. 9"],["NIST AI 600-1","3.1"]]},
+  {layer:"output", layerLabel:"Output", id:"LLM02:2025", title:"Sensitive Information Disclosure",
+   desc:"The model exposes private, regulated, or proprietary data through its outputs, logs, or cached conversations.",
+   maps:[["OWASP LLM Top 10","LLM02:2025"],["HIPAA","164.312(a)(1)"],["NIST 800-53","SC-28"],["SOC 2","CC6.7"]]},
+];
+
+const LAYER_CLASS = {input:"L-input",output:"L-output",model:"L-model",infra:"L-infra",agentic:"L-agentic",governance:"L-governance"};
+let curLayer="all";
+
+function setLayer(l){
+  curLayer=l;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('on',b.dataset.layer===l));
+  render();
+}
+function render(){
+  const q=(document.getElementById('q').value||'').toLowerCase().trim();
+  const res=DATA.filter(d=>{
+    const layerOk=curLayer==='all'||d.layer===curLayer;
+    const hay=(d.title+' '+d.desc+' '+d.id+' '+d.maps.map(m=>m.join(' ')).join(' ')).toLowerCase();
+    const qOk=!q||hay.includes(q);
+    return layerOk&&qOk;
+  });
+  document.getElementById('count').innerHTML='<b>'+res.length+'</b> '+(res.length===1?'result':'results');
+  document.getElementById('results').innerHTML=res.map(d=>{
+    const lc=LAYER_CLASS[d.layer]||'L-input';
+    const maps=d.maps.map(m=>'<span class="fwtag">'+m[0]+' &middot; <span class="code">'+m[1]+'</span></span>').join('');
+    return '<div class="rcard">'
+      +'<div class="rtop">'
+        +'<span class="layer-tag '+lc+'">'+d.layerLabel+'</span>'
+        +'<div class="rbody"><p class="rtitle">'+d.title+'</p><p class="rdesc">'+d.desc+'</p></div>'
+        +'<span class="rid">'+d.id+'</span>'
+      +'</div>'
+      +'<div class="rmaps"><span class="lbl">Maps across</span>'+maps
+        +'<span class="src"><i class="ti ti-arrow-right" style="font-size:13px"></i> '+d.maps.length+' frameworks</span>'
+      +'</div>'
+    +'</div>';
+  }).join('') || '<div style="padding:40px;text-align:center;color:var(--text3);font-size:14px;">No controls match. Try another keyword or layer.</div>';
+}
+render();
+</script>
+</body>
+</html>

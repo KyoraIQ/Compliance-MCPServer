@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyora IQ — Compliance Control Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.6.0/dist/tabler-icons.min.css">
+<style>
+  :root{
+    --bg:#0a0e11; --hero:#0c1318; --panel:#101820; --card:#121b22; --card2:#16212a;
+    --border:#1d2a33; --border2:#283a45;
+    --text:#eef3f5; --text2:#9aacb5; --text3:#5f6e77;
+    --accent:#19e3a3; --accent2:#13c08a; --accent-dim:#0c3a2e; --accent-text:#22e0a6;
+    --req:#ef6b6b; --req-bg:#2a1414; --addr:#e6b35c; --addr-bg:#2a2110;
+    --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --sans:'Inter',system-ui,sans-serif;
+    --r:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  ::selection{background:var(--accent-dim);}
+
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,14,17,.86);backdrop-filter:blur(10px);z-index:30;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .logo{width:32px;height:32px;border-radius:8px;background:var(--accent);color:#03150f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;}
+  .brand .name{font-size:15px;font-weight:600;}
+  .brand .name span{color:var(--accent-text);}
+  .navlinks{display:flex;gap:24px;}
+  .navlinks a{color:var(--text2);text-decoration:none;font-size:13.5px;}
+  .navlinks a:hover{color:var(--text);}
+  .cta{background:var(--accent);color:#03150f;border:none;padding:9px 16px;border-radius:8px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:7px;}
+
+  .hero{background:linear-gradient(180deg,var(--hero),var(--bg));border-bottom:1px solid var(--border);padding:40px 32px 34px;}
+  .wrap{max-width:1140px;margin:0;}
+  .container{max-width:1140px;margin:0 auto;padding:0 32px;}
+  .eyebrow{display:flex;align-items:center;gap:11px;color:var(--accent-text);font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px;}
+  .eyebrow .bar{width:26px;height:2px;background:var(--accent);}
+  h1{font-size:38px;line-height:1.1;font-weight:700;letter-spacing:-1px;margin-bottom:14px;max-width:760px;}
+  .lede{font-size:15.5px;color:var(--text2);max-width:660px;line-height:1.6;}
+
+  .work{padding:28px 32px 60px;}
+  .searchbar{position:relative;margin-bottom:16px;}
+  .searchbar i{position:absolute;left:17px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--text3);}
+  .searchbar input{width:100%;height:54px;padding:0 16px 0 48px;font-size:15.5px;background:var(--panel);border:1px solid var(--border2);border-radius:12px;color:var(--text);outline:none;font-family:inherit;}
+  .searchbar input::placeholder{color:var(--text3);}
+  .searchbar input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim);}
+
+  .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;}
+  .row .lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;margin-right:4px;}
+  .chip{background:transparent;border:1px solid var(--border2);color:var(--text2);padding:7px 13px;border-radius:8px;font-size:12.5px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px;white-space:nowrap;}
+  .chip:hover{border-color:var(--text3);color:var(--text);}
+  .chip.on{background:var(--accent);border-color:var(--accent);color:#03150f;font-weight:600;}
+  .chip .dot{width:7px;height:7px;border-radius:50%;}
+  .fwchip.on{background:var(--accent-dim);border-color:var(--accent2);color:var(--accent-text);font-weight:600;}
+
+  .count{font-size:12.5px;color:var(--text3);margin:18px 0 12px;}
+  .count b{color:var(--text);}
+
+  .results{display:flex;flex-direction:column;gap:10px;}
+  .rcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+  .rhead{display:flex;align-items:flex-start;gap:13px;padding:16px 18px;cursor:pointer;transition:background .12s;}
+  .rhead:hover{background:var(--card2);}
+  .ltag{font-size:10px;font-weight:700;letter-spacing:.5px;padding:4px 8px;border-radius:5px;text-transform:uppercase;white-space:nowrap;margin-top:1px;}
+  .rmid{flex:1;min-width:0;}
+  .rtitle{font-size:15px;font-weight:600;margin-bottom:3px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+  .fwname{font-size:11px;color:var(--text3);font-weight:500;}
+  .rdesc{font-size:13.5px;color:var(--text2);line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+  .rid{font-family:var(--mono);font-size:11.5px;color:var(--accent-text);background:var(--accent-dim);padding:5px 9px;border-radius:6px;white-space:nowrap;margin-top:1px;}
+  .chev{color:var(--text3);font-size:18px;margin-top:2px;transition:transform .18s;}
+  .rcard.open .chev{transform:rotate(180deg);}
+
+  .rbody{display:none;padding:4px 18px 18px;border-top:1px solid var(--border);}
+  .rcard.open .rbody{display:block;}
+  .section-label{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;margin:16px 0 8px;}
+  .statement{font-size:13.5px;color:var(--text);line-height:1.6;white-space:pre-wrap;}
+  .guidance{font-size:13px;color:var(--text2);line-height:1.6;margin-top:6px;white-space:pre-wrap;}
+  .src-note{font-size:11px;color:var(--text3);margin-top:8px;display:flex;align-items:center;gap:5px;}
+
+  .child{border:1px solid var(--border);border-radius:8px;padding:11px 13px;margin-bottom:7px;background:var(--panel);}
+  .child .ctop{display:flex;align-items:center;gap:9px;margin-bottom:4px;flex-wrap:wrap;}
+  .child .cid{font-family:var(--mono);font-size:11px;color:var(--text2);}
+  .child .ctitle{font-size:13px;font-weight:600;}
+  .child .ctext{font-size:12.5px;color:var(--text2);line-height:1.5;}
+  .flag{font-size:9.5px;font-weight:700;letter-spacing:.4px;padding:3px 7px;border-radius:5px;text-transform:uppercase;}
+  .flag.required{background:var(--req-bg);color:var(--req);}
+  .flag.addressable{background:var(--addr-bg);color:var(--addr);}
+  .enh-grid{display:flex;flex-wrap:wrap;gap:6px;}
+  .enh{font-family:var(--mono);font-size:11px;background:var(--panel);border:1px solid var(--border2);color:var(--text2);padding:5px 9px;border-radius:6px;}
+
+  .maps{display:flex;flex-direction:column;gap:6px;}
+  .map{display:flex;align-items:center;gap:10px;font-size:12.5px;background:var(--panel);border:1px solid var(--border);border-radius:7px;padding:8px 11px;}
+  .map .mcode{font-family:var(--mono);font-size:11px;background:var(--card2);padding:3px 8px;border-radius:5px;min-width:96px;text-align:center;}
+  .map .mname{color:var(--text2);flex:1;min-width:0;}
+  .map .mrel{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.4px;}
+  .strong{color:var(--accent-text);} .partial{color:var(--addr);} .weak{color:var(--text3);}
+  .msrc{font-size:10px;color:var(--text3);}
+  .mine{color:var(--addr);}
+
+  .empty{padding:48px;text-align:center;color:var(--text3);font-size:14px;}
+
+  .foot{border-top:1px solid var(--border);padding:24px 32px 40px;font-size:11.5px;color:var(--text3);line-height:1.8;}
+  .foot b{color:var(--text2);}
+
+  .L-input{background:#10243a;color:#7ab7f0;} .dot-input{background:#7ab7f0;}
+  .L-output{background:#231a3a;color:#b3a5f0;} .dot-output{background:#b3a5f0;}
+  .L-model{background:#0e2e26;color:#5fd3aa;} .dot-model{background:#5fd3aa;}
+  .L-infrastructure{background:#2e2410;color:#e6b964;} .dot-infrastructure{background:#e6b964;}
+  .L-agentic{background:#2e1414;color:#ef8f8f;} .dot-agentic{background:#ef8f8f;}
+  .L-governance{background:#1a2a2e;color:#7fc9d4;} .dot-governance{background:#7fc9d4;}
+
+  @media(max-width:720px){
+    .nav,.hero,.work,.foot,.container{padding-left:18px;padding-right:18px;}
+    .navlinks{display:none;} h1{font-size:28px;} .rhead{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand"><div class="logo">KIQ</div><div class="name">Kyora IQ <span>Compliance Reference</span></div></div>
+  <div class="navlinks"><a href="#">Search</a><a href="#">Frameworks</a><a href="#">Crosswalk</a><a href="#">MCP</a></div>
+  <button class="cta"><i class="ti ti-plug-connected" style="font-size:16px"></i> Connect via MCP</button>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="bar"></span> Reference &middot; Compliance Control Crosswalk</div>
+    <h1>Search one control. See every framework that maps to it.</h1>
+    <p class="lede">Search a risk, control, or keyword across security, privacy, and AI frameworks. Each result expands to the full control text and shows the related controls in every other framework — one authoritative reference, built to be queried by people and by AI assistants over MCP.</p>
+  </div>
+</header>
+
+<main class="work">
+  <div class="wrap">
+    <div class="searchbar">
+      <i class="ti ti-search"></i>
+      <input id="q" type="text" placeholder="Search a risk, control, or keyword — access control, audit logging, encryption, LLM01…" autocomplete="off">
+    </div>
+
+    <div class="row" id="layerRow">
+      <span class="lbl">Layer</span>
+      <button class="chip on" data-layer="all">All</button>
+    </div>
+    <div class="row" id="fwRow">
+      <span class="lbl">Framework</span>
+      <button class="chip fwchip on" data-fw="all">All</button>
+    </div>
+
+    <div class="count" id="count"></div>
+    <div class="results" id="results"></div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap" id="footAttr"></div>
+</footer>
+
+<script>
+const LAYER_LABEL = {input:"Input",output:"Output",model:"Model",infrastructure:"Infrastructure",agentic:"Agentic",governance:"Governance"};
+let DB=null, FLAT=[], curLayer="all", curFw="all";
+
+function esc(s){return (s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+
+function flatten(db){
+  const out=[];
+  for(const fwid in db.frameworks){
+    const fw=db.frameworks[fwid].framework;
+    for(const c of db.frameworks[fwid].controls){
+      out.push({fwid, fwname:fw.name, handling:fw.source_handling, ctrl:c});
+    }
+  }
+  return out;
+}
+
+function mappingsFor(ref){
+  const res=[];
+  for(const m of DB.mappings){
+    if(m.from===ref) res.push({code:m.to_display, name:m.to_title, fw:m.to.split(":")[0], rel:m.relation, strength:m.strength, source:m.source, rationale:m.rationale});
+    else if(m.to===ref) res.push({code:m.from_display, name:m.from_title, fw:m.from.split(":")[0], rel:m.relation, strength:m.strength, source:m.source, rationale:m.rationale});
+  }
+  return res;
+}
+function fwShortName(fwid){ return DB.frameworks[fwid] ? DB.frameworks[fwid].framework.name : fwid; }
+
+function searchText(item){
+  const c=item.ctrl;
+  let t=[c.display_id,c.title,c.statement,c.guidance,item.fwname].join(" ");
+  for(const ch of c.children||[]) t+=" "+ch.display_id+" "+ch.title+" "+ch.statement;
+  return t.toLowerCase();
+}
+
+function render(){
+  const q=document.getElementById('q').value.toLowerCase().trim();
+  const res=FLAT.filter(it=>{
+    if(curFw!=="all" && it.fwid!==curFw) return false;
+    if(curLayer!=="all" && it.ctrl.layer!==curLayer) return false;
+    if(q && !searchText(it).includes(q)) return false;
+    return true;
+  });
+  document.getElementById('count').innerHTML='<b>'+res.length+'</b> '+(res.length===1?'control':'controls')+(q?' matching “'+esc(q)+'”':'');
+  const wrap=document.getElementById('results');
+  if(!res.length){ wrap.innerHTML='<div class="empty">No controls match. Try a different keyword, layer, or framework.</div>'; return; }
+  wrap.innerHTML=res.slice(0,80).map((it,i)=>cardHTML(it,i)).join('');
+}
+
+function cardHTML(it,i){
+  const c=it.ctrl, layer=c.layer||"governance";
+  const parts=(c.children||[]).filter(x=>x.kind==="part"||x.kind==="spec"||x.kind==="point_of_focus"||x.kind==="criterion");
+  const techs=(c.children||[]).filter(x=>x.kind==="technique"||x.kind==="subtechnique");
+  const enh=(c.children||[]).filter(x=>x.kind==="enhancement");
+  const ref=it.fwid+":"+c.id;
+  const maps=mappingsFor(ref);
+
+  let body='';
+  if(c.statement){ body+='<div class="section-label">Control text</div><div class="statement">'+esc(c.statement)+'</div>'; }
+  if(c.guidance){ body+='<div class="section-label">Guidance</div><div class="guidance">'+esc(c.guidance)+'</div>'; }
+
+  if(parts.length){
+    const label = it.fwid==="hipaa-security-rule" ? "Implementation specifications"
+                : it.fwid==="soc2-tsc" ? "Points of focus"
+                : "Parts";
+    body+='<div class="section-label">'+label+'</div>';
+    body+=parts.map(p=>{
+      const req=p.attributes&&p.attributes.requirement;
+      const flag=req?'<span class="flag '+req+'">'+req+'</span>':'';
+      const title=p.title?'<span class="ctitle">'+esc(p.title)+'</span>':'';
+      return '<div class="child"><div class="ctop"><span class="cid">'+esc(p.display_id)+'</span>'+title+flag+'</div><div class="ctext">'+esc(p.statement)+'</div></div>';
+    }).join('');
+  }
+  if(techs.length){
+    body+='<div class="section-label">Techniques ('+techs.length+')</div>';
+    body+=techs.map(t=>'<div class="child"><div class="ctop"><span class="cid">'+esc(t.display_id)+'</span><span class="ctitle">'+esc(t.title)+'</span></div><div class="ctext">'+esc(t.statement)+'</div></div>').join('');
+  }
+  if(enh.length){
+    body+='<div class="section-label">Enhancements ('+enh.length+')</div><div class="enh-grid">'+
+      enh.map(e=>'<span class="enh" title="'+esc(e.title)+'">'+esc(e.display_id)+'</span>').join('')+'</div>';
+  }
+
+  if(maps.length){
+    body+='<div class="section-label">Maps across frameworks</div><div class="maps">'+
+      maps.map(m=>'<div class="map"><span class="mcode">'+esc(m.code)+'</span><span class="mname">'+esc(fwShortName(m.fw))+' &middot; '+esc(m.name)+'</span><span class="mrel '+m.strength+'">'+esc(m.rel)+' / '+esc(m.strength)+'</span>'+(m.source==="kyora-iq"?'<span class="msrc mine" title="'+esc(m.rationale)+'">Kyora IQ</span>':'<span class="msrc" title="'+esc(m.rationale)+'">official</span>')+'</div>').join('')+'</div>';
+  } else {
+    body+='<div class="section-label">Maps across frameworks</div><div class="src-note">No mappings recorded yet for this control.</div>';
+  }
+
+  const handlingIcon={verbatim:'ti-check',paraphrased:'ti-creative-commons','own-wording':'ti-pencil'}[it.handling]||'ti-file';
+  const handlingTxt={verbatim:'Verbatim from source',paraphrased:'Paraphrased with attribution','own-wording':'Kyora IQ own wording'}[it.handling]||it.handling;
+  body+='<div class="src-note"><i class="ti '+handlingIcon+'" style="font-size:13px"></i> '+handlingTxt+' &middot; '+esc(it.fwname)+'</div>';
+
+  return '<div class="rcard" id="rc'+i+'">'
+    +'<div class="rhead" onclick="document.getElementById(\'rc'+i+'\').classList.toggle(\'open\')">'
+      +'<span class="ltag L-'+layer+'">'+(LAYER_LABEL[layer]||layer)+'</span>'
+      +'<div class="rmid"><div class="rtitle">'+esc(c.title||c.display_id)+'<span class="fwname">'+esc(it.fwname)+'</span></div>'
+        +'<div class="rdesc">'+esc(c.statement||'')+'</div></div>'
+      +'<span class="rid">'+esc(c.display_id)+'</span>'
+      +'<i class="ti ti-chevron-down chev"></i>'
+    +'</div>'
+    +'<div class="rbody">'+body+'</div>'
+  +'</div>';
+}
+
+function buildFilters(){
+  const lr=document.getElementById('layerRow');
+  DB.layers.forEach(l=>{
+    const b=document.createElement('button');
+    b.className='chip'; b.dataset.layer=l.id;
+    b.innerHTML='<span class="dot dot-'+l.id+'"></span>'+l.label;
+    b.onclick=()=>{curLayer=l.id;syncChips(lr,'layer',l.id);render();};
+    lr.appendChild(b);
+  });
+  lr.querySelector('[data-layer=all]').onclick=()=>{curLayer="all";syncChips(lr,'layer','all');render();};
+
+  const fr=document.getElementById('fwRow');
+  DB.index.frameworks.forEach(f=>{
+    const b=document.createElement('button');
+    b.className='chip fwchip'; b.dataset.fw=f.id;
+    b.textContent=f.name.replace('NIST SP ','').replace(' for LLM Applications',' LLM');
+    b.onclick=()=>{curFw=f.id;syncChips(fr,'fw',f.id);render();};
+    fr.appendChild(b);
+  });
+  fr.querySelector('[data-fw=all]').onclick=()=>{curFw="all";syncChips(fr,'fw','all');render();};
+}
+function syncChips(row,attr,val){ row.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset[attr]===val)); }
+
+function buildFooter(){
+  document.getElementById('footAttr').innerHTML=
+    '<b>'+DB.index.counts.total_control_nodes+'</b> control nodes across <b>'+DB.index.counts.frameworks+'</b> frameworks &middot; '+DB.index.counts.mappings+' cross-framework mappings &middot; generated '+DB.index.generated_at+'<br>'
+    +'<b>Source handling</b> — Verbatim (public domain): NIST 800-53, NIST AI RMF, NIST AI 600-1, HIPAA. Paraphrased (CC BY-SA): OWASP LLM / API / Web. '
+    +'Mappings marked “Kyora IQ” are our interpretation, not the standards body’s. Kyora IQ is a reference, not a certification or legal advice.';
+}
+
+fetch('kyora-data.json').then(r=>r.json()).then(db=>{
+  DB=db; FLAT=flatten(db);
+  buildFilters(); buildFooter(); render();
+  document.getElementById('q').addEventListener('input', render);
+}).catch(e=>{
+  document.getElementById('results').innerHTML='<div class="empty">Could not load data bundle (kyora-data.json). Run the ingestion and serve this folder.</div>';
+});
+</script>
+</body>
+</html>

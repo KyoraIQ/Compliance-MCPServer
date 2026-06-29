@@ -1,0 +1,441 @@
+{
+  "framework": {
+    "id": "mitre-attack",
+    "name": "MITRE ATT&CK (Enterprise, curated)",
+    "version": "curated-subset",
+    "publisher": "The MITRE Corporation",
+    "source_handling": "paraphrased",
+    "source_url": "https://attack.mitre.org/",
+    "license": "MITRE-ATTACK-terms",
+    "retrieved_at": "2026-06-25",
+    "source_checksum": "manual:attack-curated"
+  },
+  "controls": [
+    {
+      "id": "initial-access",
+      "display_id": "Initial Access",
+      "title": "Initial Access",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Initial Access.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "tactic": "Initial Access"
+      },
+      "children": [
+        {
+          "id": "t1190",
+          "display_id": "T1190",
+          "title": "Exploit Public-Facing Application",
+          "kind": "technique",
+          "statement": "Adversaries exploit a weakness in an internet-facing host or application to gain initial access.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "tactic": "Initial Access"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1190",
+          "source_handling": "paraphrased"
+        },
+        {
+          "id": "t1078",
+          "display_id": "T1078",
+          "title": "Valid Accounts",
+          "kind": "technique",
+          "statement": "Adversaries use legitimate credentials to gain access, persist, escalate, or evade detection.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "tactic": "Initial Access"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1078",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Initial Access",
+      "source_handling": "paraphrased"
+    },
+    {
+      "id": "credential-access",
+      "display_id": "Credential Access",
+      "title": "Credential Access",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Credential Access.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "tactic": "Credential Access"
+      },
+      "children": [
+        {
+          "id": "t1110",
+          "display_id": "T1110",
+          "title": "Brute Force",
+          "kind": "technique",
+          "statement": "Adversaries systematically guess passwords or keys to obtain valid credentials.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "tactic": "Credential Access"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1110",
+          "source_handling": "paraphrased"
+        },
+        {
+          "id": "t1556",
+          "display_id": "T1556",
+          "title": "Modify Authentication Process",
+          "kind": "technique",
+          "statement": "Adversaries tamper with authentication mechanisms to bypass or weaken access controls.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "tactic": "Credential Access"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1556",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Credential Access",
+      "source_handling": "paraphrased"
+    },
+    {
+      "id": "privilege-escalation",
+      "display_id": "Privilege Escalation",
+      "title": "Privilege Escalation",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Privilege Escalation.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "tactic": "Privilege Escalation"
+      },
+      "children": [
+        {
+          "id": "t1068",
+          "display_id": "T1068",
+          "title": "Exploitation for Privilege Escalation",
+          "kind": "technique",
+          "statement": "Adversaries exploit software vulnerabilities to gain higher-level permissions.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "tactic": "Privilege Escalation"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1068",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Privilege Escalation",
+      "source_handling": "paraphrased"
+    },
+    {
+      "id": "persistence",
+      "display_id": "Persistence",
+      "title": "Persistence",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Persistence.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "tactic": "Persistence"
+      },
+      "children": [
+        {
+          "id": "t1098",
+          "display_id": "T1098",
+          "title": "Account Manipulation",
+          "kind": "technique",
+          "statement": "Adversaries modify accounts (add credentials, change permissions) to maintain access.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "tactic": "Persistence"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1098",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Persistence",
+      "source_handling": "paraphrased"
+    },
+    {
+      "id": "collection",
+      "display_id": "Collection",
+      "title": "Collection",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Collection.",
+      "guidance": "",
+      "layer": "output",
+      "attributes": {
+        "tactic": "Collection"
+      },
+      "children": [
+        {
+          "id": "t1530",
+          "display_id": "T1530",
+          "title": "Data from Cloud Storage",
+          "kind": "technique",
+          "statement": "Adversaries access data objects from improperly secured cloud storage.",
+          "guidance": "",
+          "layer": "output",
+          "attributes": {
+            "tactic": "Collection"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1530",
+          "source_handling": "paraphrased"
+        },
+        {
+          "id": "t1213",
+          "display_id": "T1213",
+          "title": "Data from Information Repositories",
+          "kind": "technique",
+          "statement": "Adversaries mine information repositories (wikis, ticketing, code) for sensitive data.",
+          "guidance": "",
+          "layer": "output",
+          "attributes": {
+            "tactic": "Collection"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1213",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Collection",
+      "source_handling": "paraphrased"
+    },
+    {
+      "id": "exfiltration",
+      "display_id": "Exfiltration",
+      "title": "Exfiltration",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Exfiltration.",
+      "guidance": "",
+      "layer": "output",
+      "attributes": {
+        "tactic": "Exfiltration"
+      },
+      "children": [
+        {
+          "id": "t1048",
+          "display_id": "T1048",
+          "title": "Exfiltration Over Alternative Protocol",
+          "kind": "technique",
+          "statement": "Adversaries steal data over a different protocol than the main command channel.",
+          "guidance": "",
+          "layer": "output",
+          "attributes": {
+            "tactic": "Exfiltration"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1048",
+          "source_handling": "paraphrased"
+        },
+        {
+          "id": "t1567",
+          "display_id": "T1567",
+          "title": "Exfiltration Over Web Service",
+          "kind": "technique",
+          "statement": "Adversaries exfiltrate data to a legitimate external web service to blend with normal traffic.",
+          "guidance": "",
+          "layer": "output",
+          "attributes": {
+            "tactic": "Exfiltration"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1567",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Exfiltration",
+      "source_handling": "paraphrased"
+    },
+    {
+      "id": "impact",
+      "display_id": "Impact",
+      "title": "Impact",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Impact.",
+      "guidance": "",
+      "layer": "output",
+      "attributes": {
+        "tactic": "Impact"
+      },
+      "children": [
+        {
+          "id": "t1485",
+          "display_id": "T1485",
+          "title": "Data Destruction",
+          "kind": "technique",
+          "statement": "Adversaries destroy data and files to interrupt availability or operations.",
+          "guidance": "",
+          "layer": "output",
+          "attributes": {
+            "tactic": "Impact"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1485",
+          "source_handling": "paraphrased"
+        },
+        {
+          "id": "t1499",
+          "display_id": "T1499",
+          "title": "Endpoint Denial of Service",
+          "kind": "technique",
+          "statement": "Adversaries exhaust a system's resources to deny availability to legitimate users.",
+          "guidance": "",
+          "layer": "output",
+          "attributes": {
+            "tactic": "Impact"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1499",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Impact",
+      "source_handling": "paraphrased"
+    },
+    {
+      "id": "defense-evasion",
+      "display_id": "Defense Evasion",
+      "title": "Defense Evasion",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Defense Evasion.",
+      "guidance": "",
+      "layer": "output",
+      "attributes": {
+        "tactic": "Defense Evasion"
+      },
+      "children": [
+        {
+          "id": "t1562",
+          "display_id": "T1562",
+          "title": "Impair Defenses",
+          "kind": "technique",
+          "statement": "Adversaries disable or modify security tools, logging, or controls to avoid detection.",
+          "guidance": "",
+          "layer": "output",
+          "attributes": {
+            "tactic": "Defense Evasion"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1562",
+          "source_handling": "paraphrased"
+        },
+        {
+          "id": "t1070",
+          "display_id": "T1070",
+          "title": "Indicator Removal",
+          "kind": "technique",
+          "statement": "Adversaries delete or modify artifacts such as logs to remove evidence of activity.",
+          "guidance": "",
+          "layer": "output",
+          "attributes": {
+            "tactic": "Defense Evasion"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1070",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Defense Evasion",
+      "source_handling": "paraphrased"
+    },
+    {
+      "id": "discovery",
+      "display_id": "Discovery",
+      "title": "Discovery",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Discovery.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "tactic": "Discovery"
+      },
+      "children": [
+        {
+          "id": "t1046",
+          "display_id": "T1046",
+          "title": "Network Service Discovery",
+          "kind": "technique",
+          "statement": "Adversaries enumerate network services to find systems and plan further actions.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "tactic": "Discovery"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1046",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Discovery",
+      "source_handling": "paraphrased"
+    },
+    {
+      "id": "execution",
+      "display_id": "Execution",
+      "title": "Execution",
+      "kind": "tactic",
+      "statement": "ATT&CK tactic: Execution.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {
+        "tactic": "Execution"
+      },
+      "children": [
+        {
+          "id": "t1203",
+          "display_id": "T1203",
+          "title": "Exploitation for Client Execution",
+          "kind": "technique",
+          "statement": "Adversaries exploit client software vulnerabilities to execute code.",
+          "guidance": "",
+          "layer": "infrastructure",
+          "attributes": {
+            "tactic": "Execution"
+          },
+          "children": [],
+          "mappings": [],
+          "source_ref": "T1203",
+          "source_handling": "paraphrased"
+        }
+      ],
+      "mappings": [],
+      "source_ref": "Execution",
+      "source_handling": "paraphrased"
+    }
+  ]
+}

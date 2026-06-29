@@ -1,0 +1,350 @@
+{
+  "risks": [
+    {
+      "id": "prompt-injection",
+      "title": "Prompt Injection",
+      "layer": "input",
+      "summary": "Crafted input overrides intended instructions, directly or via poisoned retrieved content.",
+      "controls": [
+        "owasp-llm-top10:llm01-2025",
+        "nist-800-53-r5:si-10",
+        "nist-ai-600-1:ga-2-9",
+        "nist-ai-rmf:measure-2-7",
+        "mitre-atlas:aml-t0051"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm01-2025",
+          "title": "Prompt Injection",
+          "layer": "input",
+          "display_id": "LLM01:2025"
+        },
+        {
+          "ref": "nist-800-53-r5:si-10",
+          "title": "Information Input Validation",
+          "layer": "output",
+          "display_id": "SI-10"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-9",
+          "title": "Information Security",
+          "layer": "input",
+          "display_id": "GAI 2.9"
+        },
+        {
+          "ref": "nist-ai-rmf:measure-2-7",
+          "title": "Security and Resilience",
+          "layer": "input",
+          "display_id": "MEASURE 2.7"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0051",
+          "title": "LLM Prompt Injection",
+          "layer": "infrastructure",
+          "display_id": "AML.T0051"
+        }
+      ]
+    },
+    {
+      "id": "sensitive-disclosure",
+      "title": "Sensitive Information Disclosure",
+      "layer": "output",
+      "summary": "Private, regulated, or proprietary data is exposed through outputs, logs, or embeddings.",
+      "controls": [
+        "owasp-llm-top10:llm02-2025",
+        "hipaa-security-rule:312-a-1",
+        "nist-800-53-r5:ac-3",
+        "nist-ai-600-1:ga-2-7"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm02-2025",
+          "title": "Sensitive Information Disclosure",
+          "layer": "output",
+          "display_id": "LLM02:2025"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-7",
+          "title": "Data Privacy",
+          "layer": "output",
+          "display_id": "GAI 2.7"
+        }
+      ]
+    },
+    {
+      "id": "excessive-agency",
+      "title": "Excessive Agency",
+      "layer": "agentic",
+      "summary": "An agent with too much autonomy or permission takes damaging actions when manipulated.",
+      "controls": [
+        "owasp-llm-top10:llm06-2025",
+        "nist-800-53-r5:ac-6",
+        "eu-ai-act:art-14"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm06-2025",
+          "title": "Excessive Agency",
+          "layer": "agentic",
+          "display_id": "LLM06:2025"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-6",
+          "title": "Least Privilege",
+          "layer": "infrastructure",
+          "display_id": "AC-06"
+        },
+        {
+          "ref": "eu-ai-act:art-14",
+          "title": "Human Oversight",
+          "layer": "agentic",
+          "display_id": "Art. 14"
+        }
+      ]
+    },
+    {
+      "id": "broken-access-control",
+      "title": "Broken Access Control",
+      "layer": "infrastructure",
+      "summary": "Authorization is not properly enforced, allowing access to data or functions beyond a user's rights.",
+      "controls": [
+        "owasp-web-top10:a01-2021",
+        "owasp-api-top10:api1-2023",
+        "nist-800-53-r5:ac-3",
+        "hipaa-security-rule:312-a-1",
+        "mitre-attack:t1190",
+        "soc2-tsc:cc6",
+        "hitrust-csf:01-access-control"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-web-top10:a01-2021",
+          "title": "Broken Access Control",
+          "layer": "infrastructure",
+          "display_id": "A01:2021"
+        },
+        {
+          "ref": "owasp-api-top10:api1-2023",
+          "title": "Broken Object Level Authorization",
+          "layer": "infrastructure",
+          "display_id": "API1:2023"
+        },
+        {
+          "ref": "nist-800-53-r5:ac-3",
+          "title": "Access Enforcement",
+          "layer": "infrastructure",
+          "display_id": "AC-03"
+        },
+        {
+          "ref": "hipaa-security-rule:312-a-1",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(a)(1)"
+        },
+        {
+          "ref": "mitre-attack:t1190",
+          "title": "Exploit Public-Facing Application",
+          "layer": "infrastructure",
+          "display_id": "T1190"
+        },
+        {
+          "ref": "soc2-tsc:cc6",
+          "title": "Logical and Physical Access Controls",
+          "layer": "infrastructure",
+          "display_id": "CC6"
+        },
+        {
+          "ref": "hitrust-csf:01-access-control",
+          "title": "Access Control",
+          "layer": "infrastructure",
+          "display_id": "01 Access Control"
+        }
+      ]
+    },
+    {
+      "id": "insufficient-logging",
+      "title": "Insufficient Logging & Monitoring",
+      "layer": "infrastructure",
+      "summary": "Inadequate audit logging and monitoring delays detection and response to security events.",
+      "controls": [
+        "owasp-web-top10:a09-2021",
+        "nist-800-53-r5:au-2",
+        "hipaa-security-rule:312-b",
+        "mitre-attack:t1070",
+        "soc2-tsc:cc7",
+        "hitrust-csf:09-audit-logging",
+        "eu-ai-act:art-12"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-web-top10:a09-2021",
+          "title": "Security Logging and Monitoring Failures",
+          "layer": "infrastructure",
+          "display_id": "A09:2021"
+        },
+        {
+          "ref": "nist-800-53-r5:au-2",
+          "title": "Event Logging",
+          "layer": "infrastructure",
+          "display_id": "AU-02"
+        },
+        {
+          "ref": "hipaa-security-rule:312-b",
+          "title": "Audit Controls",
+          "layer": "infrastructure",
+          "display_id": "§ 164.312(b)"
+        },
+        {
+          "ref": "mitre-attack:t1070",
+          "title": "Indicator Removal",
+          "layer": "output",
+          "display_id": "T1070"
+        },
+        {
+          "ref": "soc2-tsc:cc7",
+          "title": "System Operations",
+          "layer": "infrastructure",
+          "display_id": "CC7"
+        },
+        {
+          "ref": "hitrust-csf:09-audit-logging",
+          "title": "Audit Logging and Monitoring",
+          "layer": "infrastructure",
+          "display_id": "09 Audit Logging & Monitoring"
+        },
+        {
+          "ref": "eu-ai-act:art-12",
+          "title": "Record-Keeping (Logging)",
+          "layer": "infrastructure",
+          "display_id": "Art. 12"
+        }
+      ]
+    },
+    {
+      "id": "data-poisoning",
+      "title": "Data & Model Poisoning",
+      "layer": "model",
+      "summary": "Tampered training, fine-tuning, or RAG data corrupts model behavior.",
+      "controls": [
+        "owasp-llm-top10:llm04-2025",
+        "nist-ai-600-1:ga-2-12",
+        "mitre-atlas:aml-t0020"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm04-2025",
+          "title": "Data and Model Poisoning",
+          "layer": "model",
+          "display_id": "LLM04:2025"
+        },
+        {
+          "ref": "nist-ai-600-1:ga-2-12",
+          "title": "Value Chain and Component Integration",
+          "layer": "model",
+          "display_id": "GAI 2.12"
+        },
+        {
+          "ref": "mitre-atlas:aml-t0020",
+          "title": "Poison Training Data",
+          "layer": "governance",
+          "display_id": "AML.T0020"
+        }
+      ]
+    },
+    {
+      "id": "unbounded-consumption",
+      "title": "Unbounded Consumption",
+      "layer": "infrastructure",
+      "summary": "Uncontrolled resource use causes denial of service or runaway cost.",
+      "controls": [
+        "owasp-llm-top10:llm10-2025",
+        "owasp-api-top10:api4-2023",
+        "mitre-attack:t1499"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "owasp-llm-top10:llm10-2025",
+          "title": "Unbounded Consumption",
+          "layer": "infrastructure",
+          "display_id": "LLM10:2025"
+        },
+        {
+          "ref": "owasp-api-top10:api4-2023",
+          "title": "Unrestricted Resource Consumption",
+          "layer": "infrastructure",
+          "display_id": "API4:2023"
+        },
+        {
+          "ref": "mitre-attack:t1499",
+          "title": "Endpoint Denial of Service",
+          "layer": "output",
+          "display_id": "T1499"
+        }
+      ]
+    },
+    {
+      "id": "ai-governance-gap",
+      "title": "AI Governance Gap",
+      "layer": "governance",
+      "summary": "Missing policy, accountability, or lifecycle risk management for AI systems.",
+      "controls": [
+        "nist-ai-rmf:govern-1-1",
+        "nist-ai-rmf:govern-2-1",
+        "owasp-web-top10:a04-2021",
+        "iso-42001:a2",
+        "iso-42001:a5",
+        "eu-ai-act:art-9"
+      ],
+      "controls_resolved": [
+        {
+          "ref": "nist-ai-rmf:govern-1-1",
+          "title": "Legal and Regulatory Requirements",
+          "layer": "governance",
+          "display_id": "GOVERN 1.1"
+        },
+        {
+          "ref": "nist-ai-rmf:govern-2-1",
+          "title": "Roles and Responsibilities",
+          "layer": "governance",
+          "display_id": "GOVERN 2.1"
+        },
+        {
+          "ref": "owasp-web-top10:a04-2021",
+          "title": "Insecure Design",
+          "layer": "governance",
+          "display_id": "A04:2021"
+        },
+        {
+          "ref": "iso-42001:a2",
+          "title": "AI Policy",
+          "layer": "governance",
+          "display_id": "A.2"
+        },
+        {
+          "ref": "iso-42001:a5",
+          "title": "AI System Impact Assessment",
+          "layer": "governance",
+          "display_id": "A.5"
+        },
+        {
+          "ref": "eu-ai-act:art-9",
+          "title": "Risk Management System",
+          "layer": "governance",
+          "display_id": "Art. 9"
+        }
+      ]
+    }
+  ]
+}

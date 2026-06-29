@@ -1,0 +1,99 @@
+{
+  "framework": {
+    "id": "eu-ai-act",
+    "name": "EU AI Act",
+    "version": "Regulation (EU) 2024/1689",
+    "publisher": "European Union",
+    "source_handling": "own-wording",
+    "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+    "license": "proprietary-structure-only",
+    "retrieved_at": "2026-06-25",
+    "source_checksum": "manual:eu-ai-act"
+  },
+  "controls": [
+    {
+      "id": "art-9",
+      "display_id": "Art. 9",
+      "title": "Risk Management System",
+      "kind": "control",
+      "statement": "High-risk AI systems must establish, implement, and maintain a continuous risk management system across the lifecycle.",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "Art. 9",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "art-10",
+      "display_id": "Art. 10",
+      "title": "Data and Data Governance",
+      "kind": "control",
+      "statement": "Training, validation, and testing data for high-risk AI must meet quality and governance criteria, including bias examination.",
+      "guidance": "",
+      "layer": "model",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "Art. 10",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "art-12",
+      "display_id": "Art. 12",
+      "title": "Record-Keeping (Logging)",
+      "kind": "control",
+      "statement": "High-risk AI systems must automatically record events (logs) over their lifetime to ensure traceability.",
+      "guidance": "",
+      "layer": "infrastructure",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "Art. 12",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "art-13",
+      "display_id": "Art. 13",
+      "title": "Transparency and Information to Users",
+      "kind": "control",
+      "statement": "High-risk AI systems must be transparent enough for deployers to interpret output and use the system appropriately.",
+      "guidance": "",
+      "layer": "output",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "Art. 13",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "art-14",
+      "display_id": "Art. 14",
+      "title": "Human Oversight",
+      "kind": "control",
+      "statement": "High-risk AI systems must be designed to allow effective human oversight that can prevent or minimize risks.",
+      "guidance": "",
+      "layer": "agentic",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "Art. 14",
+      "source_handling": "own-wording"
+    },
+    {
+      "id": "art-15",
+      "display_id": "Art. 15",
+      "title": "Accuracy, Robustness and Cybersecurity",
+      "kind": "control",
+      "statement": "High-risk AI systems must achieve appropriate levels of accuracy, robustness, and cybersecurity, and perform consistently.",
+      "guidance": "",
+      "layer": "model",
+      "attributes": {},
+      "children": [],
+      "mappings": [],
+      "source_ref": "Art. 15",
+      "source_handling": "own-wording"
+    }
+  ]
+}

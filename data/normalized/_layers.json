@@ -1,0 +1,34 @@
+{
+  "layers": [
+    {
+      "id": "input",
+      "label": "Input",
+      "covers": "Prompts, RAG context, files, and request inputs that reach the system."
+    },
+    {
+      "id": "output",
+      "label": "Output",
+      "covers": "Model and system responses and how they are handled downstream."
+    },
+    {
+      "id": "model",
+      "label": "Model",
+      "covers": "The model itself, training data, and embeddings."
+    },
+    {
+      "id": "infrastructure",
+      "label": "Infrastructure",
+      "covers": "APIs, keys, hosting, accounts, and rate limits around the system."
+    },
+    {
+      "id": "agentic",
+      "label": "Agentic",
+      "covers": "Tools, autonomy, and multi-step actions an agent can take."
+    },
+    {
+      "id": "governance",
+      "label": "Governance",
+      "covers": "Policy, risk management, accountability, and lifecycle controls."
+    }
+  ]
+}

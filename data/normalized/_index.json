@@ -1,0 +1,141 @@
+{
+  "generated_at": "2026-06-25",
+  "frameworks": [
+    {
+      "id": "eu-ai-act",
+      "name": "EU AI Act",
+      "version": "Regulation (EU) 2024/1689",
+      "publisher": "European Union",
+      "source_handling": "own-wording",
+      "license": "proprietary-structure-only",
+      "controls": 6,
+      "total_nodes": 6
+    },
+    {
+      "id": "hipaa-security-rule",
+      "name": "HIPAA Security Rule",
+      "version": "45 CFR Part 164, Subpart C",
+      "publisher": "U.S. Department of Health and Human Services",
+      "source_handling": "verbatim",
+      "license": "public-domain",
+      "controls": 11,
+      "total_nodes": 39
+    },
+    {
+      "id": "hitrust-csf",
+      "name": "HITRUST CSF",
+      "version": "v11 (representative)",
+      "publisher": "HITRUST",
+      "source_handling": "own-wording",
+      "license": "proprietary-structure-only",
+      "controls": 6,
+      "total_nodes": 6
+    },
+    {
+      "id": "iso-42001",
+      "name": "ISO/IEC 42001:2023 (AI Management System)",
+      "version": "2023",
+      "publisher": "ISO/IEC",
+      "source_handling": "own-wording",
+      "license": "proprietary-structure-only",
+      "controls": 9,
+      "total_nodes": 9
+    },
+    {
+      "id": "mitre-atlas",
+      "name": "MITRE ATLAS",
+      "version": "5.6.0",
+      "publisher": "The MITRE Corporation",
+      "source_handling": "paraphrased",
+      "license": "MITRE-ATLAS-terms",
+      "controls": 16,
+      "total_nodes": 127
+    },
+    {
+      "id": "mitre-attack",
+      "name": "MITRE ATT&CK (Enterprise, curated)",
+      "version": "curated-subset",
+      "publisher": "The MITRE Corporation",
+      "source_handling": "paraphrased",
+      "license": "MITRE-ATTACK-terms",
+      "controls": 10,
+      "total_nodes": 26
+    },
+    {
+      "id": "nist-800-53-r5",
+      "name": "NIST SP 800-53 Rev. 5",
+      "version": "5.2.0",
+      "publisher": "NIST",
+      "source_handling": "verbatim",
+      "license": "public-domain",
+      "controls": 324,
+      "total_nodes": 2048
+    },
+    {
+      "id": "nist-ai-600-1",
+      "name": "NIST AI 600-1 Generative AI Profile",
+      "version": "600-1",
+      "publisher": "NIST",
+      "source_handling": "verbatim",
+      "license": "public-domain",
+      "controls": 5,
+      "total_nodes": 5
+    },
+    {
+      "id": "nist-ai-rmf",
+      "name": "NIST AI Risk Management Framework",
+      "version": "AI 100-1",
+      "publisher": "NIST",
+      "source_handling": "verbatim",
+      "license": "public-domain",
+      "controls": 9,
+      "total_nodes": 9
+    },
+    {
+      "id": "owasp-api-top10",
+      "name": "OWASP API Security Top 10",
+      "version": "2023",
+      "publisher": "OWASP",
+      "source_handling": "paraphrased",
+      "license": "CC-BY-SA-4.0",
+      "controls": 10,
+      "total_nodes": 10
+    },
+    {
+      "id": "owasp-llm-top10",
+      "name": "OWASP Top 10 for LLM Applications",
+      "version": "2025",
+      "publisher": "OWASP",
+      "source_handling": "paraphrased",
+      "license": "CC-BY-SA-4.0",
+      "controls": 10,
+      "total_nodes": 10
+    },
+    {
+      "id": "owasp-web-top10",
+      "name": "OWASP Top 10",
+      "version": "2021",
+      "publisher": "OWASP",
+      "source_handling": "paraphrased",
+      "license": "CC-BY-SA-4.0",
+      "controls": 10,
+      "total_nodes": 10
+    },
+    {
+      "id": "soc2-tsc",
+      "name": "SOC 2 (AICPA Trust Services Criteria)",
+      "version": "2017 TSC / 2022 PoF",
+      "publisher": "AICPA",
+      "source_handling": "own-wording",
+      "license": "proprietary-structure-only",
+      "controls": 9,
+      "total_nodes": 42
+    }
+  ],
+  "counts": {
+    "frameworks": 13,
+    "risks": 8,
+    "mappings": 31,
+    "total_control_nodes": 2347
+  }
+}

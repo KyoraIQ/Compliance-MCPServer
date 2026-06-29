@@ -1,0 +1,159 @@
+{
+  "framework": {
+    "id": "nist-ai-rmf",
+    "name": "NIST AI Risk Management Framework",
+    "version": "AI 100-1",
+    "publisher": "NIST",
+    "source_handling": "verbatim",
+    "source_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "license": "public-domain",
+    "retrieved_at": "2026-06-25",
+    "source_checksum": "manual:nist-ai-rmf"
+  },
+  "controls": [
+    {
+      "id": "govern-1-1",
+      "display_id": "GOVERN 1.1",
+      "title": "Legal and Regulatory Requirements",
+      "kind": "control",
+      "statement": "Legal and regulatory requirements involving AI are understood, managed, and documented.",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "function": "GOVERN"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "GOVERN 1.1",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "govern-1-2",
+      "display_id": "GOVERN 1.2",
+      "title": "Trustworthy AI Characteristics",
+      "kind": "control",
+      "statement": "The characteristics of trustworthy AI are integrated into organizational policies, processes, and procedures.",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "function": "GOVERN"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "GOVERN 1.2",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "govern-2-1",
+      "display_id": "GOVERN 2.1",
+      "title": "Roles and Responsibilities",
+      "kind": "control",
+      "statement": "Roles, responsibilities, and lines of communication related to mapping, measuring, and managing AI risks are documented and clear.",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "function": "GOVERN"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "GOVERN 2.1",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "map-1-1",
+      "display_id": "MAP 1.1",
+      "title": "Context and Intended Purpose",
+      "kind": "control",
+      "statement": "Intended purpose, setting, and context of the AI system are understood and documented.",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "function": "MAP"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "MAP 1.1",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "map-2-3",
+      "display_id": "MAP 2.3",
+      "title": "Capabilities and Limitations",
+      "kind": "control",
+      "statement": "Scientific integrity and the system's capabilities, limitations, and assumptions are documented.",
+      "guidance": "",
+      "layer": "model",
+      "attributes": {
+        "function": "MAP"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "MAP 2.3",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "measure-2-7",
+      "display_id": "MEASURE 2.7",
+      "title": "Security and Resilience",
+      "kind": "control",
+      "statement": "AI system security and resilience are evaluated and documented, including against adversarial inputs.",
+      "guidance": "",
+      "layer": "input",
+      "attributes": {
+        "function": "MEASURE"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "MEASURE 2.7",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "measure-2-11",
+      "display_id": "MEASURE 2.11",
+      "title": "Harmful Bias",
+      "kind": "control",
+      "statement": "Fairness and bias are evaluated and results documented.",
+      "guidance": "",
+      "layer": "model",
+      "attributes": {
+        "function": "MEASURE"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "MEASURE 2.11",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "manage-2-2",
+      "display_id": "MANAGE 2.2",
+      "title": "Mechanisms to Sustain Value",
+      "kind": "control",
+      "statement": "Mechanisms are in place to sustain the value of deployed AI systems and to manage risk over time.",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "function": "MANAGE"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "MANAGE 2.2",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "manage-4-1",
+      "display_id": "MANAGE 4.1",
+      "title": "Post-Deployment Monitoring",
+      "kind": "control",
+      "statement": "Post-deployment monitoring plans are implemented, including mechanisms for incident response and recovery.",
+      "guidance": "",
+      "layer": "output",
+      "attributes": {
+        "function": "MANAGE"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "MANAGE 4.1",
+      "source_handling": "verbatim"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Raw downloaded sources are reproduced by ingestion; don't commit large files
+data/raw/*.json
+!data/raw/.gitkeep
+
+# Secrets — never commit real environment files
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / web
+node_modules/
+dist/
+.astro/
+
+# OS
+.DS_Store

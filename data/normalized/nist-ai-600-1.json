@@ -1,0 +1,95 @@
+{
+  "framework": {
+    "id": "nist-ai-600-1",
+    "name": "NIST AI 600-1 Generative AI Profile",
+    "version": "600-1",
+    "publisher": "NIST",
+    "source_handling": "verbatim",
+    "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+    "license": "public-domain",
+    "retrieved_at": "2026-06-25",
+    "source_checksum": "manual:nist-ai-600-1"
+  },
+  "controls": [
+    {
+      "id": "ga-2-1",
+      "display_id": "GAI 2.1",
+      "title": "CBRN Information",
+      "kind": "control",
+      "statement": "Manage risks that generative AI could lower barriers to access to harmful CBRN-related information.",
+      "guidance": "",
+      "layer": "governance",
+      "attributes": {
+        "function": "risk"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "GAI 2.1",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "ga-2-7",
+      "display_id": "GAI 2.7",
+      "title": "Data Privacy",
+      "kind": "control",
+      "statement": "Manage risks of generative AI leaking or inferring sensitive personal data.",
+      "guidance": "",
+      "layer": "output",
+      "attributes": {
+        "function": "risk"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "GAI 2.7",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "ga-2-8",
+      "display_id": "GAI 2.8",
+      "title": "Confabulation",
+      "kind": "control",
+      "statement": "Manage risks of generative AI producing confidently stated false content (confabulation/hallucination).",
+      "guidance": "",
+      "layer": "output",
+      "attributes": {
+        "function": "risk"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "GAI 2.8",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "ga-2-9",
+      "display_id": "GAI 2.9",
+      "title": "Information Security",
+      "kind": "control",
+      "statement": "Manage generative-AI information-security risks including prompt injection and data poisoning.",
+      "guidance": "",
+      "layer": "input",
+      "attributes": {
+        "function": "risk"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "GAI 2.9",
+      "source_handling": "verbatim"
+    },
+    {
+      "id": "ga-2-12",
+      "display_id": "GAI 2.12",
+      "title": "Value Chain and Component Integration",
+      "kind": "control",
+      "statement": "Manage risks arising from third-party models, data, and components in the generative-AI value chain.",
+      "guidance": "",
+      "layer": "model",
+      "attributes": {
+        "function": "risk"
+      },
+      "children": [],
+      "mappings": [],
+      "source_ref": "GAI 2.12",
+      "source_handling": "verbatim"
+    }
+  ]
+}

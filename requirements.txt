@@ -1,0 +1,14 @@
+# Kyora IQ runtime dependencies
+# Ingestion and validation use only the Python standard library.
+# The MCP server requires the MCP SDK.
+mcp>=1.0
+
+# Gateway (auth, rate limiting, health check, deployment):
+starlette>=0.37
+uvicorn>=0.30
+
+# Ingestion of MITRE ATLAS reads the official YAML distribution:
+pyyaml>=6.0
+
+# Development / testing (optional):
+#   pip install playwright   # for the web UI functional test
