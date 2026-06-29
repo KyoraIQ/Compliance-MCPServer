@@ -7,7 +7,8 @@
     "source_handling": "own-wording",
     "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
     "license": "proprietary-structure-only",
-    "retrieved_at": "2026-06-25",
+    "disclaimer": "Summaries of EU AI Act articles are independently written for educational reference. The official, legally binding text is published in the Official Journal of the European Union (Regulation (EU) 2024/1689). Do not rely on this tool for legal or compliance decisions.",
+    "retrieved_at": "2026-06-29",
     "source_checksum": "manual:eu-ai-act"
   },
   "controls": [

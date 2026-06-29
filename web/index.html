@@ -169,7 +169,7 @@ function flatten(db){
   for(const fwid in db.frameworks){
     const fw=db.frameworks[fwid].framework;
     for(const c of db.frameworks[fwid].controls){
-      out.push({fwid, fwname:fw.name, handling:fw.source_handling, ctrl:c});
+      out.push({fwid, fwname:fw.name, handling:fw.source_handling, disclaimer:fw.disclaimer||"", ctrl:c});
     }
   }
   return out;
@@ -253,6 +253,7 @@ function cardHTML(it,i){
   const handlingIcon={verbatim:'ti-check',paraphrased:'ti-creative-commons','own-wording':'ti-pencil'}[it.handling]||'ti-file';
   const handlingTxt={verbatim:'Verbatim from source',paraphrased:'Paraphrased with attribution','own-wording':'Kyora IQ own wording'}[it.handling]||it.handling;
   body+='<div class="src-note"><i class="ti '+handlingIcon+'" style="font-size:13px"></i> '+handlingTxt+' &middot; '+esc(it.fwname)+'</div>';
+  if(it.disclaimer){ body+='<div style="margin-top:10px;padding:10px 12px;background:var(--panel);border:1px solid var(--border2);border-radius:8px;font-size:11px;color:var(--text3);line-height:1.5;"><i class="ti ti-info-circle" style="font-size:13px;vertical-align:-2px"></i> '+esc(it.disclaimer)+'</div>'; }
 
   return '<div class="rcard" id="rc'+i+'">'
     +'<div class="rhead" onclick="document.getElementById(\'rc'+i+'\').classList.toggle(\'open\')">'

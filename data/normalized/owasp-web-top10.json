@@ -7,8 +7,9 @@
     "source_handling": "paraphrased",
     "source_url": "https://owasp.org/Top10/",
     "license": "CC-BY-SA-4.0",
-    "retrieved_at": "2026-06-25",
-    "source_checksum": "manual:owasp-web-top10"
+    "retrieved_at": "2026-06-29",
+    "source_checksum": "manual:owasp-web-top10",
+    "disclaimer": "OWASP content is licensed CC BY-SA 4.0. This tool provides independently-written summaries with attribution and is not endorsed by the OWASP Foundation. See the official OWASP project for authoritative text."
   },
   "controls": [
     {

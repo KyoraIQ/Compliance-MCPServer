@@ -7,7 +7,8 @@
     "source_handling": "own-wording",
     "source_url": "https://www.aicpa-cima.com/",
     "license": "proprietary-structure-only",
-    "retrieved_at": "2026-06-25",
+    "disclaimer": "The Trust Services Criteria and COSO Principles are proprietary to the AICPA. This tool provides independently-written summaries for educational reference only and is not affiliated with or endorsed by the AICPA. For official criteria text, audit guidance, and SOC 2 reports, visit the AICPA website. Do not rely on this tool for compliance decisions.",
+    "retrieved_at": "2026-06-29",
     "source_checksum": "manual:soc2-tsc"
   },
   "controls": [

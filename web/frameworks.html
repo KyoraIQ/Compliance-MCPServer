@@ -94,6 +94,9 @@ fetch('kyora-data.json').then(r=>r.json()).then(db=>{
   document.getElementById('grid').innerHTML = frameworks.map(f=>{
     const plain = PLAIN[f.id] || "";
     const bucket = f.source_handling;
+    const fwData = db.frameworks[f.id];
+    const disc = fwData && fwData.framework.disclaimer ? fwData.framework.disclaimer : "";
+    const discHtml = disc ? `<div style="margin-top:10px;font-size:10.5px;color:var(--text3);line-height:1.45;border-top:1px solid var(--border);padding-top:8px;"><i class="ti ti-info-circle" style="font-size:12px;vertical-align:-1px"></i> ${disc}</div>` : "";
     return `<div class="fw">
       <h3>${f.name}</h3>
       <div class="meta">${f.publisher} · ${f.version}</div>
@@ -102,6 +105,7 @@ fetch('kyora-data.json').then(r=>r.json()).then(db=>{
         <span class="badge b-${bucket}">${BUCKET_LABEL[bucket]||bucket}</span>
         <span class="count">${f.controls} controls</span>
       </div>
+      ${discHtml}
     </div>`;
   }).join('');
   const c = db.index.counts;

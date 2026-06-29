@@ -7,7 +7,8 @@
     "source_handling": "own-wording",
     "source_url": "https://www.iso.org/standard/81230.html",
     "license": "proprietary-structure-only",
-    "retrieved_at": "2026-06-25",
+    "disclaimer": "ISO/IEC 42001 is copyrighted by ISO/IEC. This tool provides independently-written summaries of the control structure for educational reference only and is not affiliated with or endorsed by ISO/IEC. Purchase the official standard from ISO for authoritative control text. Do not rely on this tool for compliance decisions.",
+    "retrieved_at": "2026-06-29",
     "source_checksum": "manual:iso-42001"
   },
   "controls": [

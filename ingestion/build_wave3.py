@@ -110,22 +110,91 @@ ISO42001 = [
 ]
 
 # ---------------------------------------------------------------------------
-# HITRUST CSF — representative control reference structure, own wording.
+# HITRUST CSF v11 — full 14 control categories (0.0-0.13) and their 49
+# objectives. Own wording (structure is fact; HITRUST text is licensed).
+# Format: (cat_id, cat_display, cat_title, layer, [ (obj_id, obj_title) ])
 # ---------------------------------------------------------------------------
 HITRUST = [
-    ("01-access-control", "01 Access Control", "Access Control", "infrastructure",
-     "Govern logical access: registration, privilege management, authentication, and review of user access to information systems."),
-    ("06-config-management", "06 Configuration Management", "Configuration Management", "infrastructure",
-     "Establish and maintain secure baseline configurations and control changes to systems and software."),
-    ("07-vuln-management", "07 Vulnerability Management", "Vulnerability Management", "infrastructure",
-     "Identify, evaluate, and remediate technical vulnerabilities in a timely, risk-based manner."),
-    ("09-audit-logging", "09 Audit Logging & Monitoring", "Audit Logging and Monitoring", "infrastructure",
-     "Record and review security-relevant events to detect and investigate unauthorized activity."),
-    ("11-incident-management", "11 Incident Management", "Incident Management", "governance",
-     "Detect, report, respond to, and learn from information security incidents."),
-    ("13-privacy", "13 Privacy Practices", "Privacy Practices", "output",
-     "Govern the collection, use, disclosure, retention, and protection of personal information."),
+    ("00", "0.0", "Information Security Management Program", "governance", [
+        ("00.a", "Information Security Management Program")]),
+    ("01", "1.0", "Access Control", "infrastructure", [
+        ("01.a", "Business Requirement for Access Control"),
+        ("01.b", "Authorized Access to Information Systems"),
+        ("01.c", "User Responsibilities"),
+        ("01.d", "Network Access Control"),
+        ("01.e", "Operating System Access Control"),
+        ("01.f", "Application and Information Access Control"),
+        ("01.g", "Mobile Computing and Teleworking")]),
+    ("02", "2.0", "Human Resources Security", "governance", [
+        ("02.a", "Prior to Employment"),
+        ("02.b", "During Employment"),
+        ("02.c", "Termination or Change of Employment")]),
+    ("03", "3.0", "Risk Management", "governance", [
+        ("03.a", "Risk Management Program"),
+        ("03.b", "Performing Risk Assessments"),
+        ("03.c", "Risk Mitigation")]),
+    ("04", "4.0", "Security Policy", "governance", [
+        ("04.a", "Information Security Policy"),
+        ("04.b", "Review of the Information Security Policy")]),
+    ("05", "5.0", "Organization of Information Security", "governance", [
+        ("05.a", "Internal Organization"),
+        ("05.b", "External Parties")]),
+    ("06", "6.0", "Compliance", "governance", [
+        ("06.a", "Compliance with Legal Requirements"),
+        ("06.b", "Compliance with Security Policies and Standards"),
+        ("06.c", "Information System Audit Considerations")]),
+    ("07", "7.0", "Asset Management", "infrastructure", [
+        ("07.a", "Responsibility for Assets"),
+        ("07.b", "Information Classification")]),
+    ("08", "8.0", "Physical and Environmental Security", "infrastructure", [
+        ("08.a", "Secure Areas"),
+        ("08.b", "Equipment Security")]),
+    ("09", "9.0", "Communications and Operations Management", "infrastructure", [
+        ("09.a", "Documented Operating Procedures"),
+        ("09.b", "Change Management"),
+        ("09.c", "Segregation of Duties"),
+        ("09.d", "Third-Party Service Delivery Management"),
+        ("09.e", "System Planning and Acceptance"),
+        ("09.f", "Protection Against Malicious and Mobile Code"),
+        ("09.g", "Information Back-Up"),
+        ("09.h", "Network Security Management"),
+        ("09.i", "Media Handling"),
+        ("09.j", "Exchange of Information")]),
+    ("10", "10.0", "Information Systems Acquisition, Development, and Maintenance", "model", [
+        ("10.a", "Security Requirements of Information Systems"),
+        ("10.b", "Correct Processing in Applications"),
+        ("10.c", "Cryptographic Controls"),
+        ("10.d", "Security of System Files"),
+        ("10.e", "Security in Development and Support Processes"),
+        ("10.f", "Technical Vulnerability Management")]),
+    ("11", "11.0", "Information Security Incident Management", "governance", [
+        ("11.a", "Reporting Information Security Events and Weaknesses"),
+        ("11.b", "Management of Information Security Incidents and Improvements")]),
+    ("12", "12.0", "Business Continuity Management", "governance", [
+        ("12.a", "Information Security Aspects of Business Continuity Management")]),
+    ("13", "13.0", "Privacy Practices", "output", [
+        ("13.a", "Openness and Transparency"),
+        ("13.b", "Individual Participation"),
+        ("13.c", "Purpose Specification and Limitation"),
+        ("13.d", "Data Minimization"),
+        ("13.e", "Use and Disclosure Limitation"),
+        ("13.f", "Data Quality and Integrity"),
+        ("13.g", "Accountability and Privacy Management")]),
 ]
+
+def hitrust_controls():
+    out = []
+    for cat_id, disp, title, layer, objectives in HITRUST:
+        children = []
+        for obj_id, obj_title in objectives:
+            children.append(node(obj_id, obj_id, obj_title, layer,
+                f"Control objective within HITRUST CSF category {disp} {title}. "
+                f"(Structure shown; HITRUST control text is licensed — see disclaimer.)",
+                kind="criterion"))
+        out.append(node(cat_id, disp, title, layer,
+            f"HITRUST CSF control category {disp}: {title}.",
+            kind="control", children=children))
+    return out
 
 # ---------------------------------------------------------------------------
 # EU AI Act — article references with Kyora summaries (law text is public; we
@@ -162,12 +231,20 @@ def simple_controls(rows):
     return [node(cid, disp, title, layer, statement, kind="control")
             for (cid, disp, title, layer, statement) in rows]
 
+DISCLAIMERS = {
+    "soc2-tsc": "The Trust Services Criteria and COSO Principles are proprietary to the AICPA. This tool provides independently-written summaries for educational reference only and is not affiliated with or endorsed by the AICPA. For official criteria text, audit guidance, and SOC 2 reports, visit the AICPA website. Do not rely on this tool for compliance decisions.",
+    "iso-42001": "ISO/IEC 42001 is copyrighted by ISO/IEC. This tool provides independently-written summaries of the control structure for educational reference only and is not affiliated with or endorsed by ISO/IEC. Purchase the official standard from ISO for authoritative control text. Do not rely on this tool for compliance decisions.",
+    "hitrust-csf": "The HITRUST CSF is proprietary to HITRUST. This tool provides independently-written summaries of the control structure for educational reference only and is not affiliated with or endorsed by HITRUST. Access the official CSF via HITRUST MyCSF for authoritative control text. Do not rely on this tool for compliance decisions.",
+    "eu-ai-act": "Summaries of EU AI Act articles are independently written for educational reference. The official, legally binding text is published in the Official Journal of the European Union (Regulation (EU) 2024/1689). Do not rely on this tool for legal or compliance decisions.",
+}
+
 def wrap(fid, name, version, publisher, url, controls):
     return {
         "framework": {
             "id": fid, "name": name, "version": version, "publisher": publisher,
             "source_handling": "own-wording", "source_url": url,
             "license": "proprietary-structure-only",
+            "disclaimer": DISCLAIMERS.get(fid, ""),
             "retrieved_at": datetime.date.today().isoformat(),
             "source_checksum": f"manual:{fid}",
         },
@@ -184,8 +261,8 @@ def build_all(outdir):
                           "2023", "ISO/IEC", "https://www.iso.org/standard/81230.html",
                           simple_controls(ISO42001)),
         "hitrust-csf": wrap("hitrust-csf", "HITRUST CSF",
-                            "v11 (representative)", "HITRUST",
-                            "https://hitrustalliance.net/", simple_controls(HITRUST)),
+                            "v11", "HITRUST",
+                            "https://hitrustalliance.net/", hitrust_controls()),
         "eu-ai-act": wrap("eu-ai-act", "EU AI Act",
                           "Regulation (EU) 2024/1689", "European Union",
                           "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",

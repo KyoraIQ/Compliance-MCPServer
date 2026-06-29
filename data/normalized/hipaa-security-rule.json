@@ -7,8 +7,9 @@
     "source_handling": "verbatim",
     "source_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164",
     "license": "public-domain",
-    "retrieved_at": "2026-06-25",
-    "source_checksum": "manual:45cfr164-subpartC"
+    "retrieved_at": "2026-06-29",
+    "source_checksum": "manual:45cfr164-subpartC",
+    "disclaimer": "HIPAA Security Rule text is U.S. public law (45 CFR Part 164). This tool reproduces and summarizes it for educational reference only and is not affiliated with or endorsed by HHS. For authoritative requirements and official guidance, consult the eCFR and HHS. Do not rely on this tool for compliance decisions."
   },
   "controls": [
     {

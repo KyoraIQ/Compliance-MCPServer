@@ -27,31 +27,78 @@ LAYERS = [
 
 # Canonical risks (seeded from OWASP LLM + classic security). Each links to
 # controls across frameworks using "<framework_id>:<control_id>" refs.
+# Control DOMAINS — the general crosswalk spine. Each domain is a common
+# compliance theme, with the equivalent control in each framework that has one.
+# This is framework-general (not AI-specific); AI domains are included among them.
+# Stored under the "risks" key for data-model compatibility; rendered as "domains".
 RISKS = [
-    {"id": "prompt-injection", "title": "Prompt Injection", "layer": "input",
-     "summary": "Crafted input overrides intended instructions, directly or via poisoned retrieved content.",
-     "controls": ["owasp-llm-top10:llm01-2025", "nist-800-53-r5:si-10", "nist-ai-600-1:ga-2-9", "nist-ai-rmf:measure-2-7", "mitre-atlas:aml-t0051"]},
-    {"id": "sensitive-disclosure", "title": "Sensitive Information Disclosure", "layer": "output",
-     "summary": "Private, regulated, or proprietary data is exposed through outputs, logs, or embeddings.",
-     "controls": ["owasp-llm-top10:llm02-2025", "hipaa-security-rule:312-a-1", "nist-800-53-r5:ac-3", "nist-ai-600-1:ga-2-7"]},
-    {"id": "excessive-agency", "title": "Excessive Agency", "layer": "agentic",
-     "summary": "An agent with too much autonomy or permission takes damaging actions when manipulated.",
-     "controls": ["owasp-llm-top10:llm06-2025", "nist-800-53-r5:ac-6", "eu-ai-act:art-14"]},
-    {"id": "broken-access-control", "title": "Broken Access Control", "layer": "infrastructure",
-     "summary": "Authorization is not properly enforced, allowing access to data or functions beyond a user's rights.",
-     "controls": ["owasp-web-top10:a01-2021", "owasp-api-top10:api1-2023", "nist-800-53-r5:ac-3", "hipaa-security-rule:312-a-1", "mitre-attack:t1190", "soc2-tsc:cc6", "hitrust-csf:01-access-control"]},
-    {"id": "insufficient-logging", "title": "Insufficient Logging & Monitoring", "layer": "infrastructure",
-     "summary": "Inadequate audit logging and monitoring delays detection and response to security events.",
-     "controls": ["owasp-web-top10:a09-2021", "nist-800-53-r5:au-2", "hipaa-security-rule:312-b", "mitre-attack:t1070", "soc2-tsc:cc7", "hitrust-csf:09-audit-logging", "eu-ai-act:art-12"]},
-    {"id": "data-poisoning", "title": "Data & Model Poisoning", "layer": "model",
-     "summary": "Tampered training, fine-tuning, or RAG data corrupts model behavior.",
-     "controls": ["owasp-llm-top10:llm04-2025", "nist-ai-600-1:ga-2-12", "mitre-atlas:aml-t0020"]},
-    {"id": "unbounded-consumption", "title": "Unbounded Consumption", "layer": "infrastructure",
-     "summary": "Uncontrolled resource use causes denial of service or runaway cost.",
-     "controls": ["owasp-llm-top10:llm10-2025", "owasp-api-top10:api4-2023", "mitre-attack:t1499"]},
-    {"id": "ai-governance-gap", "title": "AI Governance Gap", "layer": "governance",
-     "summary": "Missing policy, accountability, or lifecycle risk management for AI systems.",
-     "controls": ["nist-ai-rmf:govern-1-1", "nist-ai-rmf:govern-2-1", "owasp-web-top10:a04-2021", "iso-42001:a2", "iso-42001:a5", "eu-ai-act:art-9"]},
+    {"id": "access-control", "title": "Access Control & Authorization", "layer": "infrastructure",
+     "summary": "Restricting access to systems and data to authorized identities, and enforcing least privilege.",
+     "controls": ["nist-800-53-r5:ac-3", "nist-800-53-r5:ac-6", "hipaa-security-rule:312-a-1",
+                  "soc2-tsc:cc6", "hitrust-csf:01", "owasp-web-top10:a01-2021",
+                  "owasp-api-top10:api1-2023", "mitre-attack:t1078"]},
+    {"id": "identity-authentication", "title": "Identity & Authentication", "layer": "infrastructure",
+     "summary": "Verifying the identity of users and services before granting access.",
+     "controls": ["nist-800-53-r5:ia-2", "hipaa-security-rule:312-d", "soc2-tsc:cc6",
+                  "hitrust-csf:01", "owasp-web-top10:a07-2021", "owasp-api-top10:api2-2023",
+                  "mitre-attack:t1556"]},
+    {"id": "audit-logging", "title": "Audit Logging & Monitoring", "layer": "infrastructure",
+     "summary": "Recording and reviewing security-relevant events to detect and investigate activity.",
+     "controls": ["nist-800-53-r5:au-2", "hipaa-security-rule:312-b", "soc2-tsc:cc7",
+                  "hitrust-csf:09", "owasp-web-top10:a09-2021", "eu-ai-act:art-12",
+                  "mitre-attack:t1070"]},
+    {"id": "encryption", "title": "Encryption & Data Protection", "layer": "infrastructure",
+     "summary": "Protecting data in transit and at rest with cryptographic controls.",
+     "controls": ["nist-800-53-r5:sc-8", "hipaa-security-rule:312-e-1", "soc2-tsc:cc6",
+                  "hitrust-csf:10", "owasp-web-top10:a02-2021"]},
+    {"id": "risk-assessment", "title": "Risk Assessment & Management", "layer": "governance",
+     "summary": "Identifying, analyzing, and treating risks to systems, data, and objectives.",
+     "controls": ["nist-800-53-r5:ra-3", "hipaa-security-rule:308-a-1", "soc2-tsc:cc3",
+                  "hitrust-csf:03", "iso-42001:a5", "nist-ai-rmf:map-1-1", "eu-ai-act:art-9"]},
+    {"id": "incident-response", "title": "Incident Response", "layer": "governance",
+     "summary": "Detecting, responding to, and recovering from security incidents.",
+     "controls": ["nist-800-53-r5:ir-4", "hipaa-security-rule:308-a-6", "soc2-tsc:cc7",
+                  "hitrust-csf:11"]},
+    {"id": "change-management", "title": "Change & Configuration Management", "layer": "infrastructure",
+     "summary": "Controlling changes to systems, software, and configurations.",
+     "controls": ["nist-800-53-r5:cm-3", "soc2-tsc:cc8", "hitrust-csf:09",
+                  "owasp-web-top10:a08-2021"]},
+    {"id": "asset-management", "title": "Asset & Data Classification", "layer": "governance",
+     "summary": "Inventorying assets and classifying data by sensitivity.",
+     "controls": ["nist-800-53-r5:cm-8", "soc2-tsc:cc6", "hitrust-csf:07"]},
+    {"id": "vulnerability-management", "title": "Vulnerability Management", "layer": "infrastructure",
+     "summary": "Identifying and remediating technical vulnerabilities and outdated components.",
+     "controls": ["nist-800-53-r5:ra-5", "hitrust-csf:10", "soc2-tsc:cc7",
+                  "owasp-web-top10:a06-2021"]},
+    {"id": "input-validation", "title": "Input Validation & Injection Defense", "layer": "input",
+     "summary": "Validating inputs to prevent injection and malformed-data attacks.",
+     "controls": ["nist-800-53-r5:si-10", "owasp-web-top10:a03-2021", "owasp-llm-top10:llm01-2025",
+                  "mitre-atlas:aml-t0051", "nist-ai-600-1:ga-2-9"]},
+    {"id": "governance-policy", "title": "Governance, Policy & Accountability", "layer": "governance",
+     "summary": "Establishing policy, roles, and accountability for security and AI programs.",
+     "controls": ["nist-800-53-r5:pm-1", "soc2-tsc:cc1", "hitrust-csf:04", "hitrust-csf:05",
+                  "iso-42001:a2", "iso-42001:a3", "nist-ai-rmf:govern-1-1"]},
+    {"id": "third-party-risk", "title": "Third-Party & Supply Chain Risk", "layer": "governance",
+     "summary": "Managing risks from vendors, partners, and supply-chain components.",
+     "controls": ["nist-800-53-r5:sr-3", "soc2-tsc:cc9", "hitrust-csf:05",
+                  "iso-42001:a10", "owasp-llm-top10:llm03-2025"]},
+    # --- AI-specific domains (one group among the rest) ---
+    {"id": "ai-prompt-injection", "title": "AI: Prompt Injection", "layer": "input",
+     "summary": "Crafted input overrides an AI model's instructions, directly or via poisoned content.",
+     "controls": ["owasp-llm-top10:llm01-2025", "mitre-atlas:aml-t0051", "nist-ai-600-1:ga-2-9",
+                  "nist-ai-rmf:measure-2-7", "nist-800-53-r5:si-10"]},
+    {"id": "ai-excessive-agency", "title": "AI: Excessive Agency", "layer": "agentic",
+     "summary": "An AI agent with too much autonomy or permission takes damaging actions when manipulated.",
+     "controls": ["owasp-llm-top10:llm06-2025", "nist-800-53-r5:ac-6", "eu-ai-act:art-14",
+                  "iso-42001:a9"]},
+    {"id": "ai-data-poisoning", "title": "AI: Data & Model Poisoning", "layer": "model",
+     "summary": "Tampered training, fine-tuning, or RAG data corrupts AI model behavior.",
+     "controls": ["owasp-llm-top10:llm04-2025", "nist-ai-600-1:ga-2-12", "mitre-atlas:aml-t0020",
+                  "iso-42001:a7"]},
+    {"id": "ai-governance", "title": "AI: Governance & Oversight", "layer": "governance",
+     "summary": "Policy, accountability, human oversight, and lifecycle risk management for AI systems.",
+     "controls": ["nist-ai-rmf:govern-1-1", "iso-42001:a2", "iso-42001:a5", "eu-ai-act:art-9",
+                  "eu-ai-act:art-14"]},
 ]
 
 # Cross-framework mappings. Each: from -> to with relation, strength, source.
@@ -105,9 +152,9 @@ MAPPINGS = [
      "SOC 2 system operations / monitoring aligns with NIST event logging."),
     ("soc2-tsc:cc8", "owasp-web-top10:a08-2021", "related", "partial", "kyora-iq",
      "SOC 2 change management relates to software and data integrity failures."),
-    ("soc2-tsc:cc6", "hitrust-csf:01-access-control", "equivalent", "strong", "kyora-iq",
+    ("soc2-tsc:cc6", "hitrust-csf:01", "equivalent", "strong", "kyora-iq",
      "SOC 2 access controls correspond to HITRUST access control (01)."),
-    ("nist-800-53-r5:au-2", "hitrust-csf:09-audit-logging", "equivalent", "strong", "kyora-iq",
+    ("nist-800-53-r5:au-2", "hitrust-csf:09", "equivalent", "strong", "kyora-iq",
      "Event logging corresponds to HITRUST audit logging and monitoring (09)."),
     ("nist-ai-rmf:govern-1-1", "iso-42001:a2", "related", "strong", "kyora-iq",
      "AI RMF governance aligns with ISO 42001 AI policy."),
@@ -154,8 +201,35 @@ def resolve_index(normdir: Path):
                         "license": fw["license"], "controls": control_count, "total_nodes": total})
     return idx, fw_meta
 
+ALL_DISCLAIMERS = {
+    "soc2-tsc": "The Trust Services Criteria and COSO Principles are proprietary to the AICPA. This tool provides independently-written summaries for educational reference only and is not affiliated with or endorsed by the AICPA. For official criteria text, audit guidance, and SOC 2 reports, visit the AICPA website. Do not rely on this tool for compliance decisions.",
+    "iso-42001": "ISO/IEC 42001 is copyrighted by ISO/IEC. This tool provides independently-written summaries of the control structure for educational reference only and is not affiliated with or endorsed by ISO/IEC. Purchase the official standard from ISO for authoritative control text. Do not rely on this tool for compliance decisions.",
+    "hitrust-csf": "The HITRUST CSF is proprietary to HITRUST. This tool provides independently-written summaries of the control structure for educational reference only and is not affiliated with or endorsed by HITRUST. Access the official CSF via HITRUST MyCSF for authoritative control text. Do not rely on this tool for compliance decisions.",
+    "eu-ai-act": "Summaries of EU AI Act articles are independently written for educational reference. The official, legally binding text is published in the Official Journal of the European Union (Regulation (EU) 2024/1689). Do not rely on this tool for legal or compliance decisions.",
+    "hipaa-security-rule": "HIPAA Security Rule text is U.S. public law (45 CFR Part 164). This tool reproduces and summarizes it for educational reference only and is not affiliated with or endorsed by HHS. For authoritative requirements and official guidance, consult the eCFR and HHS. Do not rely on this tool for compliance decisions.",
+    "nist-800-53-r5": "NIST SP 800-53 is a U.S. Government publication (public domain), reproduced here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text. Do not rely on this tool for compliance decisions.",
+    "nist-ai-rmf": "The NIST AI RMF is a U.S. Government publication (public domain), summarized here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text.",
+    "nist-ai-600-1": "NIST AI 600-1 is a U.S. Government publication (public domain), summarized here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text.",
+    "owasp-llm-top10": "OWASP content is licensed CC BY-SA 4.0. This tool provides independently-written summaries with attribution and is not endorsed by the OWASP Foundation. See the official OWASP project for authoritative text.",
+    "owasp-api-top10": "OWASP content is licensed CC BY-SA 4.0. This tool provides independently-written summaries with attribution and is not endorsed by the OWASP Foundation. See the official OWASP project for authoritative text.",
+    "owasp-web-top10": "OWASP content is licensed CC BY-SA 4.0. This tool provides independently-written summaries with attribution and is not endorsed by the OWASP Foundation. See the official OWASP project for authoritative text.",
+    "mitre-atlas": "MITRE ATLAS is © The MITRE Corporation. This tool provides independently-written summaries with attribution and is not endorsed by MITRE. See the official ATLAS site for authoritative text.",
+    "mitre-attack": "MITRE ATT&CK is © The MITRE Corporation. This tool provides independently-written summaries of a curated subset with attribution and is not endorsed by MITRE. See the official ATT&CK site for authoritative text.",
+}
+
+def inject_disclaimers(normdir: Path):
+    for f in normdir.glob("*.json"):
+        if f.name.startswith("_"):
+            continue
+        d = json.loads(f.read_text())
+        fid = d["framework"]["id"]
+        if fid in ALL_DISCLAIMERS:
+            d["framework"]["disclaimer"] = ALL_DISCLAIMERS[fid]
+            f.write_text(json.dumps(d, indent=2, ensure_ascii=False))
+
 def main(normdir_str: str):
     normdir = Path(normdir_str)
+    inject_disclaimers(normdir)
     idx, fw_meta = resolve_index(normdir)
 
     # Validate refs

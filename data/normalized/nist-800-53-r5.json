@@ -8,7 +8,8 @@
     "source_url": "https://github.com/usnistgov/oscal-content",
     "license": "public-domain",
     "retrieved_at": "2026-06-29",
-    "source_checksum": "sha256:01f37cf90ea99d92242c936cbfbdebcc338eef1f71454e2acac36cc56e9bc062"
+    "source_checksum": "sha256:01f37cf90ea99d92242c936cbfbdebcc338eef1f71454e2acac36cc56e9bc062",
+    "disclaimer": "NIST SP 800-53 is a U.S. Government publication (public domain), reproduced here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text. Do not rely on this tool for compliance decisions."
   },
   "controls": [
     {

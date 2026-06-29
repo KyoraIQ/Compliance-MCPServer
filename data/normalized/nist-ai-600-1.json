@@ -7,8 +7,9 @@
     "source_handling": "verbatim",
     "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
     "license": "public-domain",
-    "retrieved_at": "2026-06-25",
-    "source_checksum": "manual:nist-ai-600-1"
+    "retrieved_at": "2026-06-29",
+    "source_checksum": "manual:nist-ai-600-1",
+    "disclaimer": "NIST AI 600-1 is a U.S. Government publication (public domain), summarized here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text."
   },
   "controls": [
     {

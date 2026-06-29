@@ -24,12 +24,12 @@
     {
       "id": "hitrust-csf",
       "name": "HITRUST CSF",
-      "version": "v11 (representative)",
+      "version": "v11",
       "publisher": "HITRUST",
       "source_handling": "own-wording",
       "license": "proprietary-structure-only",
-      "controls": 6,
-      "total_nodes": 6
+      "controls": 65,
+      "total_nodes": 65
     },
     {
       "id": "iso-42001",
@@ -134,9 +134,9 @@
   ],
   "counts": {
     "frameworks": 13,
-    "risks": 8,
+    "risks": 16,
     "mappings": 31,
-    "total_control_nodes": 2347,
-    "total_controls": 1495
+    "total_control_nodes": 2406,
+    "total_controls": 1554
   }
 }

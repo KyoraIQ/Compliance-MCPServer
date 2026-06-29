@@ -7,8 +7,9 @@
     "source_handling": "verbatim",
     "source_url": "https://www.nist.gov/itl/ai-risk-management-framework",
     "license": "public-domain",
-    "retrieved_at": "2026-06-25",
-    "source_checksum": "manual:nist-ai-rmf"
+    "retrieved_at": "2026-06-29",
+    "source_checksum": "manual:nist-ai-rmf",
+    "disclaimer": "The NIST AI RMF is a U.S. Government publication (public domain), summarized here for educational reference. Not affiliated with or endorsed by NIST. Consult the official NIST publication for authoritative text."
   },
   "controls": [
     {
