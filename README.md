@@ -14,7 +14,7 @@ assistant can pull authoritative, cited control text instead of guessing.
 > assistant can *use* this reference while reviewing a system, but the checking
 > of a real environment is a separate, later capability.
 
-## Frameworks tracked (13)
+## Frameworks tracked (12)
 
 Ingested in waves. Each framework is handled according to how its source is
 licensed — see `docs/SOURCING-POLICY.md`.
@@ -33,6 +33,22 @@ licensed — see `docs/SOURCING-POLICY.md`.
 | 3 | SOC 2 / AICPA Trust Services Criteria | Own wording (AICPA text licensed) |
 | 3 | ISO/IEC 42001 | Own wording (ISO text licensed) |
 | 3 | EU AI Act | Article references + own summaries |
+
+## Crosswalk
+
+Controls are grouped into **control domains** so you can see how the same theme
+is addressed across every framework at once. There are 28 domains: 12 covering
+general security and privacy (access control, audit logging, encryption, risk
+assessment, incident response, and so on) and 16 covering AI-specific security
+risks across the five AI layers (input, output, model, infrastructure, agentic),
+including prompt injection, sensitive information disclosure, model theft,
+unbounded consumption, excessive agency, and MCP and connector tool abuse.
+
+Cross-framework **mappings** connect individual controls to their equivalents in
+other frameworks. Mappings are hand-authored Kyora IQ interpretations, clearly
+tagged as such, and the community can suggest more through a pre-filled GitHub
+issue from any control's page. Mappings are not official crosswalks; they are a
+reasoned starting point, the same way any GRC team builds its own.
 
 ## Repository layout
 
