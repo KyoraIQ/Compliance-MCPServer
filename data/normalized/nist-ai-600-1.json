@@ -4,93 +4,156 @@
     "name": "NIST AI 600-1 Generative AI Profile",
     "version": "600-1",
     "publisher": "NIST",
-    "source_handling": "verbatim",
     "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
-    "license": "public-domain",
+    "source_handling": "paraphrased",
+    "license": "Public Domain (U.S. Government work)",
     "retrieved_at": "2026-06-29",
-    "source_checksum": "manual:nist-ai-600-1",
     "disclaimer": "NIST AI 600-1 is public domain. Shown for reference — verify against the official NIST publication."
   },
   "controls": [
     {
       "id": "ga-2-1",
       "display_id": "GAI 2.1",
-      "title": "CBRN Information",
-      "kind": "control",
-      "statement": "Manage risks that generative AI could lower barriers to access to harmful CBRN-related information.",
-      "guidance": "",
+      "title": "CBRN Information or Capabilities",
       "layer": "governance",
-      "attributes": {
-        "function": "risk"
-      },
+      "statement": "Risk that generative AI lowers the barrier to access or synthesize harmful chemical, biological, radiological, or nuclear information or capabilities.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
       "children": [],
-      "mappings": [],
-      "source_ref": "GAI 2.1",
-      "source_handling": "verbatim"
+      "mappings": []
+    },
+    {
+      "id": "ga-2-2",
+      "display_id": "GAI 2.2",
+      "title": "Confabulation",
+      "layer": "output",
+      "statement": "Risk that the system produces confidently stated false or fabricated content (also called hallucination) that users may over-trust.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
+      "children": [],
+      "mappings": []
+    },
+    {
+      "id": "ga-2-3",
+      "display_id": "GAI 2.3",
+      "title": "Dangerous, Violent, or Hateful Content",
+      "layer": "output",
+      "statement": "Risk that the system produces or eases production of dangerous, violent, or hateful content, including incitement and recommendations for self-harm.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
+      "children": [],
+      "mappings": []
+    },
+    {
+      "id": "ga-2-4",
+      "display_id": "GAI 2.4",
+      "title": "Environmental Impacts",
+      "layer": "infrastructure",
+      "statement": "Risk from the high compute, energy, and water demands of training and operating large generative AI models.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
+      "children": [],
+      "mappings": []
+    },
+    {
+      "id": "ga-2-5",
+      "display_id": "GAI 2.5",
+      "title": "Harmful Bias and Homogenization",
+      "layer": "model",
+      "statement": "Risk that the system amplifies harmful bias, discriminates, or homogenizes outputs in ways that disadvantage groups of people.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
+      "children": [],
+      "mappings": []
+    },
+    {
+      "id": "ga-2-6",
+      "display_id": "GAI 2.6",
+      "title": "Human-AI Configuration",
+      "layer": "agentic",
+      "statement": "Risk from how humans and the AI system interact, including over-reliance, automation bias, misuse, and unclear roles in decision-making.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
+      "children": [],
+      "mappings": []
     },
     {
       "id": "ga-2-7",
       "display_id": "GAI 2.7",
       "title": "Data Privacy",
-      "kind": "control",
-      "statement": "Manage risks of generative AI leaking or inferring sensitive personal data.",
-      "guidance": "",
       "layer": "output",
-      "attributes": {
-        "function": "risk"
-      },
+      "statement": "Risk that generative AI leaks, infers, or reconstructs sensitive personal data from training data, context, or other users.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
       "children": [],
-      "mappings": [],
-      "source_ref": "GAI 2.7",
-      "source_handling": "verbatim"
+      "mappings": []
     },
     {
       "id": "ga-2-8",
       "display_id": "GAI 2.8",
-      "title": "Confabulation",
-      "kind": "control",
-      "statement": "Manage risks of generative AI producing confidently stated false content (confabulation/hallucination).",
-      "guidance": "",
+      "title": "Information Integrity",
       "layer": "output",
-      "attributes": {
-        "function": "risk"
-      },
+      "statement": "Risk that generative AI degrades information integrity at scale, including confabulation, misinformation, disinformation, and deceptive synthetic content.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
       "children": [],
-      "mappings": [],
-      "source_ref": "GAI 2.8",
-      "source_handling": "verbatim"
+      "mappings": []
     },
     {
       "id": "ga-2-9",
       "display_id": "GAI 2.9",
       "title": "Information Security",
-      "kind": "control",
-      "statement": "Manage generative-AI information-security risks including prompt injection and data poisoning.",
-      "guidance": "",
       "layer": "input",
-      "attributes": {
-        "function": "risk"
-      },
+      "statement": "Risk to information security from generative AI, including prompt injection, data poisoning, model theft, and expanded attack surface.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
       "children": [],
-      "mappings": [],
-      "source_ref": "GAI 2.9",
-      "source_handling": "verbatim"
+      "mappings": []
+    },
+    {
+      "id": "ga-2-10",
+      "display_id": "GAI 2.10",
+      "title": "Intellectual Property",
+      "layer": "output",
+      "statement": "Risk that the system reproduces or infringes copyrighted, trademarked, or licensed material, or leaks proprietary training data.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
+      "children": [],
+      "mappings": []
+    },
+    {
+      "id": "ga-2-11",
+      "display_id": "GAI 2.11",
+      "title": "Obscene, Degrading, or Abusive Content",
+      "layer": "output",
+      "statement": "Risk that the system generates obscene, degrading, or non-consensual intimate content, including synthetic CSAM and abusive imagery.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
+      "children": [],
+      "mappings": []
     },
     {
       "id": "ga-2-12",
       "display_id": "GAI 2.12",
       "title": "Value Chain and Component Integration",
-      "kind": "control",
-      "statement": "Manage risks arising from third-party models, data, and components in the generative-AI value chain.",
-      "guidance": "",
       "layer": "model",
-      "attributes": {
-        "function": "risk"
-      },
+      "statement": "Risk arising from third-party models, data, and components integrated into the generative AI value chain, including opaque provenance.",
+      "guidance": "",
+      "kind": "risk",
+      "attributes": {},
       "children": [],
-      "mappings": [],
-      "source_ref": "GAI 2.12",
-      "source_handling": "verbatim"
+      "mappings": []
     }
   ]
 }

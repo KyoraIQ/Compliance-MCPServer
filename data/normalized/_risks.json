@@ -211,7 +211,7 @@
         "hipaa-security-rule:308-a-1",
         "soc2-tsc:cc3",
         "iso-42001:a5",
-        "nist-ai-rmf:map-1-1",
+        "nist-ai-rmf:map-1",
         "eu-ai-act:art-9"
       ],
       "controls_resolved": [
@@ -235,15 +235,15 @@
         },
         {
           "ref": "iso-42001:a5",
-          "title": "AI System Impact Assessment",
+          "title": "Assessing Impacts of AI Systems",
           "layer": "governance",
           "display_id": "A.5"
         },
         {
-          "ref": "nist-ai-rmf:map-1-1",
-          "title": "Context and Intended Purpose",
+          "ref": "nist-ai-rmf:map-1",
+          "title": "Context Establishment",
           "layer": "governance",
-          "display_id": "MAP 1.1"
+          "display_id": "MAP 1"
         },
         {
           "ref": "eu-ai-act:art-9",
@@ -425,7 +425,7 @@
         "soc2-tsc:cc1",
         "iso-42001:a2",
         "iso-42001:a3",
-        "nist-ai-rmf:govern-1-1"
+        "nist-ai-rmf:govern-1"
       ],
       "controls_resolved": [
         {
@@ -442,7 +442,7 @@
         },
         {
           "ref": "iso-42001:a2",
-          "title": "AI Policy",
+          "title": "Policies Related to AI",
           "layer": "governance",
           "display_id": "A.2"
         },
@@ -453,10 +453,10 @@
           "display_id": "A.3"
         },
         {
-          "ref": "nist-ai-rmf:govern-1-1",
-          "title": "Legal and Regulatory Requirements",
+          "ref": "nist-ai-rmf:govern-1",
+          "title": "Policies, Processes, Procedures, and Practices",
           "layer": "governance",
-          "display_id": "GOVERN 1.1"
+          "display_id": "GOVERN 1"
         }
       ]
     },
@@ -582,8 +582,8 @@
         "mitre-attack:execution",
         "owasp-api-top10:api8-2023",
         "owasp-web-top10:a03-2021",
-        "nist-ai-rmf:measure-2-7",
-        "nist-ai-rmf:manage-2-2",
+        "nist-ai-rmf:measure-2",
+        "nist-ai-rmf:manage-2",
         "iso-42001:a6",
         "iso-42001:a8",
         "eu-ai-act:art-15",
@@ -628,20 +628,20 @@
           "display_id": "A03:2021"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-7",
-          "title": "Security and Resilience",
-          "layer": "input",
-          "display_id": "MEASURE 2.7"
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
+          "layer": "model",
+          "display_id": "MEASURE 2"
         },
         {
-          "ref": "nist-ai-rmf:manage-2-2",
-          "title": "Mechanisms to Sustain Value",
-          "layer": "governance",
-          "display_id": "MANAGE 2.2"
+          "ref": "nist-ai-rmf:manage-2",
+          "title": "Sustained Value and Risk Treatment",
+          "layer": "agentic",
+          "display_id": "MANAGE 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -718,8 +718,8 @@
         "mitre-atlas:aml-t0024",
         "owasp-api-top10:api3-2023",
         "owasp-web-top10:a01-2021",
-        "nist-ai-rmf:measure-2-7",
-        "nist-ai-rmf:manage-2-2",
+        "nist-ai-rmf:measure-2",
+        "nist-ai-rmf:manage-2",
         "iso-42001:a6",
         "eu-ai-act:art-10",
         "nist-800-53-r5:si-10",
@@ -763,20 +763,20 @@
           "display_id": "A01:2021"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-7",
-          "title": "Security and Resilience",
-          "layer": "input",
-          "display_id": "MEASURE 2.7"
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
+          "layer": "model",
+          "display_id": "MEASURE 2"
         },
         {
-          "ref": "nist-ai-rmf:manage-2-2",
-          "title": "Mechanisms to Sustain Value",
-          "layer": "governance",
-          "display_id": "MANAGE 2.2"
+          "ref": "nist-ai-rmf:manage-2",
+          "title": "Sustained Value and Risk Treatment",
+          "layer": "agentic",
+          "display_id": "MANAGE 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -848,8 +848,8 @@
         "mitre-attack:t1530",
         "owasp-api-top10:api3-2023",
         "owasp-web-top10:a02-2021",
-        "nist-ai-rmf:measure-2-7",
-        "nist-ai-rmf:govern-1-1",
+        "nist-ai-rmf:measure-2",
+        "nist-ai-rmf:govern-1",
         "iso-42001:a6",
         "iso-42001:a8",
         "eu-ai-act:art-10",
@@ -901,20 +901,20 @@
           "display_id": "A02:2021"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-7",
-          "title": "Security and Resilience",
-          "layer": "input",
-          "display_id": "MEASURE 2.7"
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
+          "layer": "model",
+          "display_id": "MEASURE 2"
         },
         {
-          "ref": "nist-ai-rmf:govern-1-1",
-          "title": "Legal and Regulatory Requirements",
+          "ref": "nist-ai-rmf:govern-1",
+          "title": "Policies, Processes, Procedures, and Practices",
           "layer": "governance",
-          "display_id": "GOVERN 1.1"
+          "display_id": "GOVERN 1"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -997,8 +997,8 @@
         "mitre-attack:execution",
         "owasp-api-top10:api7-2023",
         "owasp-web-top10:a03-2021",
-        "nist-ai-rmf:measure-2-7",
-        "nist-ai-rmf:manage-2-2",
+        "nist-ai-rmf:measure-2",
+        "nist-ai-rmf:manage-2",
         "iso-42001:a6",
         "eu-ai-act:art-15",
         "nist-800-53-r5:si-10",
@@ -1042,20 +1042,20 @@
           "display_id": "A03:2021"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-7",
-          "title": "Security and Resilience",
-          "layer": "input",
-          "display_id": "MEASURE 2.7"
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
+          "layer": "model",
+          "display_id": "MEASURE 2"
         },
         {
-          "ref": "nist-ai-rmf:manage-2-2",
-          "title": "Mechanisms to Sustain Value",
-          "layer": "governance",
-          "display_id": "MANAGE 2.2"
+          "ref": "nist-ai-rmf:manage-2",
+          "title": "Sustained Value and Risk Treatment",
+          "layer": "agentic",
+          "display_id": "MANAGE 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -1109,7 +1109,7 @@
         },
         {
           "ref": "nist-ai-600-1:ga-2-8",
-          "title": "Confabulation",
+          "title": "Information Integrity",
           "layer": "output",
           "display_id": "GAI 2.8"
         }
@@ -1124,8 +1124,8 @@
         "owasp-llm-top10:llm09-2025",
         "mitre-atlas:aml-t0048",
         "mitre-atlas:aml-t0047",
-        "nist-ai-rmf:measure-2-11",
-        "nist-ai-rmf:govern-2-1",
+        "nist-ai-rmf:measure-2",
+        "nist-ai-rmf:govern-2",
         "iso-42001:a6",
         "iso-42001:a8",
         "eu-ai-act:art-13",
@@ -1156,20 +1156,20 @@
           "display_id": "AML.T0047"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-11",
-          "title": "Harmful Bias",
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
           "layer": "model",
-          "display_id": "MEASURE 2.11"
+          "display_id": "MEASURE 2"
         },
         {
-          "ref": "nist-ai-rmf:govern-2-1",
-          "title": "Roles and Responsibilities",
+          "ref": "nist-ai-rmf:govern-2",
+          "title": "Accountability Structures",
           "layer": "governance",
-          "display_id": "GOVERN 2.1"
+          "display_id": "GOVERN 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -1181,7 +1181,7 @@
         },
         {
           "ref": "eu-ai-act:art-13",
-          "title": "Transparency and Information to Users",
+          "title": "Transparency and Information to Deployers",
           "layer": "output",
           "display_id": "Art. 13"
         },
@@ -1217,7 +1217,7 @@
         },
         {
           "ref": "nist-ai-600-1:ga-2-8",
-          "title": "Confabulation",
+          "title": "Information Integrity",
           "layer": "output",
           "display_id": "GAI 2.8"
         }
@@ -1232,8 +1232,8 @@
         "owasp-llm-top10:llm04-2025",
         "mitre-atlas:aml-t0020",
         "owasp-web-top10:a08-2021",
-        "nist-ai-rmf:measure-2-11",
-        "nist-ai-rmf:map-2-3",
+        "nist-ai-rmf:measure-2",
+        "nist-ai-rmf:map-2",
         "iso-42001:a6",
         "iso-42001:a7",
         "eu-ai-act:art-10",
@@ -1266,20 +1266,20 @@
           "display_id": "A08:2021"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-11",
-          "title": "Harmful Bias",
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
           "layer": "model",
-          "display_id": "MEASURE 2.11"
+          "display_id": "MEASURE 2"
         },
         {
-          "ref": "nist-ai-rmf:map-2-3",
-          "title": "Capabilities and Limitations",
+          "ref": "nist-ai-rmf:map-2",
+          "title": "Categorization",
           "layer": "model",
-          "display_id": "MAP 2.3"
+          "display_id": "MAP 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -1357,8 +1357,8 @@
         "mitre-attack:credential-access",
         "owasp-api-top10:api3-2023",
         "owasp-web-top10:a05-2021",
-        "nist-ai-rmf:measure-2-7",
-        "nist-ai-rmf:govern-1-1",
+        "nist-ai-rmf:measure-2",
+        "nist-ai-rmf:govern-1",
         "iso-42001:a6",
         "eu-ai-act:art-13",
         "nist-800-53-r5:ac-3",
@@ -1407,26 +1407,26 @@
           "display_id": "A05:2021"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-7",
-          "title": "Security and Resilience",
-          "layer": "input",
-          "display_id": "MEASURE 2.7"
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
+          "layer": "model",
+          "display_id": "MEASURE 2"
         },
         {
-          "ref": "nist-ai-rmf:govern-1-1",
-          "title": "Legal and Regulatory Requirements",
+          "ref": "nist-ai-rmf:govern-1",
+          "title": "Policies, Processes, Procedures, and Practices",
           "layer": "governance",
-          "display_id": "GOVERN 1.1"
+          "display_id": "GOVERN 1"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
         {
           "ref": "eu-ai-act:art-13",
-          "title": "Transparency and Information to Users",
+          "title": "Transparency and Information to Deployers",
           "layer": "output",
           "display_id": "Art. 13"
         },
@@ -1485,8 +1485,8 @@
         "mitre-attack:t1530",
         "owasp-api-top10:api2-2023",
         "owasp-web-top10:a01-2021",
-        "nist-ai-rmf:govern-1-1",
-        "nist-ai-rmf:manage-2-2",
+        "nist-ai-rmf:govern-1",
+        "nist-ai-rmf:manage-2",
         "iso-42001:a6",
         "eu-ai-act:art-13",
         "nist-800-53-r5:ac-3",
@@ -1530,26 +1530,26 @@
           "display_id": "A01:2021"
         },
         {
-          "ref": "nist-ai-rmf:govern-1-1",
-          "title": "Legal and Regulatory Requirements",
+          "ref": "nist-ai-rmf:govern-1",
+          "title": "Policies, Processes, Procedures, and Practices",
           "layer": "governance",
-          "display_id": "GOVERN 1.1"
+          "display_id": "GOVERN 1"
         },
         {
-          "ref": "nist-ai-rmf:manage-2-2",
-          "title": "Mechanisms to Sustain Value",
-          "layer": "governance",
-          "display_id": "MANAGE 2.2"
+          "ref": "nist-ai-rmf:manage-2",
+          "title": "Sustained Value and Risk Treatment",
+          "layer": "agentic",
+          "display_id": "MANAGE 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
         {
           "ref": "eu-ai-act:art-13",
-          "title": "Transparency and Information to Users",
+          "title": "Transparency and Information to Deployers",
           "layer": "output",
           "display_id": "Art. 13"
         },
@@ -1614,8 +1614,8 @@
         "mitre-attack:t1499",
         "owasp-api-top10:api4-2023",
         "owasp-web-top10:a05-2021",
-        "nist-ai-rmf:measure-2-7",
-        "nist-ai-rmf:manage-4-1",
+        "nist-ai-rmf:measure-2",
+        "nist-ai-rmf:manage-4",
         "iso-42001:a6",
         "eu-ai-act:art-15",
         "nist-800-53-r5:sc-5",
@@ -1659,20 +1659,20 @@
           "display_id": "A05:2021"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-7",
-          "title": "Security and Resilience",
-          "layer": "input",
-          "display_id": "MEASURE 2.7"
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
+          "layer": "model",
+          "display_id": "MEASURE 2"
         },
         {
-          "ref": "nist-ai-rmf:manage-4-1",
-          "title": "Post-Deployment Monitoring",
-          "layer": "output",
-          "display_id": "MANAGE 4.1"
+          "ref": "nist-ai-rmf:manage-4",
+          "title": "Risk Monitoring and Communication",
+          "layer": "infrastructure",
+          "display_id": "MANAGE 4"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -1743,8 +1743,8 @@
         "mitre-attack:initial-access",
         "owasp-api-top10:api9-2023",
         "owasp-web-top10:a06-2021",
-        "nist-ai-rmf:govern-1-1",
-        "nist-ai-rmf:map-2-3",
+        "nist-ai-rmf:govern-1",
+        "nist-ai-rmf:map-2",
         "iso-42001:a6",
         "iso-42001:a7",
         "eu-ai-act:art-15",
@@ -1788,20 +1788,20 @@
           "display_id": "A06:2021"
         },
         {
-          "ref": "nist-ai-rmf:govern-1-1",
-          "title": "Legal and Regulatory Requirements",
+          "ref": "nist-ai-rmf:govern-1",
+          "title": "Policies, Processes, Procedures, and Practices",
           "layer": "governance",
-          "display_id": "GOVERN 1.1"
+          "display_id": "GOVERN 1"
         },
         {
-          "ref": "nist-ai-rmf:map-2-3",
-          "title": "Capabilities and Limitations",
+          "ref": "nist-ai-rmf:map-2",
+          "title": "Categorization",
           "layer": "model",
-          "display_id": "MAP 2.3"
+          "display_id": "MAP 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -1873,7 +1873,7 @@
         "owasp-api-top10:api1-2023",
         "owasp-web-top10:a01-2021",
         "owasp-web-top10:a07-2021",
-        "nist-ai-rmf:measure-2-7",
+        "nist-ai-rmf:measure-2",
         "iso-42001:a6",
         "eu-ai-act:art-15",
         "nist-800-53-r5:ia-3",
@@ -1922,14 +1922,14 @@
           "display_id": "A07:2021"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-7",
-          "title": "Security and Resilience",
-          "layer": "input",
-          "display_id": "MEASURE 2.7"
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
+          "layer": "model",
+          "display_id": "MEASURE 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -1993,7 +1993,7 @@
         "owasp-api-top10:api7-2023",
         "owasp-api-top10:api8-2023",
         "owasp-web-top10:a05-2021",
-        "nist-ai-rmf:manage-4-1",
+        "nist-ai-rmf:manage-4",
         "iso-42001:a6",
         "eu-ai-act:art-15",
         "nist-800-53-r5:cm-6",
@@ -2031,14 +2031,14 @@
           "display_id": "A05:2021"
         },
         {
-          "ref": "nist-ai-rmf:manage-4-1",
-          "title": "Post-Deployment Monitoring",
-          "layer": "output",
-          "display_id": "MANAGE 4.1"
+          "ref": "nist-ai-rmf:manage-4",
+          "title": "Risk Monitoring and Communication",
+          "layer": "infrastructure",
+          "display_id": "MANAGE 4"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -2111,8 +2111,8 @@
         "mitre-attack:t1078",
         "owasp-api-top10:api5-2023",
         "owasp-web-top10:a01-2021",
-        "nist-ai-rmf:govern-1-2",
-        "nist-ai-rmf:manage-4-1",
+        "nist-ai-rmf:govern-1",
+        "nist-ai-rmf:manage-4",
         "iso-42001:a6",
         "eu-ai-act:art-14",
         "nist-800-53-r5:ac-3",
@@ -2168,20 +2168,20 @@
           "display_id": "A01:2021"
         },
         {
-          "ref": "nist-ai-rmf:govern-1-2",
-          "title": "Trustworthy AI Characteristics",
+          "ref": "nist-ai-rmf:govern-1",
+          "title": "Policies, Processes, Procedures, and Practices",
           "layer": "governance",
-          "display_id": "GOVERN 1.2"
+          "display_id": "GOVERN 1"
         },
         {
-          "ref": "nist-ai-rmf:manage-4-1",
-          "title": "Post-Deployment Monitoring",
-          "layer": "output",
-          "display_id": "MANAGE 4.1"
+          "ref": "nist-ai-rmf:manage-4",
+          "title": "Risk Monitoring and Communication",
+          "layer": "infrastructure",
+          "display_id": "MANAGE 4"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -2255,8 +2255,8 @@
         "owasp-api-top10:api5-2023",
         "owasp-api-top10:api8-2023",
         "owasp-web-top10:a04-2021",
-        "nist-ai-rmf:govern-1-2",
-        "nist-ai-rmf:manage-2-2",
+        "nist-ai-rmf:govern-1",
+        "nist-ai-rmf:manage-2",
         "iso-42001:a6",
         "iso-42001:a7",
         "eu-ai-act:art-14",
@@ -2320,20 +2320,20 @@
           "display_id": "A04:2021"
         },
         {
-          "ref": "nist-ai-rmf:govern-1-2",
-          "title": "Trustworthy AI Characteristics",
+          "ref": "nist-ai-rmf:govern-1",
+          "title": "Policies, Processes, Procedures, and Practices",
           "layer": "governance",
-          "display_id": "GOVERN 1.2"
+          "display_id": "GOVERN 1"
         },
         {
-          "ref": "nist-ai-rmf:manage-2-2",
-          "title": "Mechanisms to Sustain Value",
-          "layer": "governance",
-          "display_id": "MANAGE 2.2"
+          "ref": "nist-ai-rmf:manage-2",
+          "title": "Sustained Value and Risk Treatment",
+          "layer": "agentic",
+          "display_id": "MANAGE 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -2414,8 +2414,8 @@
         "owasp-llm-top10:llm06-2025",
         "mitre-atlas:aml-t0086",
         "owasp-web-top10:a04-2021",
-        "nist-ai-rmf:govern-1-2",
-        "nist-ai-rmf:measure-2-7",
+        "nist-ai-rmf:govern-1",
+        "nist-ai-rmf:measure-2",
         "iso-42001:a6",
         "iso-42001:a8",
         "eu-ai-act:art-14",
@@ -2448,20 +2448,20 @@
           "display_id": "A04:2021"
         },
         {
-          "ref": "nist-ai-rmf:govern-1-2",
-          "title": "Trustworthy AI Characteristics",
+          "ref": "nist-ai-rmf:govern-1",
+          "title": "Policies, Processes, Procedures, and Practices",
           "layer": "governance",
-          "display_id": "GOVERN 1.2"
+          "display_id": "GOVERN 1"
         },
         {
-          "ref": "nist-ai-rmf:measure-2-7",
-          "title": "Security and Resilience",
-          "layer": "input",
-          "display_id": "MEASURE 2.7"
+          "ref": "nist-ai-rmf:measure-2",
+          "title": "Trustworthiness Evaluation",
+          "layer": "model",
+          "display_id": "MEASURE 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },
@@ -2544,8 +2544,8 @@
         "owasp-api-top10:api8-2023",
         "owasp-web-top10:a04-2021",
         "owasp-web-top10:a01-2021",
-        "nist-ai-rmf:govern-1-2",
-        "nist-ai-rmf:manage-2-2",
+        "nist-ai-rmf:govern-1",
+        "nist-ai-rmf:manage-2",
         "iso-42001:a6",
         "iso-42001:a7",
         "eu-ai-act:art-14",
@@ -2627,20 +2627,20 @@
           "display_id": "A01:2021"
         },
         {
-          "ref": "nist-ai-rmf:govern-1-2",
-          "title": "Trustworthy AI Characteristics",
+          "ref": "nist-ai-rmf:govern-1",
+          "title": "Policies, Processes, Procedures, and Practices",
           "layer": "governance",
-          "display_id": "GOVERN 1.2"
+          "display_id": "GOVERN 1"
         },
         {
-          "ref": "nist-ai-rmf:manage-2-2",
-          "title": "Mechanisms to Sustain Value",
-          "layer": "governance",
-          "display_id": "MANAGE 2.2"
+          "ref": "nist-ai-rmf:manage-2",
+          "title": "Sustained Value and Risk Treatment",
+          "layer": "agentic",
+          "display_id": "MANAGE 2"
         },
         {
           "ref": "iso-42001:a6",
-          "title": "AI System Lifecycle",
+          "title": "AI System Life Cycle",
           "layer": "model",
           "display_id": "A.6"
         },

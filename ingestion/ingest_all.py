@@ -71,8 +71,12 @@ def main():
         [str(ING / "build_hipaa.py"), str(NORM / "hipaa-security-rule.json")])
     run("Build NIST Privacy Framework v1.0",
         [str(ING / "build_nist_privacy.py"), str(NORM / "nist-privacy-1-0.json")])
-    run("Build OWASP (LLM/API/Web) + NIST AI (RMF/600-1)",
+    run("Build OWASP (LLM/API/Web)",
         [str(ING / "build_owasp_nistai.py"), str(NORM)])
+    run("Build NIST AI RMF (full: 4 functions, 19 categories)",
+        [str(ING / "build_nist_ai_rmf.py"), str(NORM / "nist-ai-rmf.json")])
+    run("Build NIST AI 600-1 (full: 12 GenAI risk categories)",
+        [str(ING / "build_nist_ai_600.py"), str(NORM / "nist-ai-600-1.json")])
     run("Normalize MITRE ATLAS (official YAML → schema)",
         [str(ING / "normalize_atlas.py"), str(RAW / "atlas.yaml"), str(NORM / "mitre-atlas.json")])
     run("Build MITRE ATT&CK (curated subset)",

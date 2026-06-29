@@ -8,8 +8,8 @@
       "publisher": "European Union",
       "source_handling": "own-wording",
       "license": "proprietary-structure-only",
-      "controls": 6,
-      "total_nodes": 6
+      "controls": 12,
+      "total_nodes": 12
     },
     {
       "id": "hipaa-security-rule",
@@ -28,8 +28,8 @@
       "publisher": "ISO/IEC",
       "source_handling": "own-wording",
       "license": "proprietary-structure-only",
-      "controls": 9,
-      "total_nodes": 9
+      "controls": 38,
+      "total_nodes": 47
     },
     {
       "id": "mitre-atlas",
@@ -66,20 +66,20 @@
       "name": "NIST AI 600-1 Generative AI Profile",
       "version": "600-1",
       "publisher": "NIST",
-      "source_handling": "verbatim",
-      "license": "public-domain",
-      "controls": 5,
-      "total_nodes": 5
+      "source_handling": "paraphrased",
+      "license": "Public Domain (U.S. Government work)",
+      "controls": 12,
+      "total_nodes": 12
     },
     {
       "id": "nist-ai-rmf",
       "name": "NIST AI Risk Management Framework",
-      "version": "AI 100-1",
+      "version": "1.0",
       "publisher": "NIST",
-      "source_handling": "verbatim",
-      "license": "public-domain",
-      "controls": 9,
-      "total_nodes": 9
+      "source_handling": "paraphrased",
+      "license": "Public Domain (U.S. Government work)",
+      "controls": 19,
+      "total_nodes": 23
     },
     {
       "id": "nist-privacy-1-0",
@@ -136,7 +136,7 @@
     "frameworks": 13,
     "risks": 29,
     "mappings": 171,
-    "total_control_nodes": 2407,
-    "total_controls": 1508
+    "total_control_nodes": 2472,
+    "total_controls": 1560
   }
 }

@@ -106,8 +106,6 @@ def build_all(outdir: str):
         "owasp-llm-top10": wrap("owasp-llm-top10","OWASP Top 10 for LLM Applications","2025","OWASP","paraphrased","https://genai.owasp.org/llm-top-10/","CC-BY-SA-4.0",[node(*r) for r in OWASP_LLM]),
         "owasp-api-top10": wrap("owasp-api-top10","OWASP API Security Top 10","2023","OWASP","paraphrased","https://owasp.org/API-Security/","CC-BY-SA-4.0",[node(*r) for r in OWASP_API]),
         "owasp-web-top10": wrap("owasp-web-top10","OWASP Top 10","2021","OWASP","paraphrased","https://owasp.org/Top10/","CC-BY-SA-4.0",[node(*r) for r in OWASP_WEB]),
-        "nist-ai-rmf": wrap("nist-ai-rmf","NIST AI Risk Management Framework","AI 100-1","NIST","verbatim","https://www.nist.gov/itl/ai-risk-management-framework","public-domain",[nist_node(*r) for r in NIST_AI_RMF]),
-        "nist-ai-600-1": wrap("nist-ai-600-1","NIST AI 600-1 Generative AI Profile","600-1","NIST","verbatim","https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf","public-domain",[nist_node(c,d,t,l,s,f) for (c,d,t,l,s,f) in NIST_AI_600]),
     }
     for fid, data in files.items():
         p = Path(outdir) / f"{fid}.json"

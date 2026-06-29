@@ -118,30 +118,6 @@ SOC2_SUPPLEMENTAL = [
 # ---------------------------------------------------------------------------
 # ISO/IEC 42001:2023 Annex A — 9 control objectives (A.2-A.10), own wording.
 # ---------------------------------------------------------------------------
-ISO42001 = [
-    ("a2", "A.2", "AI Policy", "governance",
-     "Establish, document, and maintain an organizational policy for the development and use of AI systems, aligned with business objectives and other policies."),
-    ("a3", "A.3", "Internal Organization", "governance",
-     "Define AI roles and responsibilities and establish a process for reporting concerns about the organization's AI systems."),
-    ("a4", "A.4", "Resources for AI Systems", "model",
-     "Identify and document the resources — data, tooling, compute, human competence — needed across the AI system lifecycle."),
-    ("a5", "A.5", "AI System Impact Assessment", "governance",
-     "Establish a process to assess the potential impacts of AI systems on individuals, groups, and society throughout their lifecycle."),
-    ("a6", "A.6", "AI System Lifecycle", "model",
-     "Define and apply responsible processes for the design, development, verification, deployment, operation, and retirement of AI systems."),
-    ("a7", "A.7", "Data for AI Systems", "model",
-     "Manage data used in AI systems: provenance, quality, preparation, and governance appropriate to the system's purpose."),
-    ("a8", "A.8", "Information for Interested Parties", "output",
-     "Provide appropriate information to users and affected parties about AI system capabilities, limitations, and intended use."),
-    ("a9", "A.9", "Use of AI Systems", "agentic",
-     "Establish responsible-use objectives and controls for how AI systems are operated and consumed within and beyond the organization."),
-    ("a10", "A.10", "Third-Party and Customer Relationships", "governance",
-     "Manage AI-related responsibilities, risks, and obligations across suppliers, partners, and customers in the AI value chain."),
-]
-
-# ---------------------------------------------------------------------------
-# Format: (cat_id, cat_display, cat_title, layer, [ (obj_id, obj_title) ])
-# ---------------------------------------------------------------------------
 
 def soc2_controls():
     out = []
@@ -163,39 +139,108 @@ def soc2_controls():
     return out
 
 ISO42001 = [
-    ("a2", "A.2", "AI Policy", "governance",
-     "Establish, document, and maintain an organizational policy for the development and use of AI systems, aligned with business objectives and other policies."),
+    ("a2", "A.2", "Policies Related to AI", "governance",
+     "Provide management direction and support for AI systems through documented policies.", [
+        ("A.2.2", "AI policy"),
+        ("A.2.3", "Alignment with other organizational policies"),
+        ("A.2.4", "Review of the AI policy"),
+     ]),
     ("a3", "A.3", "Internal Organization", "governance",
-     "Define AI roles and responsibilities and establish a process for reporting concerns about the organization's AI systems."),
+     "Establish accountability and clear roles for responsible AI within the organization.", [
+        ("A.3.2", "AI roles and responsibilities"),
+        ("A.3.3", "Reporting of concerns"),
+     ]),
     ("a4", "A.4", "Resources for AI Systems", "model",
-     "Identify and document the resources, data, tooling, compute, and human competence, needed across the AI system lifecycle."),
-    ("a5", "A.5", "AI System Impact Assessment", "governance",
-     "Establish a process to assess the potential impacts of AI systems on individuals, groups, and society throughout their lifecycle."),
-    ("a6", "A.6", "AI System Lifecycle", "model",
-     "Define and apply responsible processes for the design, development, verification, deployment, operation, and retirement of AI systems."),
+     "Identify and document the resources needed for AI systems across their lifecycle.", [
+        ("A.4.2", "Resource documentation"),
+        ("A.4.3", "Data resources"),
+        ("A.4.4", "Tooling resources"),
+        ("A.4.5", "System and computing resources"),
+        ("A.4.6", "Human resources"),
+     ]),
+    ("a5", "A.5", "Assessing Impacts of AI Systems", "governance",
+     "Assess the impacts of AI systems on individuals, groups, and society.", [
+        ("A.5.2", "AI system impact assessment process"),
+        ("A.5.3", "Documentation of impact assessments"),
+        ("A.5.4", "Assessing impacts on individuals and groups"),
+        ("A.5.5", "Assessing societal impacts"),
+     ]),
+    ("a6", "A.6", "AI System Life Cycle", "model",
+     "Define and apply responsible processes across the AI system life cycle.", [
+        ("A.6.1.2", "Objectives for responsible AI development"),
+        ("A.6.1.3", "Processes for responsible AI design and development"),
+        ("A.6.2.2", "AI system requirements and specification"),
+        ("A.6.2.3", "Documentation of AI system design"),
+        ("A.6.2.4", "AI system verification and validation"),
+        ("A.6.2.5", "AI system deployment"),
+        ("A.6.2.6", "AI system operation and monitoring"),
+        ("A.6.2.7", "AI system technical documentation"),
+        ("A.6.2.8", "AI system recording of event logs"),
+     ]),
     ("a7", "A.7", "Data for AI Systems", "model",
-     "Manage data used in AI systems: provenance, quality, preparation, and governance appropriate to the system's purpose."),
+     "Manage the data used in AI systems for quality, provenance, and governance.", [
+        ("A.7.2", "Data for development and enhancement of AI systems"),
+        ("A.7.3", "Acquisition of data"),
+        ("A.7.4", "Quality of data for AI systems"),
+        ("A.7.5", "Data provenance"),
+        ("A.7.6", "Data preparation"),
+     ]),
     ("a8", "A.8", "Information for Interested Parties", "output",
-     "Provide appropriate information to users and affected parties about AI system capabilities, limitations, and intended use."),
+     "Provide appropriate information to users and other interested parties.", [
+        ("A.8.2", "System documentation and information for users"),
+        ("A.8.3", "External reporting"),
+        ("A.8.4", "Communication of incidents"),
+        ("A.8.5", "Information for interested parties"),
+     ]),
     ("a9", "A.9", "Use of AI Systems", "agentic",
-     "Establish responsible-use objectives and controls for how AI systems are operated and consumed within and beyond the organization."),
+     "Establish responsible-use processes and limits for AI systems.", [
+        ("A.9.2", "Processes for responsible use of AI systems"),
+        ("A.9.3", "Objectives for responsible use of AI systems"),
+        ("A.9.4", "Intended use of the AI system"),
+     ]),
     ("a10", "A.10", "Third-Party and Customer Relationships", "governance",
-     "Manage AI-related responsibilities, risks, and obligations across suppliers, partners, and customers in the AI value chain."),
+     "Manage AI responsibilities across suppliers, partners, and customers.", [
+        ("A.10.2", "Allocation of responsibilities"),
+        ("A.10.3", "Suppliers"),
+        ("A.10.4", "Customers"),
+     ]),
 ]
+
+def iso42001_controls():
+    out = []
+    for cid, disp, title, layer, summary, ctrls in ISO42001:
+        children = []
+        for code, ctitle in ctrls:
+            slug = code.lower().replace(".", "-")
+            children.append(node(slug, code, ctitle, layer, ctitle, kind="control"))
+        out.append(node(cid, disp, title, layer, summary, kind="objective", children=children))
+    return out
 
 EU_AI_ACT = [
     ("art-9", "Art. 9", "Risk Management System", "governance",
      "High-risk AI systems must establish, implement, and maintain a continuous risk management system across the lifecycle."),
     ("art-10", "Art. 10", "Data and Data Governance", "model",
      "Training, validation, and testing data for high-risk AI must meet quality and governance criteria, including bias examination."),
+    ("art-11", "Art. 11", "Technical Documentation", "governance",
+     "Providers of high-risk AI must draw up and keep up to date technical documentation demonstrating conformity before the system is placed on the market."),
     ("art-12", "Art. 12", "Record-Keeping (Logging)", "infrastructure",
      "High-risk AI systems must automatically record events (logs) over their lifetime to ensure traceability."),
-    ("art-13", "Art. 13", "Transparency and Information to Users", "output",
-     "High-risk AI systems must be transparent enough for deployers to interpret output and use the system appropriately."),
+    ("art-13", "Art. 13", "Transparency and Information to Deployers", "output",
+     "High-risk AI systems must be transparent enough for deployers to interpret output and use the system appropriately, with clear instructions for use."),
     ("art-14", "Art. 14", "Human Oversight", "agentic",
      "High-risk AI systems must be designed to allow effective human oversight that can prevent or minimize risks."),
     ("art-15", "Art. 15", "Accuracy, Robustness and Cybersecurity", "model",
      "High-risk AI systems must achieve appropriate levels of accuracy, robustness, and cybersecurity, and perform consistently."),
+    ("art-16", "Art. 16", "Obligations of Providers", "governance",
+     "Providers of high-risk AI systems must ensure conformity, maintain documentation, implement a quality management system, and cooperate with authorities."),
+    ("art-17", "Art. 17", "Quality Management System", "governance",
+     "Providers must put in place a documented quality management system covering compliance strategy, design control, testing, and post-market monitoring."),
+    ("art-26", "Art. 26", "Obligations of Deployers", "agentic",
+     "Deployers of high-risk AI must use systems per instructions, ensure human oversight, monitor operation, and keep logs."),
+    ("art-50", "Art. 50", "Transparency for Certain AI Systems", "output",
+     "Providers and deployers must inform people when they interact with AI, and label synthetic or manipulated content such as deepfakes."),
+    ("art-72", "Art. 72", "Post-Market Monitoring", "infrastructure",
+     "Providers must establish a post-market monitoring system to collect and review the performance of high-risk AI systems throughout their lifetime."),
 ]
 
 def simple_controls(rows):
@@ -229,7 +274,7 @@ def build_all(outdir):
                          "https://www.aicpa-cima.com/", soc2_controls()),
         "iso-42001": wrap("iso-42001", "ISO/IEC 42001:2023 (AI Management System)",
                           "2023", "ISO/IEC", "https://www.iso.org/standard/81230.html",
-                          simple_controls(ISO42001)),
+                          iso42001_controls()),
         "eu-ai-act": wrap("eu-ai-act", "EU AI Act",
                           "Regulation (EU) 2024/1689", "European Union",
                           "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",

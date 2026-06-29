@@ -2,159 +2,332 @@
   "framework": {
     "id": "nist-ai-rmf",
     "name": "NIST AI Risk Management Framework",
-    "version": "AI 100-1",
+    "version": "1.0",
     "publisher": "NIST",
-    "source_handling": "verbatim",
     "source_url": "https://www.nist.gov/itl/ai-risk-management-framework",
-    "license": "public-domain",
+    "source_handling": "paraphrased",
+    "license": "Public Domain (U.S. Government work)",
     "retrieved_at": "2026-06-29",
-    "source_checksum": "manual:nist-ai-rmf",
     "disclaimer": "NIST AI RMF is public domain. Shown for reference — verify against the official NIST publication."
   },
   "controls": [
     {
-      "id": "govern-1-1",
-      "display_id": "GOVERN 1.1",
-      "title": "Legal and Regulatory Requirements",
-      "kind": "control",
-      "statement": "Legal and regulatory requirements involving AI are understood, managed, and documented.",
-      "guidance": "",
+      "id": "govern",
+      "display_id": "GOVERN",
+      "title": "Govern",
       "layer": "governance",
-      "attributes": {
-        "function": "GOVERN"
-      },
-      "children": [],
-      "mappings": [],
-      "source_ref": "GOVERN 1.1",
-      "source_handling": "verbatim"
+      "statement": "Govern function of the NIST AI Risk Management Framework.",
+      "guidance": "",
+      "kind": "function",
+      "attributes": {},
+      "children": [
+        {
+          "id": "govern-1",
+          "display_id": "GOVERN 1",
+          "title": "Policies, Processes, Procedures, and Practices",
+          "layer": "governance",
+          "statement": "Policies and processes for AI risk management are in place, transparent, and implemented across the organization, including legal and regulatory understanding. (7 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 7
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "govern-2",
+          "display_id": "GOVERN 2",
+          "title": "Accountability Structures",
+          "layer": "governance",
+          "statement": "Accountability structures are in place so the right teams and individuals are empowered, responsible, and trained for AI risk management. (3 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 3
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "govern-3",
+          "display_id": "GOVERN 3",
+          "title": "Workforce Diversity and Inclusion",
+          "layer": "governance",
+          "statement": "Workforce diversity, equity, inclusion, and accessibility are prioritized in the mapping, measuring, and managing of AI risk. (2 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 2
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "govern-4",
+          "display_id": "GOVERN 4",
+          "title": "Organizational Culture and Critical Thinking",
+          "layer": "governance",
+          "statement": "Organizational teams are committed to a culture that considers and communicates AI risk, encouraging critical thinking and safety-first mindsets. (3 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 3
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "govern-5",
+          "display_id": "GOVERN 5",
+          "title": "Stakeholder Engagement",
+          "layer": "governance",
+          "statement": "Processes are in place for robust engagement with relevant AI actors and affected communities, including mechanisms to collect and act on feedback. (2 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 2
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "govern-6",
+          "display_id": "GOVERN 6",
+          "title": "Third-Party Risk",
+          "layer": "governance",
+          "statement": "Policies address the risks and benefits of third-party AI software, data, and supply-chain components, including how they are acquired and monitored. (2 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 2
+          },
+          "children": [],
+          "mappings": []
+        }
+      ],
+      "mappings": []
     },
     {
-      "id": "govern-1-2",
-      "display_id": "GOVERN 1.2",
-      "title": "Trustworthy AI Characteristics",
-      "kind": "control",
-      "statement": "The characteristics of trustworthy AI are integrated into organizational policies, processes, and procedures.",
-      "guidance": "",
+      "id": "map",
+      "display_id": "MAP",
+      "title": "Map",
       "layer": "governance",
-      "attributes": {
-        "function": "GOVERN"
-      },
-      "children": [],
-      "mappings": [],
-      "source_ref": "GOVERN 1.2",
-      "source_handling": "verbatim"
+      "statement": "Map function of the NIST AI Risk Management Framework.",
+      "guidance": "",
+      "kind": "function",
+      "attributes": {},
+      "children": [
+        {
+          "id": "map-1",
+          "display_id": "MAP 1",
+          "title": "Context Establishment",
+          "layer": "governance",
+          "statement": "The context in which the AI system operates is established and understood, including intended purpose, settings, norms, and the organization's mission. (6 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 6
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "map-2",
+          "display_id": "MAP 2",
+          "title": "Categorization",
+          "layer": "model",
+          "statement": "The AI system, its capabilities, the tasks it performs, and the methods used are categorized and documented. (3 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 3
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "map-3",
+          "display_id": "MAP 3",
+          "title": "AI Capabilities, Targeted Usage, Goals",
+          "layer": "model",
+          "statement": "The system's capabilities, targeted usage, goals, and expected benefits and costs are understood relative to appropriate benchmarks. (5 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 5
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "map-4",
+          "display_id": "MAP 4",
+          "title": "Risk and Benefit Mapping of Third Parties",
+          "layer": "governance",
+          "statement": "Risks and benefits are mapped for all components of the AI system, including third-party software, data, and the broader value chain. (2 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 2
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "map-5",
+          "display_id": "MAP 5",
+          "title": "Impacts on Individuals, Groups, and Society",
+          "layer": "output",
+          "statement": "Impacts to individuals, groups, communities, organizations, and society are characterized, including the likelihood and magnitude of each identified impact. (2 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 2
+          },
+          "children": [],
+          "mappings": []
+        }
+      ],
+      "mappings": []
     },
     {
-      "id": "govern-2-1",
-      "display_id": "GOVERN 2.1",
-      "title": "Roles and Responsibilities",
-      "kind": "control",
-      "statement": "Roles, responsibilities, and lines of communication related to mapping, measuring, and managing AI risks are documented and clear.",
-      "guidance": "",
+      "id": "measure",
+      "display_id": "MEASURE",
+      "title": "Measure",
       "layer": "governance",
-      "attributes": {
-        "function": "GOVERN"
-      },
-      "children": [],
-      "mappings": [],
-      "source_ref": "GOVERN 2.1",
-      "source_handling": "verbatim"
+      "statement": "Measure function of the NIST AI Risk Management Framework.",
+      "guidance": "",
+      "kind": "function",
+      "attributes": {},
+      "children": [
+        {
+          "id": "measure-1",
+          "display_id": "MEASURE 1",
+          "title": "Appropriate Methods and Metrics",
+          "layer": "model",
+          "statement": "Appropriate methods and metrics are identified and applied to measure the AI risks enumerated during the Map function. (3 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 3
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "measure-2",
+          "display_id": "MEASURE 2",
+          "title": "Trustworthiness Evaluation",
+          "layer": "model",
+          "statement": "AI systems are evaluated for trustworthy characteristics including validity, reliability, safety, security, resilience, privacy, fairness, bias, transparency, and explainability. (13 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 13
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "measure-3",
+          "display_id": "MEASURE 3",
+          "title": "Risk Tracking Mechanisms",
+          "layer": "infrastructure",
+          "statement": "Mechanisms for tracking identified AI risks over time are in place, including for risks that are difficult to measure and emergent risks. (3 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 3
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "measure-4",
+          "display_id": "MEASURE 4",
+          "title": "Measurement Effectiveness",
+          "layer": "governance",
+          "statement": "Feedback about the efficacy of measurement is gathered and assessed, including input from domain experts and affected users. (3 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 3
+          },
+          "children": [],
+          "mappings": []
+        }
+      ],
+      "mappings": []
     },
     {
-      "id": "map-1-1",
-      "display_id": "MAP 1.1",
-      "title": "Context and Intended Purpose",
-      "kind": "control",
-      "statement": "Intended purpose, setting, and context of the AI system are understood and documented.",
-      "guidance": "",
+      "id": "manage",
+      "display_id": "MANAGE",
+      "title": "Manage",
       "layer": "governance",
-      "attributes": {
-        "function": "MAP"
-      },
-      "children": [],
-      "mappings": [],
-      "source_ref": "MAP 1.1",
-      "source_handling": "verbatim"
-    },
-    {
-      "id": "map-2-3",
-      "display_id": "MAP 2.3",
-      "title": "Capabilities and Limitations",
-      "kind": "control",
-      "statement": "Scientific integrity and the system's capabilities, limitations, and assumptions are documented.",
+      "statement": "Manage function of the NIST AI Risk Management Framework.",
       "guidance": "",
-      "layer": "model",
-      "attributes": {
-        "function": "MAP"
-      },
-      "children": [],
-      "mappings": [],
-      "source_ref": "MAP 2.3",
-      "source_handling": "verbatim"
-    },
-    {
-      "id": "measure-2-7",
-      "display_id": "MEASURE 2.7",
-      "title": "Security and Resilience",
-      "kind": "control",
-      "statement": "AI system security and resilience are evaluated and documented, including against adversarial inputs.",
-      "guidance": "",
-      "layer": "input",
-      "attributes": {
-        "function": "MEASURE"
-      },
-      "children": [],
-      "mappings": [],
-      "source_ref": "MEASURE 2.7",
-      "source_handling": "verbatim"
-    },
-    {
-      "id": "measure-2-11",
-      "display_id": "MEASURE 2.11",
-      "title": "Harmful Bias",
-      "kind": "control",
-      "statement": "Fairness and bias are evaluated and results documented.",
-      "guidance": "",
-      "layer": "model",
-      "attributes": {
-        "function": "MEASURE"
-      },
-      "children": [],
-      "mappings": [],
-      "source_ref": "MEASURE 2.11",
-      "source_handling": "verbatim"
-    },
-    {
-      "id": "manage-2-2",
-      "display_id": "MANAGE 2.2",
-      "title": "Mechanisms to Sustain Value",
-      "kind": "control",
-      "statement": "Mechanisms are in place to sustain the value of deployed AI systems and to manage risk over time.",
-      "guidance": "",
-      "layer": "governance",
-      "attributes": {
-        "function": "MANAGE"
-      },
-      "children": [],
-      "mappings": [],
-      "source_ref": "MANAGE 2.2",
-      "source_handling": "verbatim"
-    },
-    {
-      "id": "manage-4-1",
-      "display_id": "MANAGE 4.1",
-      "title": "Post-Deployment Monitoring",
-      "kind": "control",
-      "statement": "Post-deployment monitoring plans are implemented, including mechanisms for incident response and recovery.",
-      "guidance": "",
-      "layer": "output",
-      "attributes": {
-        "function": "MANAGE"
-      },
-      "children": [],
-      "mappings": [],
-      "source_ref": "MANAGE 4.1",
-      "source_handling": "verbatim"
+      "kind": "function",
+      "attributes": {},
+      "children": [
+        {
+          "id": "manage-1",
+          "display_id": "MANAGE 1",
+          "title": "Risk Prioritization and Response",
+          "layer": "agentic",
+          "statement": "AI risks based on assessments and other analytical output are prioritized, responded to, and managed, including decisions to proceed or not. (4 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 4
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "manage-2",
+          "display_id": "MANAGE 2",
+          "title": "Sustained Value and Risk Treatment",
+          "layer": "agentic",
+          "statement": "Strategies to maximize AI benefits and minimize negative impacts are planned, prepared, implemented, documented, and communicated. (4 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 4
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "manage-3",
+          "display_id": "MANAGE 3",
+          "title": "Third-Party Risk Management",
+          "layer": "governance",
+          "statement": "AI risks and benefits from third-party entities are managed, including monitoring, contingency, and override mechanisms. (2 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 2
+          },
+          "children": [],
+          "mappings": []
+        },
+        {
+          "id": "manage-4",
+          "display_id": "MANAGE 4",
+          "title": "Risk Monitoring and Communication",
+          "layer": "infrastructure",
+          "statement": "Risk treatments, including response and recovery and post-deployment monitoring, are documented and regularly monitored, with appeal, override, and decommissioning mechanisms. (3 subcategories in NIST AI 100-1.)",
+          "guidance": "",
+          "kind": "control",
+          "attributes": {
+            "subcategories": 3
+          },
+          "children": [],
+          "mappings": []
+        }
+      ],
+      "mappings": []
     }
   ]
 }
