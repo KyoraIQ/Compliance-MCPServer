@@ -84,7 +84,6 @@ const PLAIN = {
   "mitre-attack": "A widely used catalog of tactics and techniques that attackers use against IT systems. This tool carries a curated subset relevant to these controls.",
   "soc2-tsc": "The criteria behind SOC 2 audits. These are what customers ask SaaS vendors to prove about security, availability, and confidentiality.",
   "iso-42001": "The world's first international standard for managing AI responsibly. It defines an AI management system, much like ISO 27001 does for information security.",
-  "hitrust-csf": "A certifiable security framework popular in healthcare. It harmonizes many other standards into one set of controls.",
   "eu-ai-act": "The European Union's AI law. This tool references its key articles for high risk AI systems, covering risk management, oversight, transparency, and logging."
 };
 const BUCKET_LABEL = {verbatim:"Verbatim",paraphrased:"Paraphrased","own-wording":"Own wording"};
@@ -111,7 +110,7 @@ fetch('kyora-data.json').then(r=>r.json()).then(db=>{
   const c = db.index.counts;
   document.getElementById('footAttr').innerHTML =
     `<b>${c.total_controls}</b> controls across <b>${c.frameworks}</b> frameworks · ${c.mappings} cross-framework mappings.<br>`+
-    `Verbatim sources are public domain (NIST, HIPAA). Paraphrased sources are openly licensed (OWASP CC BY-SA; MITRE with attribution). Own-wording frameworks (SOC 2, ISO 42001, HITRUST, EU AI Act) are described in Kyora IQ's words because their official texts are copyrighted. Kyora IQ is a reference, not a certification or legal advice.`;
+    `Verbatim sources are public domain (NIST, HIPAA). Paraphrased sources are openly licensed (OWASP CC BY-SA; MITRE with attribution). Own-wording frameworks (SOC 2, ISO 42001, EU AI Act) are described in Kyora IQ's words because their official texts are copyrighted. Kyora IQ is a reference, not a certification or legal advice.`;
 }).catch(()=>{document.getElementById('grid').innerHTML='<div style="color:var(--text3)">Could not load data.</div>';});
 </script>
 </body>

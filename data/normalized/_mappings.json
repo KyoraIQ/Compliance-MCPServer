@@ -277,30 +277,6 @@
       "rationale": "SOC 2 change management relates to software and data integrity failures."
     },
     {
-      "from": "soc2-tsc:cc6",
-      "from_title": "Logical and Physical Access Controls",
-      "from_display": "CC6",
-      "to": "hitrust-csf:01",
-      "to_title": "Access Control",
-      "to_display": "1.0",
-      "relation": "equivalent",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "SOC 2 access controls correspond to HITRUST access control (01)."
-    },
-    {
-      "from": "nist-800-53-r5:au-2",
-      "from_title": "Event Logging",
-      "from_display": "AU-02",
-      "to": "hitrust-csf:09",
-      "to_title": "Communications and Operations Management",
-      "to_display": "9.0",
-      "relation": "equivalent",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "Event logging corresponds to HITRUST audit logging and monitoring (09)."
-    },
-    {
       "from": "nist-ai-rmf:govern-1-1",
       "from_title": "Legal and Regulatory Requirements",
       "from_display": "GOVERN 1.1",
@@ -431,18 +407,6 @@
       "strength": "strong",
       "source": "kyora-iq",
       "rationale": "Separation of duties aligns with SOC 2 CC6.3 (role-based access and segregation of incompatible functions)."
-    },
-    {
-      "from": "nist-800-53-r5:ac-5",
-      "from_title": "Separation of Duties",
-      "from_display": "AC-05",
-      "to": "hitrust-csf:09",
-      "to_title": "Communications and Operations Management",
-      "to_display": "9.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "Separation of duties aligns with HITRUST Communications and Operations Management (segregation of duties)."
     },
     {
       "from": "nist-800-53-r5:ac-6",
@@ -601,18 +565,6 @@
       "rationale": "Incident handling aligns with the HIPAA Security Incident Procedures standard."
     },
     {
-      "from": "nist-800-53-r5:ir-4",
-      "from_title": "Incident Handling",
-      "from_display": "IR-04",
-      "to": "hitrust-csf:11",
-      "to_title": "Information Security Incident Management",
-      "to_display": "11.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "Incident handling aligns with HITRUST Information Security Incident Management."
-    },
-    {
       "from": "nist-800-53-r5:cp-9",
       "from_title": "System Backup",
       "from_display": "CP-09",
@@ -635,18 +587,6 @@
       "strength": "strong",
       "source": "kyora-iq",
       "rationale": "System recovery aligns with the HIPAA Contingency Plan standard (disaster recovery)."
-    },
-    {
-      "from": "nist-800-53-r5:cp-2",
-      "from_title": "Contingency Plan",
-      "from_display": "CP-02",
-      "to": "hitrust-csf:12",
-      "to_title": "Business Continuity Management",
-      "to_display": "12.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "Contingency planning aligns with HITRUST Business Continuity Management."
     },
     {
       "from": "nist-800-53-r5:ra-3",
@@ -676,18 +616,6 @@
       "from": "nist-800-53-r5:ra-3",
       "from_title": "Risk Assessment",
       "from_display": "RA-03",
-      "to": "hitrust-csf:03",
-      "to_title": "Risk Management",
-      "to_display": "3.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "Risk assessment aligns with HITRUST Risk Management."
-    },
-    {
-      "from": "nist-800-53-r5:ra-3",
-      "from_title": "Risk Assessment",
-      "from_display": "RA-03",
       "to": "iso-42001:a5",
       "to_title": "AI System Impact Assessment",
       "to_display": "A.5",
@@ -709,18 +637,6 @@
       "rationale": "Vulnerability monitoring aligns with SOC 2 CC7.1 (detecting vulnerabilities)."
     },
     {
-      "from": "nist-800-53-r5:ra-5",
-      "from_title": "Vulnerability Monitoring and Scanning",
-      "from_display": "RA-05",
-      "to": "hitrust-csf:10",
-      "to_title": "Information Systems Acquisition, Development, and Maintenance",
-      "to_display": "10.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "Vulnerability monitoring aligns with HITRUST Information Systems Acquisition (vulnerability management)."
-    },
-    {
       "from": "nist-800-53-r5:cm-3",
       "from_title": "Configuration Change Control",
       "from_display": "CM-03",
@@ -731,30 +647,6 @@
       "strength": "strong",
       "source": "kyora-iq",
       "rationale": "Configuration change control aligns with SOC 2 CC8.1 (change management)."
-    },
-    {
-      "from": "nist-800-53-r5:cm-3",
-      "from_title": "Configuration Change Control",
-      "from_display": "CM-03",
-      "to": "hitrust-csf:09",
-      "to_title": "Communications and Operations Management",
-      "to_display": "9.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "Configuration change control aligns with HITRUST change management."
-    },
-    {
-      "from": "nist-800-53-r5:cm-8",
-      "from_title": "System Component Inventory",
-      "from_display": "CM-08",
-      "to": "hitrust-csf:07",
-      "to_title": "Asset Management",
-      "to_display": "7.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "System component inventory aligns with HITRUST Asset Management."
     },
     {
       "from": "nist-800-53-r5:sc-8",
@@ -793,18 +685,6 @@
       "rationale": "Boundary protection aligns with SOC 2 CC6.6 (protecting the system boundary)."
     },
     {
-      "from": "nist-800-53-r5:sc-8",
-      "from_title": "Transmission Confidentiality and Integrity",
-      "from_display": "SC-08",
-      "to": "hitrust-csf:10",
-      "to_title": "Information Systems Acquisition, Development, and Maintenance",
-      "to_display": "10.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "Transmission confidentiality aligns with HITRUST cryptographic controls."
-    },
-    {
       "from": "nist-800-53-r5:si-4",
       "from_title": "System Monitoring",
       "from_display": "SI-04",
@@ -815,18 +695,6 @@
       "strength": "strong",
       "source": "kyora-iq",
       "rationale": "System monitoring aligns with SOC 2 CC7.2 (monitoring for anomalies)."
-    },
-    {
-      "from": "nist-800-53-r5:si-2",
-      "from_title": "Flaw Remediation",
-      "from_display": "SI-02",
-      "to": "hitrust-csf:10",
-      "to_title": "Information Systems Acquisition, Development, and Maintenance",
-      "to_display": "10.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "Flaw remediation aligns with HITRUST vulnerability management."
     },
     {
       "from": "nist-800-53-r5:si-3",
@@ -868,18 +736,6 @@
       "from": "nist-800-53-r5:pm-1",
       "from_title": "Information Security Program Plan",
       "from_display": "PM-01",
-      "to": "hitrust-csf:04",
-      "to_title": "Security Policy",
-      "to_display": "4.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "Security program plan aligns with HITRUST Security Policy."
-    },
-    {
-      "from": "nist-800-53-r5:pm-1",
-      "from_title": "Information Security Program Plan",
-      "from_display": "PM-01",
       "to": "iso-42001:a2",
       "to_title": "AI Policy",
       "to_display": "A.2",
@@ -913,18 +769,6 @@
       "rationale": "Supply chain controls align with ISO 42001 third-party relationships."
     },
     {
-      "from": "nist-800-53-r5:sr-3",
-      "from_title": "Supply Chain Controls and Processes",
-      "from_display": "SR-03",
-      "to": "hitrust-csf:05",
-      "to_title": "Organization of Information Security",
-      "to_display": "5.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "Supply chain controls align with HITRUST Organization of Information Security (external parties)."
-    },
-    {
       "from": "nist-800-53-r5:at-2",
       "from_title": "Literacy Training and Awareness",
       "from_display": "AT-02",
@@ -937,18 +781,6 @@
       "rationale": "Security awareness training aligns with the HIPAA Security Awareness and Training standard."
     },
     {
-      "from": "nist-800-53-r5:at-2",
-      "from_title": "Literacy Training and Awareness",
-      "from_display": "AT-02",
-      "to": "hitrust-csf:02",
-      "to_title": "Human Resources Security",
-      "to_display": "2.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "Security awareness training aligns with HITRUST Human Resources Security."
-    },
-    {
       "from": "nist-800-53-r5:pe-3",
       "from_title": "Physical Access Control",
       "from_display": "PE-03",
@@ -959,18 +791,6 @@
       "strength": "strong",
       "source": "kyora-iq",
       "rationale": "Physical access control aligns with the HIPAA Facility Access Controls standard."
-    },
-    {
-      "from": "nist-800-53-r5:pe-3",
-      "from_title": "Physical Access Control",
-      "from_display": "PE-03",
-      "to": "hitrust-csf:08",
-      "to_title": "Physical and Environmental Security",
-      "to_display": "8.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "Physical access control aligns with HITRUST Physical and Environmental Security."
     },
     {
       "from": "nist-ai-rmf:govern-1-1",
@@ -1129,198 +949,6 @@
       "rationale": "HIPAA Transmission Security aligns with SOC 2 CC6.7 (restricting information in transit)."
     },
     {
-      "from": "hipaa-security-rule:312-a-1",
-      "from_title": "Access Control",
-      "from_display": "§ 164.312(a)(1)",
-      "to": "hitrust-csf:01",
-      "to_title": "Access Control",
-      "to_display": "1.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "HIPAA Access Control aligns with HITRUST Access Control."
-    },
-    {
-      "from": "hipaa-security-rule:312-b",
-      "from_title": "Audit Controls",
-      "from_display": "§ 164.312(b)",
-      "to": "hitrust-csf:09",
-      "to_title": "Communications and Operations Management",
-      "to_display": "9.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "HIPAA Audit Controls align with HITRUST audit logging and monitoring."
-    },
-    {
-      "from": "hipaa-security-rule:308-a-6",
-      "from_title": "Security Incident Procedures",
-      "from_display": "§ 164.308(a)(6)",
-      "to": "hitrust-csf:11",
-      "to_title": "Information Security Incident Management",
-      "to_display": "11.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "HIPAA Security Incident Procedures align with HITRUST Incident Management."
-    },
-    {
-      "from": "hipaa-security-rule:308-a-1",
-      "from_title": "Security Management Process",
-      "from_display": "§ 164.308(a)(1)",
-      "to": "hitrust-csf:03",
-      "to_title": "Risk Management",
-      "to_display": "3.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "HIPAA risk analysis aligns with HITRUST Risk Management."
-    },
-    {
-      "from": "hipaa-security-rule:308-a-7",
-      "from_title": "Contingency Plan",
-      "from_display": "§ 164.308(a)(7)",
-      "to": "hitrust-csf:12",
-      "to_title": "Business Continuity Management",
-      "to_display": "12.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "HIPAA Contingency Plan aligns with HITRUST Business Continuity Management."
-    },
-    {
-      "from": "hipaa-security-rule:310-a-1",
-      "from_title": "Facility Access Controls",
-      "from_display": "§ 164.310(a)(1)",
-      "to": "hitrust-csf:08",
-      "to_title": "Physical and Environmental Security",
-      "to_display": "8.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "HIPAA Facility Access Controls align with HITRUST Physical and Environmental Security."
-    },
-    {
-      "from": "hipaa-security-rule:308-a-5",
-      "from_title": "Security Awareness and Training",
-      "from_display": "§ 164.308(a)(5)",
-      "to": "hitrust-csf:02",
-      "to_title": "Human Resources Security",
-      "to_display": "2.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "HIPAA Security Awareness and Training aligns with HITRUST Human Resources Security."
-    },
-    {
-      "from": "hipaa-security-rule:312-e-1",
-      "from_title": "Transmission Security",
-      "from_display": "§ 164.312(e)(1)",
-      "to": "hitrust-csf:10",
-      "to_title": "Information Systems Acquisition, Development, and Maintenance",
-      "to_display": "10.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "HIPAA Transmission Security aligns with HITRUST cryptographic controls."
-    },
-    {
-      "from": "soc2-tsc:cc6-1",
-      "from_title": "Logical access security over protected information assets",
-      "from_display": "CC6.1",
-      "to": "hitrust-csf:01",
-      "to_title": "Access Control",
-      "to_display": "1.0",
-      "relation": "equivalent",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "SOC 2 logical access aligns with HITRUST Access Control."
-    },
-    {
-      "from": "soc2-tsc:cc7-2",
-      "from_title": "Monitor system components for anomalies",
-      "from_display": "CC7.2",
-      "to": "hitrust-csf:09",
-      "to_title": "Communications and Operations Management",
-      "to_display": "9.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "SOC 2 system monitoring aligns with HITRUST audit logging and monitoring."
-    },
-    {
-      "from": "soc2-tsc:cc7-4",
-      "from_title": "Respond to identified security incidents",
-      "from_display": "CC7.4",
-      "to": "hitrust-csf:11",
-      "to_title": "Information Security Incident Management",
-      "to_display": "11.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "SOC 2 incident response aligns with HITRUST Incident Management."
-    },
-    {
-      "from": "soc2-tsc:cc3-2",
-      "from_title": "Identify and analyze risk to objectives",
-      "from_display": "CC3.2",
-      "to": "hitrust-csf:03",
-      "to_title": "Risk Management",
-      "to_display": "3.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "SOC 2 risk assessment aligns with HITRUST Risk Management."
-    },
-    {
-      "from": "soc2-tsc:cc8-1",
-      "from_title": "Manage changes to infrastructure, data, software, and procedures",
-      "from_display": "CC8.1",
-      "to": "hitrust-csf:09",
-      "to_title": "Communications and Operations Management",
-      "to_display": "9.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "SOC 2 change management aligns with HITRUST Communications and Operations Management."
-    },
-    {
-      "from": "soc2-tsc:cc9-2",
-      "from_title": "Assess and manage risks from vendors and business partners",
-      "from_display": "CC9.2",
-      "to": "hitrust-csf:05",
-      "to_title": "Organization of Information Security",
-      "to_display": "5.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "SOC 2 vendor risk aligns with HITRUST Organization of Information Security (external parties)."
-    },
-    {
-      "from": "soc2-tsc:cc1-1",
-      "from_title": "Commitment to integrity and ethical values",
-      "from_display": "CC1.1",
-      "to": "hitrust-csf:04",
-      "to_title": "Security Policy",
-      "to_display": "4.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "SOC 2 control environment aligns with HITRUST Security Policy."
-    },
-    {
-      "from": "soc2-tsc:cc6-4",
-      "from_title": "Restrict physical access to facilities and assets",
-      "from_display": "CC6.4",
-      "to": "hitrust-csf:08",
-      "to_title": "Physical and Environmental Security",
-      "to_display": "8.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "SOC 2 physical access aligns with HITRUST Physical and Environmental Security."
-    },
-    {
       "from": "soc2-tsc:cc1-1",
       "from_title": "Commitment to integrity and ethical values",
       "from_display": "CC1.1",
@@ -1355,30 +983,6 @@
       "strength": "partial",
       "source": "kyora-iq",
       "rationale": "SOC 2 risk assessment parallels ISO 42001 AI system impact assessment."
-    },
-    {
-      "from": "hitrust-csf:03",
-      "from_title": "Risk Management",
-      "from_display": "3.0",
-      "to": "iso-42001:a5",
-      "to_title": "AI System Impact Assessment",
-      "to_display": "A.5",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "HITRUST Risk Management parallels ISO 42001 AI impact assessment."
-    },
-    {
-      "from": "hitrust-csf:04",
-      "from_title": "Security Policy",
-      "from_display": "4.0",
-      "to": "iso-42001:a2",
-      "to_title": "AI Policy",
-      "to_display": "A.2",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "HITRUST Security Policy parallels ISO 42001 AI policy."
     },
     {
       "from": "nist-ai-rmf:govern-1-1",
@@ -2113,30 +1717,6 @@
       "rationale": "Configuration settings align with SOC 2 CC7.1 (detecting configuration changes)."
     },
     {
-      "from": "nist-800-53-r5:cp-9",
-      "from_title": "System Backup",
-      "from_display": "CP-09",
-      "to": "hitrust-csf:12",
-      "to_title": "Business Continuity Management",
-      "to_display": "12.0",
-      "relation": "related",
-      "strength": "strong",
-      "source": "kyora-iq",
-      "rationale": "System backup aligns with HITRUST Business Continuity Management."
-    },
-    {
-      "from": "nist-800-53-r5:ia-5",
-      "from_title": "Authenticator Management",
-      "from_display": "IA-05",
-      "to": "hitrust-csf:01",
-      "to_title": "Access Control",
-      "to_display": "1.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "Authenticator management aligns with HITRUST Access Control."
-    },
-    {
       "from": "nist-800-53-r5:mp-6",
       "from_title": "Media Sanitization",
       "from_display": "MP-06",
@@ -2197,18 +1777,6 @@
       "rationale": "Software and information integrity aligns with the HIPAA Integrity standard."
     },
     {
-      "from": "nist-800-53-r5:si-12",
-      "from_title": "Information Management and Retention",
-      "from_display": "SI-12",
-      "to": "hitrust-csf:13",
-      "to_title": "Privacy Practices",
-      "to_display": "13.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "Information retention aligns with HITRUST Privacy Practices."
-    },
-    {
       "from": "nist-800-53-r5:ca-2",
       "from_title": "Control Assessments",
       "from_display": "CA-02",
@@ -2243,42 +1811,6 @@
       "strength": "partial",
       "source": "kyora-iq",
       "rationale": "System security plan aligns with SOC 2 CC5.3 (policies and procedures)."
-    },
-    {
-      "from": "nist-800-53-r5:ca-2",
-      "from_title": "Control Assessments",
-      "from_display": "CA-02",
-      "to": "hitrust-csf:06",
-      "to_title": "Compliance",
-      "to_display": "6.0",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "Control assessments align with HITRUST Compliance (audit considerations)."
-    },
-    {
-      "from": "hitrust-csf:13",
-      "from_title": "Privacy Practices",
-      "from_display": "13.0",
-      "to": "eu-ai-act:art-10",
-      "to_title": "Data and Data Governance",
-      "to_display": "Art. 10",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "HITRUST Privacy Practices relate to EU AI Act data governance (Art. 10)."
-    },
-    {
-      "from": "hitrust-csf:13",
-      "from_title": "Privacy Practices",
-      "from_display": "13.0",
-      "to": "nist-800-53-r5:pt-1",
-      "to_title": "Policy and Procedures",
-      "to_display": "PT-01",
-      "relation": "related",
-      "strength": "partial",
-      "source": "kyora-iq",
-      "rationale": "HITRUST Privacy Practices align with NIST privacy authorization policy (PT-1)."
     },
     {
       "from": "nist-ai-rmf:govern-1-1",

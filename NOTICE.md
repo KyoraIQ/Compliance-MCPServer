@@ -32,7 +32,6 @@ text is Kyora IQ's own. The official texts remain copyrighted by their owners.
 
 - **SOC 2 / AICPA Trust Services Criteria** — © AICPA.
 - **ISO/IEC 42001** — © ISO/IEC.
-- **HITRUST CSF** — © HITRUST.
 - **EU AI Act** — Article references with Kyora IQ summaries; official OJ text is
   public.
 

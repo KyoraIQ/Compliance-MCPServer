@@ -32,7 +32,6 @@ licensed — see `docs/SOURCING-POLICY.md`.
 | 2 | MITRE ATT&CK | Paraphrased + attributed (MITRE terms) |
 | 3 | SOC 2 / AICPA Trust Services Criteria | Own wording (AICPA text licensed) |
 | 3 | ISO/IEC 42001 | Own wording (ISO text licensed) |
-| 3 | HITRUST CSF | Own wording (HITRUST text licensed) |
 | 3 | EU AI Act | Article references + own summaries |
 
 ## Repository layout

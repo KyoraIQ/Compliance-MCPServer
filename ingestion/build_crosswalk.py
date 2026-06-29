@@ -35,40 +35,38 @@ RISKS = [
     {"id": "access-control", "title": "Access Control & Authorization", "layer": "infrastructure",
      "summary": "Restricting access to systems and data to authorized identities, and enforcing least privilege.",
      "controls": ["nist-800-53-r5:ac-3", "nist-800-53-r5:ac-6", "hipaa-security-rule:312-a-1",
-                  "soc2-tsc:cc6", "hitrust-csf:01", "owasp-web-top10:a01-2021",
+                  "soc2-tsc:cc6", "owasp-web-top10:a01-2021",
                   "owasp-api-top10:api1-2023", "mitre-attack:t1078"]},
     {"id": "identity-authentication", "title": "Identity & Authentication", "layer": "infrastructure",
      "summary": "Verifying the identity of users and services before granting access.",
      "controls": ["nist-800-53-r5:ia-2", "hipaa-security-rule:312-d", "soc2-tsc:cc6",
-                  "hitrust-csf:01", "owasp-web-top10:a07-2021", "owasp-api-top10:api2-2023",
+                  "owasp-web-top10:a07-2021", "owasp-api-top10:api2-2023",
                   "mitre-attack:t1556"]},
     {"id": "audit-logging", "title": "Audit Logging & Monitoring", "layer": "infrastructure",
      "summary": "Recording and reviewing security-relevant events to detect and investigate activity.",
      "controls": ["nist-800-53-r5:au-2", "hipaa-security-rule:312-b", "soc2-tsc:cc7",
-                  "hitrust-csf:09", "owasp-web-top10:a09-2021", "eu-ai-act:art-12",
+                  "owasp-web-top10:a09-2021", "eu-ai-act:art-12",
                   "mitre-attack:t1070"]},
     {"id": "encryption", "title": "Encryption & Data Protection", "layer": "infrastructure",
      "summary": "Protecting data in transit and at rest with cryptographic controls.",
      "controls": ["nist-800-53-r5:sc-8", "hipaa-security-rule:312-e-1", "soc2-tsc:cc6",
-                  "hitrust-csf:10", "owasp-web-top10:a02-2021"]},
+                  "owasp-web-top10:a02-2021"]},
     {"id": "risk-assessment", "title": "Risk Assessment & Management", "layer": "governance",
      "summary": "Identifying, analyzing, and treating risks to systems, data, and objectives.",
      "controls": ["nist-800-53-r5:ra-3", "hipaa-security-rule:308-a-1", "soc2-tsc:cc3",
-                  "hitrust-csf:03", "iso-42001:a5", "nist-ai-rmf:map-1-1", "eu-ai-act:art-9"]},
+                  "iso-42001:a5", "nist-ai-rmf:map-1-1", "eu-ai-act:art-9"]},
     {"id": "incident-response", "title": "Incident Response", "layer": "governance",
      "summary": "Detecting, responding to, and recovering from security incidents.",
-     "controls": ["nist-800-53-r5:ir-4", "hipaa-security-rule:308-a-6", "soc2-tsc:cc7",
-                  "hitrust-csf:11"]},
+     "controls": ["nist-800-53-r5:ir-4", "hipaa-security-rule:308-a-6", "soc2-tsc:cc7"]},
     {"id": "change-management", "title": "Change & Configuration Management", "layer": "infrastructure",
      "summary": "Controlling changes to systems, software, and configurations.",
-     "controls": ["nist-800-53-r5:cm-3", "soc2-tsc:cc8", "hitrust-csf:09",
-                  "owasp-web-top10:a08-2021"]},
+     "controls": ["nist-800-53-r5:cm-3", "soc2-tsc:cc8", "owasp-web-top10:a08-2021"]},
     {"id": "asset-management", "title": "Asset & Data Classification", "layer": "governance",
      "summary": "Inventorying assets and classifying data by sensitivity.",
-     "controls": ["nist-800-53-r5:cm-8", "soc2-tsc:cc6", "hitrust-csf:07"]},
+     "controls": ["nist-800-53-r5:cm-8", "soc2-tsc:cc6"]},
     {"id": "vulnerability-management", "title": "Vulnerability Management", "layer": "infrastructure",
      "summary": "Identifying and remediating technical vulnerabilities and outdated components.",
-     "controls": ["nist-800-53-r5:ra-5", "hitrust-csf:10", "soc2-tsc:cc7",
+     "controls": ["nist-800-53-r5:ra-5", "soc2-tsc:cc7",
                   "owasp-web-top10:a06-2021"]},
     {"id": "input-validation", "title": "Input Validation & Injection Defense", "layer": "input",
      "summary": "Validating inputs to prevent injection and malformed-data attacks.",
@@ -76,12 +74,10 @@ RISKS = [
                   "mitre-atlas:aml-t0051", "nist-ai-600-1:ga-2-9"]},
     {"id": "governance-policy", "title": "Governance, Policy & Accountability", "layer": "governance",
      "summary": "Establishing policy, roles, and accountability for security and AI programs.",
-     "controls": ["nist-800-53-r5:pm-1", "soc2-tsc:cc1", "hitrust-csf:04", "hitrust-csf:05",
-                  "iso-42001:a2", "iso-42001:a3", "nist-ai-rmf:govern-1-1"]},
+     "controls": ["nist-800-53-r5:pm-1", "soc2-tsc:cc1", "iso-42001:a2", "iso-42001:a3", "nist-ai-rmf:govern-1-1"]},
     {"id": "third-party-risk", "title": "Third-Party & Supply Chain Risk", "layer": "governance",
      "summary": "Managing risks from vendors, partners, and supply-chain components.",
-     "controls": ["nist-800-53-r5:sr-3", "soc2-tsc:cc9", "hitrust-csf:05",
-                  "iso-42001:a10", "owasp-llm-top10:llm03-2025"]},
+     "controls": ["nist-800-53-r5:sr-3", "soc2-tsc:cc9", "iso-42001:a10", "owasp-llm-top10:llm03-2025"]},
     # --- AI-specific domains (one group among the rest) ---
     {"id": "ai-prompt-injection", "title": "AI: Prompt Injection", "layer": "input",
      "summary": "Crafted input overrides an AI model's instructions, directly or via poisoned content.",
@@ -143,7 +139,7 @@ MAPPINGS = [
      "Broken access control relates to exploitation of public-facing applications (T1190)."),
     ("owasp-llm-top10:llm10-2025", "mitre-attack:t1499", "related", "partial", "kyora-iq",
      "Unbounded consumption relates to endpoint denial of service (T1499)."),
-    # --- wave 3: SOC 2 / ISO 42001 / HITRUST / EU AI Act ---
+    # --- wave 3: SOC 2 / ISO 42001 / EU AI Act ---
     ("nist-800-53-r5:ac-3", "soc2-tsc:cc6", "equivalent", "strong", "kyora-iq",
      "Access enforcement aligns with SOC 2 logical and physical access controls (CC6)."),
     ("soc2-tsc:cc6", "hipaa-security-rule:312-a-1", "related", "strong", "kyora-iq",
@@ -152,10 +148,6 @@ MAPPINGS = [
      "SOC 2 system operations / monitoring aligns with NIST event logging."),
     ("soc2-tsc:cc8", "owasp-web-top10:a08-2021", "related", "partial", "kyora-iq",
      "SOC 2 change management relates to software and data integrity failures."),
-    ("soc2-tsc:cc6", "hitrust-csf:01", "equivalent", "strong", "kyora-iq",
-     "SOC 2 access controls correspond to HITRUST access control (01)."),
-    ("nist-800-53-r5:au-2", "hitrust-csf:09", "equivalent", "strong", "kyora-iq",
-     "Event logging corresponds to HITRUST audit logging and monitoring (09)."),
     ("nist-ai-rmf:govern-1-1", "iso-42001:a2", "related", "strong", "kyora-iq",
      "AI RMF governance aligns with ISO 42001 AI policy."),
     ("nist-ai-rmf:govern-2-1", "iso-42001:a3", "related", "strong", "kyora-iq",
@@ -175,7 +167,7 @@ MAPPINGS = [
     # the controls' purpose; clearly tagged kyora-iq, not an official mapping.
     # ===================================================================
 
-    # --- Access control family (AC) -> SOC2 / HIPAA / HITRUST ---
+    # --- Access control family (AC) -> SOC2 / HIPAA ---
     ("nist-800-53-r5:ac-2", "soc2-tsc:cc6-2", "related", "strong", "kyora-iq",
      "Account management aligns with SOC 2 CC6.2 (register and authorize new users)."),
     ("nist-800-53-r5:ac-2", "soc2-tsc:cc6-3", "related", "strong", "kyora-iq",
@@ -186,8 +178,6 @@ MAPPINGS = [
      "Access enforcement aligns with SOC 2 CC6.1 (logical access security)."),
     ("nist-800-53-r5:ac-5", "soc2-tsc:cc6-3", "related", "strong", "kyora-iq",
      "Separation of duties aligns with SOC 2 CC6.3 (role-based access and segregation of incompatible functions)."),
-    ("nist-800-53-r5:ac-5", "hitrust-csf:09", "related", "partial", "kyora-iq",
-     "Separation of duties aligns with HITRUST Communications and Operations Management (segregation of duties)."),
     ("nist-800-53-r5:ac-6", "soc2-tsc:cc6-3", "related", "strong", "kyora-iq",
      "Least privilege aligns with SOC 2 CC6.3 (access based on least privilege)."),
     ("nist-800-53-r5:ac-6", "hipaa-security-rule:312-a-1", "related", "partial", "kyora-iq",
@@ -220,38 +210,26 @@ MAPPINGS = [
      "Incident handling aligns with SOC 2 CC7.4 (responding to security incidents)."),
     ("nist-800-53-r5:ir-4", "hipaa-security-rule:308-a-6", "related", "strong", "kyora-iq",
      "Incident handling aligns with the HIPAA Security Incident Procedures standard."),
-    ("nist-800-53-r5:ir-4", "hitrust-csf:11", "related", "strong", "kyora-iq",
-     "Incident handling aligns with HITRUST Information Security Incident Management."),
 
     # --- Contingency Planning (CP) ---
     ("nist-800-53-r5:cp-9", "hipaa-security-rule:308-a-7", "related", "strong", "kyora-iq",
      "System backup aligns with the HIPAA Contingency Plan standard (data backup)."),
     ("nist-800-53-r5:cp-10", "hipaa-security-rule:308-a-7", "related", "strong", "kyora-iq",
      "System recovery aligns with the HIPAA Contingency Plan standard (disaster recovery)."),
-    ("nist-800-53-r5:cp-2", "hitrust-csf:12", "related", "strong", "kyora-iq",
-     "Contingency planning aligns with HITRUST Business Continuity Management."),
 
     # --- Risk Assessment (RA) ---
     ("nist-800-53-r5:ra-3", "soc2-tsc:cc3-2", "related", "strong", "kyora-iq",
      "Risk assessment aligns with SOC 2 CC3.2 (identify and analyze risk)."),
     ("nist-800-53-r5:ra-3", "hipaa-security-rule:308-a-1", "related", "strong", "kyora-iq",
      "Risk assessment aligns with the HIPAA Security Management Process (risk analysis)."),
-    ("nist-800-53-r5:ra-3", "hitrust-csf:03", "related", "strong", "kyora-iq",
-     "Risk assessment aligns with HITRUST Risk Management."),
     ("nist-800-53-r5:ra-3", "iso-42001:a5", "related", "partial", "kyora-iq",
      "Risk assessment aligns with ISO 42001 AI system impact assessment."),
     ("nist-800-53-r5:ra-5", "soc2-tsc:cc7-1", "related", "strong", "kyora-iq",
      "Vulnerability monitoring aligns with SOC 2 CC7.1 (detecting vulnerabilities)."),
-    ("nist-800-53-r5:ra-5", "hitrust-csf:10", "related", "strong", "kyora-iq",
-     "Vulnerability monitoring aligns with HITRUST Information Systems Acquisition (vulnerability management)."),
 
     # --- Configuration / Change Management (CM) ---
     ("nist-800-53-r5:cm-3", "soc2-tsc:cc8-1", "related", "strong", "kyora-iq",
      "Configuration change control aligns with SOC 2 CC8.1 (change management)."),
-    ("nist-800-53-r5:cm-3", "hitrust-csf:09", "related", "partial", "kyora-iq",
-     "Configuration change control aligns with HITRUST change management."),
-    ("nist-800-53-r5:cm-8", "hitrust-csf:07", "related", "strong", "kyora-iq",
-     "System component inventory aligns with HITRUST Asset Management."),
 
     # --- System & Communications Protection (SC) ---
     ("nist-800-53-r5:sc-8", "hipaa-security-rule:312-e-1", "related", "strong", "kyora-iq",
@@ -260,46 +238,34 @@ MAPPINGS = [
      "Protection of information at rest supports the HIPAA Integrity standard."),
     ("nist-800-53-r5:sc-7", "soc2-tsc:cc6-6", "related", "strong", "kyora-iq",
      "Boundary protection aligns with SOC 2 CC6.6 (protecting the system boundary)."),
-    ("nist-800-53-r5:sc-8", "hitrust-csf:10", "related", "partial", "kyora-iq",
-     "Transmission confidentiality aligns with HITRUST cryptographic controls."),
 
     # --- System & Information Integrity (SI) ---
     ("nist-800-53-r5:si-4", "soc2-tsc:cc7-2", "related", "strong", "kyora-iq",
      "System monitoring aligns with SOC 2 CC7.2 (monitoring for anomalies)."),
-    ("nist-800-53-r5:si-2", "hitrust-csf:10", "related", "strong", "kyora-iq",
-     "Flaw remediation aligns with HITRUST vulnerability management."),
     ("nist-800-53-r5:si-3", "owasp-web-top10:a08-2021", "related", "partial", "kyora-iq",
      "Malicious code protection relates to software and data integrity failures."),
 
-    # --- Governance / Program Management (PM) -> SOC2 / ISO / HITRUST ---
+    # --- Governance / Program Management (PM) -> SOC2 / ISO ---
     ("nist-800-53-r5:pm-1", "soc2-tsc:cc1-1", "related", "strong", "kyora-iq",
      "Information security program plan aligns with SOC 2 CC1.1 (control environment)."),
     ("nist-800-53-r5:pm-9", "soc2-tsc:cc3-1", "related", "partial", "kyora-iq",
      "Risk management strategy aligns with SOC 2 CC3.1 (specifying objectives for risk)."),
-    ("nist-800-53-r5:pm-1", "hitrust-csf:04", "related", "strong", "kyora-iq",
-     "Security program plan aligns with HITRUST Security Policy."),
     ("nist-800-53-r5:pm-1", "iso-42001:a2", "related", "partial", "kyora-iq",
      "Security program plan parallels ISO 42001 AI policy at the governance level."),
 
-    # --- Supply Chain (SR) -> SOC2 / ISO / HITRUST ---
+    # --- Supply Chain (SR) -> SOC2 / ISO ---
     ("nist-800-53-r5:sr-3", "soc2-tsc:cc9-2", "related", "strong", "kyora-iq",
      "Supply chain controls align with SOC 2 CC9.2 (vendor and business partner risk)."),
     ("nist-800-53-r5:sr-3", "iso-42001:a10", "related", "partial", "kyora-iq",
      "Supply chain controls align with ISO 42001 third-party relationships."),
-    ("nist-800-53-r5:sr-3", "hitrust-csf:05", "related", "partial", "kyora-iq",
-     "Supply chain controls align with HITRUST Organization of Information Security (external parties)."),
 
     # --- Awareness & Training (AT) ---
     ("nist-800-53-r5:at-2", "hipaa-security-rule:308-a-5", "related", "strong", "kyora-iq",
      "Security awareness training aligns with the HIPAA Security Awareness and Training standard."),
-    ("nist-800-53-r5:at-2", "hitrust-csf:02", "related", "partial", "kyora-iq",
-     "Security awareness training aligns with HITRUST Human Resources Security."),
 
     # --- Physical (PE) ---
     ("nist-800-53-r5:pe-3", "hipaa-security-rule:310-a-1", "related", "strong", "kyora-iq",
      "Physical access control aligns with the HIPAA Facility Access Controls standard."),
-    ("nist-800-53-r5:pe-3", "hitrust-csf:08", "related", "strong", "kyora-iq",
-     "Physical access control aligns with HITRUST Physical and Environmental Security."),
 
     # --- AI governance cross-links ---
     ("nist-ai-rmf:govern-1-1", "soc2-tsc:cc1-1", "related", "partial", "kyora-iq",
@@ -336,53 +302,15 @@ MAPPINGS = [
     ("hipaa-security-rule:312-e-1", "soc2-tsc:cc6-7", "related", "strong", "kyora-iq",
      "HIPAA Transmission Security aligns with SOC 2 CC6.7 (restricting information in transit)."),
 
-    # --- HIPAA <-> HITRUST (direct) ---
-    ("hipaa-security-rule:312-a-1", "hitrust-csf:01", "related", "strong", "kyora-iq",
-     "HIPAA Access Control aligns with HITRUST Access Control."),
-    ("hipaa-security-rule:312-b", "hitrust-csf:09", "related", "strong", "kyora-iq",
-     "HIPAA Audit Controls align with HITRUST audit logging and monitoring."),
-    ("hipaa-security-rule:308-a-6", "hitrust-csf:11", "related", "strong", "kyora-iq",
-     "HIPAA Security Incident Procedures align with HITRUST Incident Management."),
-    ("hipaa-security-rule:308-a-1", "hitrust-csf:03", "related", "strong", "kyora-iq",
-     "HIPAA risk analysis aligns with HITRUST Risk Management."),
-    ("hipaa-security-rule:308-a-7", "hitrust-csf:12", "related", "strong", "kyora-iq",
-     "HIPAA Contingency Plan aligns with HITRUST Business Continuity Management."),
-    ("hipaa-security-rule:310-a-1", "hitrust-csf:08", "related", "strong", "kyora-iq",
-     "HIPAA Facility Access Controls align with HITRUST Physical and Environmental Security."),
-    ("hipaa-security-rule:308-a-5", "hitrust-csf:02", "related", "partial", "kyora-iq",
-     "HIPAA Security Awareness and Training aligns with HITRUST Human Resources Security."),
-    ("hipaa-security-rule:312-e-1", "hitrust-csf:10", "related", "partial", "kyora-iq",
-     "HIPAA Transmission Security aligns with HITRUST cryptographic controls."),
 
-    # --- SOC 2 <-> HITRUST (direct) ---
-    ("soc2-tsc:cc6-1", "hitrust-csf:01", "equivalent", "strong", "kyora-iq",
-     "SOC 2 logical access aligns with HITRUST Access Control."),
-    ("soc2-tsc:cc7-2", "hitrust-csf:09", "related", "strong", "kyora-iq",
-     "SOC 2 system monitoring aligns with HITRUST audit logging and monitoring."),
-    ("soc2-tsc:cc7-4", "hitrust-csf:11", "related", "strong", "kyora-iq",
-     "SOC 2 incident response aligns with HITRUST Incident Management."),
-    ("soc2-tsc:cc3-2", "hitrust-csf:03", "related", "strong", "kyora-iq",
-     "SOC 2 risk assessment aligns with HITRUST Risk Management."),
-    ("soc2-tsc:cc8-1", "hitrust-csf:09", "related", "partial", "kyora-iq",
-     "SOC 2 change management aligns with HITRUST Communications and Operations Management."),
-    ("soc2-tsc:cc9-2", "hitrust-csf:05", "related", "partial", "kyora-iq",
-     "SOC 2 vendor risk aligns with HITRUST Organization of Information Security (external parties)."),
-    ("soc2-tsc:cc1-1", "hitrust-csf:04", "related", "strong", "kyora-iq",
-     "SOC 2 control environment aligns with HITRUST Security Policy."),
-    ("soc2-tsc:cc6-4", "hitrust-csf:08", "related", "strong", "kyora-iq",
-     "SOC 2 physical access aligns with HITRUST Physical and Environmental Security."),
 
-    # --- SOC 2 / HITRUST <-> ISO 42001 (governance) ---
+    # --- SOC 2 <-> ISO 42001 (governance) ---
     ("soc2-tsc:cc1-1", "iso-42001:a2", "related", "partial", "kyora-iq",
      "SOC 2 control environment parallels ISO 42001 AI policy at the governance level."),
     ("soc2-tsc:cc1-3", "iso-42001:a3", "related", "partial", "kyora-iq",
      "SOC 2 structures and reporting lines parallel ISO 42001 internal organization."),
     ("soc2-tsc:cc3-2", "iso-42001:a5", "related", "partial", "kyora-iq",
      "SOC 2 risk assessment parallels ISO 42001 AI system impact assessment."),
-    ("hitrust-csf:03", "iso-42001:a5", "related", "partial", "kyora-iq",
-     "HITRUST Risk Management parallels ISO 42001 AI impact assessment."),
-    ("hitrust-csf:04", "iso-42001:a2", "related", "partial", "kyora-iq",
-     "HITRUST Security Policy parallels ISO 42001 AI policy."),
 
     # --- NIST AI RMF <-> EU AI Act / ISO 42001 / SOC2 ---
     ("nist-ai-rmf:govern-1-1", "eu-ai-act:art-9", "related", "strong", "kyora-iq",
@@ -516,17 +444,13 @@ MAPPINGS = [
     ("iso-42001:a9", "eu-ai-act:art-14", "related", "strong", "kyora-iq",
      "ISO 42001 responsible use aligns with EU AI Act human oversight (Art. 14)."),
 
-    # --- NIST 800-53 additional families -> SOC2 / HITRUST ---
+    # --- NIST 800-53 additional families -> SOC2 ---
     ("nist-800-53-r5:ac-4", "soc2-tsc:cc6-7", "related", "partial", "kyora-iq",
      "Information flow enforcement aligns with SOC 2 CC6.7 (restricting information movement)."),
     ("nist-800-53-r5:au-9", "soc2-tsc:cc7-2", "related", "partial", "kyora-iq",
      "Protection of audit information supports SOC 2 CC7.2 monitoring integrity."),
     ("nist-800-53-r5:cm-6", "soc2-tsc:cc7-1", "related", "strong", "kyora-iq",
      "Configuration settings align with SOC 2 CC7.1 (detecting configuration changes)."),
-    ("nist-800-53-r5:cp-9", "hitrust-csf:12", "related", "strong", "kyora-iq",
-     "System backup aligns with HITRUST Business Continuity Management."),
-    ("nist-800-53-r5:ia-5", "hitrust-csf:01", "related", "partial", "kyora-iq",
-     "Authenticator management aligns with HITRUST Access Control."),
     ("nist-800-53-r5:mp-6", "hipaa-security-rule:310-d-1", "related", "strong", "kyora-iq",
      "Media sanitization aligns with the HIPAA Device and Media Controls standard."),
     ("nist-800-53-r5:pe-3", "soc2-tsc:cc6-4", "related", "strong", "kyora-iq",
@@ -537,8 +461,6 @@ MAPPINGS = [
      "Security engineering principles align with ISO 42001 AI system lifecycle."),
     ("nist-800-53-r5:si-7", "hipaa-security-rule:312-c-1", "related", "strong", "kyora-iq",
      "Software and information integrity aligns with the HIPAA Integrity standard."),
-    ("nist-800-53-r5:si-12", "hitrust-csf:13", "related", "partial", "kyora-iq",
-     "Information retention aligns with HITRUST Privacy Practices."),
 
     # --- SOC 2 internal criteria -> NIST (governance depth) ---
     ("nist-800-53-r5:ca-2", "soc2-tsc:cc4-1", "related", "strong", "kyora-iq",
@@ -547,14 +469,7 @@ MAPPINGS = [
      "Continuous monitoring aligns with SOC 2 CC4.1 (ongoing evaluations)."),
     ("nist-800-53-r5:pl-2", "soc2-tsc:cc5-3", "related", "partial", "kyora-iq",
      "System security plan aligns with SOC 2 CC5.3 (policies and procedures)."),
-    ("nist-800-53-r5:ca-2", "hitrust-csf:06", "related", "partial", "kyora-iq",
-     "Control assessments align with HITRUST Compliance (audit considerations)."),
 
-    # --- HITRUST privacy + HIPAA + EU ---
-    ("hitrust-csf:13", "eu-ai-act:art-10", "related", "partial", "kyora-iq",
-     "HITRUST Privacy Practices relate to EU AI Act data governance (Art. 10)."),
-    ("hitrust-csf:13", "nist-800-53-r5:pt-1", "related", "partial", "kyora-iq",
-     "HITRUST Privacy Practices align with NIST privacy authorization policy (PT-1)."),
 
     # --- AI RMF <-> NIST 800-53 (governance bridge) ---
     ("nist-ai-rmf:govern-1-1", "nist-800-53-r5:pm-1", "related", "partial", "kyora-iq",
@@ -581,13 +496,12 @@ def resolve_index(normdir: Path):
         # that level so the displayed number matches official descriptions.
         #   NIST: base controls + enhancements (not lettered parts)
         #   HIPAA: standards (not implementation specs)
-        #   SOC 2 / HITRUST: the nested 'criterion' nodes (criteria / objectives)
+        #   SOC 2: the nested 'criterion' nodes (criteria)
         #   others: top-level controls (+ MITRE techniques)
         COUNT_KINDS = {
             "nist-800-53-r5": {"control", "enhancement"},
             "hipaa-security-rule": {"standard"},
             "soc2-tsc": {"criterion"},
-            "hitrust-csf": {"criterion"},
             "iso-42001": {"control"},
             "eu-ai-act": {"control"},
         }
@@ -613,7 +527,6 @@ def resolve_index(normdir: Path):
 ALL_DISCLAIMERS = {
     "soc2-tsc": "The Trust Services Criteria and COSO Principles are proprietary to the AICPA. This tool provides independently-written summaries for educational reference only and is not affiliated with or endorsed by the AICPA. For official criteria text, audit guidance, and SOC 2 reports, visit the AICPA website. Do not rely on this tool for compliance decisions.",
     "iso-42001": "ISO/IEC 42001 is copyrighted by ISO/IEC. This tool provides independently-written summaries of the control structure for educational reference only and is not affiliated with or endorsed by ISO/IEC. Purchase the official standard from ISO for authoritative control text. Do not rely on this tool for compliance decisions.",
-    "hitrust-csf": "The HITRUST CSF is proprietary to HITRUST. This tool provides independently-written summaries of the control structure for educational reference only and is not affiliated with or endorsed by HITRUST. Access the official CSF via HITRUST MyCSF for authoritative control text. Do not rely on this tool for compliance decisions.",
     "eu-ai-act": "Summaries of EU AI Act articles are independently written for educational reference. The official, legally binding text is published in the Official Journal of the European Union (Regulation (EU) 2024/1689). Do not rely on this tool for legal or compliance decisions.",
     "hipaa-security-rule": "HIPAA Security Rule text is U.S. public law (45 CFR Part 164). This tool reproduces and summarizes it for educational reference only and is not affiliated with or endorsed by HHS. For authoritative requirements and official guidance, consult the eCFR and HHS. Do not rely on this tool for compliance decisions.",
     "nist-800-53-r5": "NIST SP 800-53 is public domain. Shown for reference — verify against the official NIST publication; do not rely on this tool for compliance decisions.",

@@ -10,7 +10,6 @@
         "nist-800-53-r5:ac-6",
         "hipaa-security-rule:312-a-1",
         "soc2-tsc:cc6",
-        "hitrust-csf:01",
         "owasp-web-top10:a01-2021",
         "owasp-api-top10:api1-2023",
         "mitre-attack:t1078"
@@ -41,12 +40,6 @@
           "display_id": "CC6"
         },
         {
-          "ref": "hitrust-csf:01",
-          "title": "Access Control",
-          "layer": "infrastructure",
-          "display_id": "1.0"
-        },
-        {
           "ref": "owasp-web-top10:a01-2021",
           "title": "Broken Access Control",
           "layer": "infrastructure",
@@ -75,7 +68,6 @@
         "nist-800-53-r5:ia-2",
         "hipaa-security-rule:312-d",
         "soc2-tsc:cc6",
-        "hitrust-csf:01",
         "owasp-web-top10:a07-2021",
         "owasp-api-top10:api2-2023",
         "mitre-attack:t1556"
@@ -98,12 +90,6 @@
           "title": "Logical and Physical Access Controls",
           "layer": "infrastructure",
           "display_id": "CC6"
-        },
-        {
-          "ref": "hitrust-csf:01",
-          "title": "Access Control",
-          "layer": "infrastructure",
-          "display_id": "1.0"
         },
         {
           "ref": "owasp-web-top10:a07-2021",
@@ -134,7 +120,6 @@
         "nist-800-53-r5:au-2",
         "hipaa-security-rule:312-b",
         "soc2-tsc:cc7",
-        "hitrust-csf:09",
         "owasp-web-top10:a09-2021",
         "eu-ai-act:art-12",
         "mitre-attack:t1070"
@@ -157,12 +142,6 @@
           "title": "System Operations",
           "layer": "infrastructure",
           "display_id": "CC7"
-        },
-        {
-          "ref": "hitrust-csf:09",
-          "title": "Communications and Operations Management",
-          "layer": "infrastructure",
-          "display_id": "9.0"
         },
         {
           "ref": "owasp-web-top10:a09-2021",
@@ -193,7 +172,6 @@
         "nist-800-53-r5:sc-8",
         "hipaa-security-rule:312-e-1",
         "soc2-tsc:cc6",
-        "hitrust-csf:10",
         "owasp-web-top10:a02-2021"
       ],
       "controls_resolved": [
@@ -216,12 +194,6 @@
           "display_id": "CC6"
         },
         {
-          "ref": "hitrust-csf:10",
-          "title": "Information Systems Acquisition, Development, and Maintenance",
-          "layer": "model",
-          "display_id": "10.0"
-        },
-        {
           "ref": "owasp-web-top10:a02-2021",
           "title": "Cryptographic Failures",
           "layer": "infrastructure",
@@ -238,7 +210,6 @@
         "nist-800-53-r5:ra-3",
         "hipaa-security-rule:308-a-1",
         "soc2-tsc:cc3",
-        "hitrust-csf:03",
         "iso-42001:a5",
         "nist-ai-rmf:map-1-1",
         "eu-ai-act:art-9"
@@ -261,12 +232,6 @@
           "title": "Risk Assessment",
           "layer": "governance",
           "display_id": "CC3"
-        },
-        {
-          "ref": "hitrust-csf:03",
-          "title": "Risk Management",
-          "layer": "governance",
-          "display_id": "3.0"
         },
         {
           "ref": "iso-42001:a5",
@@ -296,8 +261,7 @@
       "controls": [
         "nist-800-53-r5:ir-4",
         "hipaa-security-rule:308-a-6",
-        "soc2-tsc:cc7",
-        "hitrust-csf:11"
+        "soc2-tsc:cc7"
       ],
       "controls_resolved": [
         {
@@ -317,12 +281,6 @@
           "title": "System Operations",
           "layer": "infrastructure",
           "display_id": "CC7"
-        },
-        {
-          "ref": "hitrust-csf:11",
-          "title": "Information Security Incident Management",
-          "layer": "governance",
-          "display_id": "11.0"
         }
       ]
     },
@@ -334,7 +292,6 @@
       "controls": [
         "nist-800-53-r5:cm-3",
         "soc2-tsc:cc8",
-        "hitrust-csf:09",
         "owasp-web-top10:a08-2021"
       ],
       "controls_resolved": [
@@ -351,12 +308,6 @@
           "display_id": "CC8"
         },
         {
-          "ref": "hitrust-csf:09",
-          "title": "Communications and Operations Management",
-          "layer": "infrastructure",
-          "display_id": "9.0"
-        },
-        {
           "ref": "owasp-web-top10:a08-2021",
           "title": "Software and Data Integrity Failures",
           "layer": "model",
@@ -371,8 +322,7 @@
       "summary": "Inventorying assets and classifying data by sensitivity.",
       "controls": [
         "nist-800-53-r5:cm-8",
-        "soc2-tsc:cc6",
-        "hitrust-csf:07"
+        "soc2-tsc:cc6"
       ],
       "controls_resolved": [
         {
@@ -386,12 +336,6 @@
           "title": "Logical and Physical Access Controls",
           "layer": "infrastructure",
           "display_id": "CC6"
-        },
-        {
-          "ref": "hitrust-csf:07",
-          "title": "Asset Management",
-          "layer": "infrastructure",
-          "display_id": "7.0"
         }
       ]
     },
@@ -402,7 +346,6 @@
       "summary": "Identifying and remediating technical vulnerabilities and outdated components.",
       "controls": [
         "nist-800-53-r5:ra-5",
-        "hitrust-csf:10",
         "soc2-tsc:cc7",
         "owasp-web-top10:a06-2021"
       ],
@@ -412,12 +355,6 @@
           "title": "Vulnerability Monitoring and Scanning",
           "layer": "governance",
           "display_id": "RA-05"
-        },
-        {
-          "ref": "hitrust-csf:10",
-          "title": "Information Systems Acquisition, Development, and Maintenance",
-          "layer": "model",
-          "display_id": "10.0"
         },
         {
           "ref": "soc2-tsc:cc7",
@@ -486,8 +423,6 @@
       "controls": [
         "nist-800-53-r5:pm-1",
         "soc2-tsc:cc1",
-        "hitrust-csf:04",
-        "hitrust-csf:05",
         "iso-42001:a2",
         "iso-42001:a3",
         "nist-ai-rmf:govern-1-1"
@@ -504,18 +439,6 @@
           "title": "Control Environment",
           "layer": "governance",
           "display_id": "CC1"
-        },
-        {
-          "ref": "hitrust-csf:04",
-          "title": "Security Policy",
-          "layer": "governance",
-          "display_id": "4.0"
-        },
-        {
-          "ref": "hitrust-csf:05",
-          "title": "Organization of Information Security",
-          "layer": "governance",
-          "display_id": "5.0"
         },
         {
           "ref": "iso-42001:a2",
@@ -545,7 +468,6 @@
       "controls": [
         "nist-800-53-r5:sr-3",
         "soc2-tsc:cc9",
-        "hitrust-csf:05",
         "iso-42001:a10",
         "owasp-llm-top10:llm03-2025"
       ],
@@ -561,12 +483,6 @@
           "title": "Risk Mitigation",
           "layer": "governance",
           "display_id": "CC9"
-        },
-        {
-          "ref": "hitrust-csf:05",
-          "title": "Organization of Information Security",
-          "layer": "governance",
-          "display_id": "5.0"
         },
         {
           "ref": "iso-42001:a10",

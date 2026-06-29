@@ -199,7 +199,7 @@ def check_source_atlas(rep, offline):
 
 def check_bucket3(rep):
     """Guard the IP policy: licensed-source frameworks must be flagged own-wording."""
-    bucket3 = {"soc2-tsc", "iso-42001", "hitrust-csf", "eu-ai-act"}
+    bucket3 = {"soc2-tsc", "iso-42001", "eu-ai-act"}
     for f in framework_files():
         fw = json.loads(f.read_text())["framework"]
         if fw["id"] in bucket3:

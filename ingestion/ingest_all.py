@@ -75,7 +75,7 @@ def main():
         [str(ING / "normalize_atlas.py"), str(RAW / "atlas.yaml"), str(NORM / "mitre-atlas.json")])
     run("Build MITRE ATT&CK (curated subset)",
         [str(ING / "build_attack.py"), str(NORM / "mitre-attack.json")])
-    run("Build wave-3 (SOC 2, ISO 42001, HITRUST, EU AI Act — own wording)",
+    run("Build wave-3 (SOC 2, ISO 42001, EU AI Act — own wording)",
         [str(ING / "build_wave3.py"), str(NORM)])
     run("Build crosswalk spine (layers, risks, mappings, index)",
         [str(ING / "build_crosswalk.py"), str(NORM)])

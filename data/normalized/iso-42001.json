@@ -45,7 +45,7 @@
       "display_id": "A.4",
       "title": "Resources for AI Systems",
       "kind": "control",
-      "statement": "Identify and document the resources — data, tooling, compute, human competence — needed across the AI system lifecycle.",
+      "statement": "Identify and document the resources, data, tooling, compute, and human competence, needed across the AI system lifecycle.",
       "guidance": "",
       "layer": "model",
       "attributes": {},

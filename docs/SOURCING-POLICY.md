@@ -42,8 +42,6 @@ descriptions**, plus mappings to controls we are allowed to publish.
   category structure only; descriptions are Kyora IQ's own wording.
 - **ISO/IEC 42001** — annex control numbers and titles structure only; our own
   descriptions.
-- **HITRUST CSF** — control reference numbers structure only; our own
-  descriptions.
 - **EU AI Act** — Article/Annex references (the law text itself is public, but we
   summarize rather than reproduce long passages, and link to the official OJ text).
 
@@ -67,6 +65,6 @@ Cross-framework mappings carry their own `source`:
 > Framework content: NIST and HIPAA reproduced from public-domain U.S.
 > Government sources. OWASP content © OWASP Foundation (CC BY-SA 4.0). MITRE
 > ATLAS/ATT&CK © The MITRE Corporation. SOC 2 (AICPA), ISO/IEC 42001, and
-> HITRUST CSF are described in Kyora IQ's own words; their official texts are
+> are described in Kyora IQ's own words; their official texts are
 > copyrighted by the respective bodies. Mappings marked "Kyora IQ" are our own
 > interpretation. Kyora IQ is a reference, not a certification or legal advice.

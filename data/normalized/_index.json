@@ -22,16 +22,6 @@
       "total_nodes": 60
     },
     {
-      "id": "hitrust-csf",
-      "name": "HITRUST CSF",
-      "version": "v11",
-      "publisher": "HITRUST",
-      "source_handling": "own-wording",
-      "license": "proprietary-structure-only",
-      "controls": 51,
-      "total_nodes": 65
-    },
-    {
       "id": "iso-42001",
       "name": "ISO/IEC 42001:2023 (AI Management System)",
       "version": "2023",
@@ -128,15 +118,15 @@
       "publisher": "AICPA",
       "source_handling": "own-wording",
       "license": "proprietary-structure-only",
-      "controls": 42,
-      "total_nodes": 42
+      "controls": 64,
+      "total_nodes": 64
     }
   ],
   "counts": {
-    "frameworks": 13,
+    "frameworks": 12,
     "risks": 16,
-    "mappings": 86,
-    "total_control_nodes": 2427,
-    "total_controls": 1519
+    "mappings": 153,
+    "total_control_nodes": 2384,
+    "total_controls": 1490
   }
 }

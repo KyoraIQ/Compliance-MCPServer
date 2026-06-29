@@ -32,7 +32,7 @@ done and what is next. Each chunk writes real files before the next begins.
 
 - [x] Wave 1: NIST 800-53, NIST AI RMF, NIST AI 600-1, HIPAA, OWASP LLM/API/Web
 - [x] Wave 2: MITRE ATLAS (official YAML, 16 tactics/127 nodes), MITRE ATT&CK (curated subset)
-- [x] Wave 3: SOC 2 (32 criteria), ISO 42001 (Annex A objectives), HITRUST CSF, EU AI Act (own wording)
+- [x] Wave 3: SOC 2 (full criteria), ISO 42001 (Annex A objectives), EU AI Act (own wording)
 
 ## ALL 13 FRAMEWORKS INGESTED. 2347 nodes, 8 risks, 31 mappings, 33 validation checks pass.
 ## Phase 3 step 1 DONE: gateway (config-driven bind, bearer auth, rate limit, /health, deploy config, student guide).
